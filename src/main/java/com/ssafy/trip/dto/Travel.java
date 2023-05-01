@@ -14,6 +14,6 @@ public class Travel {
 	private String title;
 	private String startdate;
 	private String enddate;
-	private List<String> userId;
+	private List<User> userId;
 	private List<Day> days;
 }

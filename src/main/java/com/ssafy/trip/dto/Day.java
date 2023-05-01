@@ -14,5 +14,5 @@ public class Day {
 	private String date;
 	private String weather;
 	private int travel_id;
-	private List<Integer> attractions;
+	private List<Place> attractions;
 }

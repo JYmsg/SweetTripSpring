@@ -19,5 +19,4 @@ public class Place {
 	private int contentTypeId;
 	private double latitude;
 	private double longitude;
-
 }
