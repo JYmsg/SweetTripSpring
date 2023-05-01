@@ -2,10 +2,12 @@ package com.ssafy.trip.model.service;
 
 import java.util.List;
 
+import org.springframework.stereotype.Service;
 
 import com.ssafy.trip.dto.Gugun;
 import com.ssafy.trip.model.repo.GugunRepo;
 
+@Service
 public class GugunServiceImpl implements GugunService {
 	private GugunRepo repo;
 	

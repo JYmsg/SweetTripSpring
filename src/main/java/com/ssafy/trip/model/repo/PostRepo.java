@@ -2,8 +2,11 @@ package com.ssafy.trip.model.repo;
 
 import java.util.ArrayList;
 
+import org.apache.ibatis.annotations.Mapper;
+
 import com.ssafy.trip.dto.Post;
 
+@Mapper
 public interface PostRepo {
 	// 전체 게시글 리스트
 	ArrayList<Post> getPostList() throws Exception;

@@ -17,7 +17,7 @@ public class Place {
 	private String zipcode;
 	private String img;
 	private int contentTypeId;
-	private String latitude;
-	private String longitude;
+	private double latitude;
+	private double longitude;
 
 }

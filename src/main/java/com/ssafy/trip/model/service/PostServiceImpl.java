@@ -2,10 +2,12 @@ package com.ssafy.trip.model.service;
 
 import java.util.ArrayList;
 
+import org.springframework.stereotype.Service;
+
 import com.ssafy.trip.dto.Post;
 import com.ssafy.trip.model.repo.PostRepo;
 
-
+@Service
 public class PostServiceImpl implements PostService {
 
 

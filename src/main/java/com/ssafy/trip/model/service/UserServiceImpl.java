@@ -1,8 +1,11 @@
 package com.ssafy.trip.model.service;
 
+import org.springframework.stereotype.Service;
+
 import com.ssafy.trip.dto.User;
 import com.ssafy.trip.model.repo.UserRepo;
 
+@Service
 public class UserServiceImpl implements UserService{
 	private UserRepo repo;
 	
