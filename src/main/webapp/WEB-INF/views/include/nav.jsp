@@ -203,7 +203,7 @@ aria-labelledby="staticBackdropLabel" aria-hidden="true">
 		console.log(user);
 		return user;
 	}
-	window.onload = function(){
+	function loginandregist(){
 		document.querySelector("#btn-login").addEventListener("click", function() {
 			fetch("${root}/userapi/login", {
 				method : "post",
@@ -242,4 +242,5 @@ aria-labelledby="staticBackdropLabel" aria-hidden="true">
 			});
 		})
 	}
+	document.onload = loginandregist();
 </script>
