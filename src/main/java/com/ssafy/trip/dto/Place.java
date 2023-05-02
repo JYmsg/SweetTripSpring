@@ -8,6 +8,7 @@ import lombok.*;
 @AllArgsConstructor
 @ToString
 public class Place {
+	private int contentId;
 	private int sidoCode;
 	private String sido;
 	private String gugun;
@@ -19,4 +20,5 @@ public class Place {
 	private int contentTypeId;
 	private double latitude;
 	private double longitude;
+	private int day_id;
 }

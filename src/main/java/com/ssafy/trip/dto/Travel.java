@@ -14,6 +14,14 @@ public class Travel {
 	private String title;
 	private String startdate;
 	private String enddate;
-	private List<User> userId;
+	private String user_id;
+	private List<User> users;
 	private List<Day> days;
+	public Travel(String title, String startdate, String enddate, String user_id) {
+		super();
+		this.title = title;
+		this.startdate = startdate;
+		this.enddate = enddate;
+		this.user_id = user_id;
+	}
 }

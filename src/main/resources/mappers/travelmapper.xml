@@ -1,3 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="mappers.travelmapper"></mapper>
+<mapper namespace="com.ssafy.trip.model.repo.TravelRepo">
+	<insert id="insert">
+		insert into travel (title, startdate, enddate, user_id) values(#{title}, #{startdate}, #{enddate}, #{user_id})
+	</insert>
+	<update id="update">
+		update travel set title=#{title}, startdate=#{startdate}, enddate=#{enddate} where id=#{id}
+	</update>
+	<delete id="delete">
+		delete from travel where id=#{id}
+	</delete>
+	<select id="select" resultType="Travel">
+		select * from travel where id=#{id}
+	</select>
+	<select id="selectAll" resultType="Travel">
+		select * from travel where user_id=#{user_id}
+	</select>
+	<select id="last" resultType="int">
+		select LAST_INSERT_ID()
+	</select>
+</mapper>
