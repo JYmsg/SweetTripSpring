@@ -3,10 +3,10 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <%@ include file="/include/header.jsp" %>
+    <%@ include file="/WEB-INF/views/include/header.jsp"%>
   </head>
   <body>
-    <%@ include file="/include/nav.jsp" %> 
+    <%@ include file="/WEB-INF/views/include/nav.jsp"%>
      <!--main-->
      <!--main-->
     <section class="page-section container text-center">
@@ -42,6 +42,6 @@
       	</c:if>
       </div>
     </section>
-    <%@ include file="/include/footer.jsp" %>
+    <%@ include file="/WEB-INF/views/include/footer.jsp"%>
   </body>
 </html>
