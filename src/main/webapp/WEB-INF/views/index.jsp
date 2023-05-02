@@ -24,12 +24,11 @@
 	        </div>
 	        <c:if test="${not empty hotpls }">
 	        	<a class="btn btn-outline-warning d-inline float-end mb-3" href="${root}/hotplacelist">여행지 더보기</a>
-				<form action="${root }/hotplacedetail" method="get">
 					<div class="row" style="clear: both">
 						<c:forEach var="hotpl" items="${hotpls }">
 							<div class="col-lg-4 col-sm-6 mb-4">
 					            <div class="portfolio-item">
-					              <a class="portfolio-link" href="view.jsp">
+					              <a class="portfolio-link" href="${root }/hotplacedetail?id=${hotpl.id}">
 					                <div class="portfolio-hover">
 					                	<div class="portfolio-hover-content">
 					                  		<i class="bi bi-plus-lg fs-1"></i>
@@ -45,7 +44,6 @@
 					         </div>
 						</c:forEach>
 					</div>
-				</form>
 			</c:if>
 			<c:if test="${empty hotpls }">
 				<p>등록된 장소가 없습니다.</p>
