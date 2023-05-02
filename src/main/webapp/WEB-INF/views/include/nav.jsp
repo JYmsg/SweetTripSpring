@@ -9,7 +9,7 @@
 </c:if>
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top ${subHeaderClass}" id="mainNav">
 	<div class="container">
-		<a class="navbar-brand" href="${root}/index.jsp">Enjoy Trip</a>
+		<a class="navbar-brand" href="${root}/">Enjoy Trip</a>
 		<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
 			data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" 
 			aria-expanded="false" aria-label="Toggle navigation"> Menu <i class="fas fa-bars ms-1"></i>
