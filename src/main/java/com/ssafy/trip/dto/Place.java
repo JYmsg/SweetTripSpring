@@ -8,17 +8,17 @@ import lombok.*;
 @AllArgsConstructor
 @ToString
 public class Place {
-	private int contentId;
-	private int sidoCode;
+	private int content_id;
+	private int sido_code;
 	private String sido;
 	private String gugun;
-	private int gugunCode;
+	private int gugun_code;
 	private String title;
-	private String address;
+	private String addr1;
+	private String addr2;
 	private String zipcode;
-	private String img;
-	private int contentTypeId;
+	private String first_image;
+	private int content_type_id;
 	private double latitude;
 	private double longitude;
-	private int day_id;
 }

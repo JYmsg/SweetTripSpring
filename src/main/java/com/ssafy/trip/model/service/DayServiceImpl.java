@@ -3,6 +3,7 @@ package com.ssafy.trip.model.service;
 import java.sql.SQLException;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.ssafy.trip.dto.Day;
@@ -12,11 +13,11 @@ import com.ssafy.trip.model.repo.PlaceRepo;
 
 @Service
 public class DayServiceImpl implements DayService {
+	@Autowired
 	private DayRepo repo;
+	@Autowired
+	private PlaceRepo Prepo;
 	
-	public DayServiceImpl(DayRepo repo) {
-		this.repo = repo;
-	}
 	@Override
 	public int insert(Day day) throws SQLException {
 		int r = repo.insert(day);
@@ -46,7 +47,10 @@ public class DayServiceImpl implements DayService {
 	public Day select(int id) throws SQLException {
 		Day day = repo.select(id);
 		day.setAttractions(repo.selectAttraction(id));
-		return repo.select(id);
+		for(int p: day.getAttractions()) {
+			day.getPlaces().add(Prepo.select(p));
+		}
+		return day;
 	}
 
 	@Override
@@ -64,6 +68,9 @@ public class DayServiceImpl implements DayService {
 		List<Day> results = repo.selectAll(travel_id);
 		for(Day result: results) {
 			result.setAttractions(repo.selectAttraction(result.getId()));
+			for(int p: result.getAttractions()) {
+				result.getPlaces().add(Prepo.select(p));
+			}
 		}
 		return results;
 	}

@@ -17,6 +17,8 @@ import com.ssafy.trip.model.repo.TravelRepo;
 public class TravelServiceImpl implements TravelService {
 	@Autowired
 	private TravelRepo repo;
+	@Autowired
+	private DayService svc;
 	
 	@Override
 	@Transactional
@@ -38,12 +40,20 @@ public class TravelServiceImpl implements TravelService {
 
 	@Override
 	public Travel select(int id) throws SQLException {
-		return repo.select(id);
+		Travel travel = repo.select(id);
+		if(travel == null) return null;
+		travel.setDays(svc.selectAll(travel.getId()));
+		return travel;
 	}
 
 	@Override
 	public List<Travel> selectAll(String user_id) throws SQLException {
-		return repo.selectAll(user_id);
+		List<Travel> travels = repo.selectAll(user_id);
+		if(travels == null) return null;
+		for(Travel travel: travels) {
+			travel.setDays(svc.selectAll(travel.getId()));
+		}
+		return travels;
 	}
 
 }
