@@ -10,16 +10,21 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.ssafy.trip.dto.HotPlace;
+import com.ssafy.trip.dto.Notice;
 import com.ssafy.trip.model.service.HotPlaceService;
+import com.ssafy.trip.model.service.NoticeService;
 
 @Controller
 public class IndexController {
 	@Autowired
 	private HotPlaceService hs;
+	@Autowired
+	private NoticeService ns;
 	
 	@GetMapping({"/","/index"})
 	public String index(Model m) throws SQLException {
@@ -65,11 +70,68 @@ public class IndexController {
 	public String hotplaceregist() {
 		return "hotplace/hotplaceregist";
 	}
-	@DeleteMapping("/hotpldel")
+	
+	@GetMapping("/hotpldel")
 	public String hotpldelete(int id) throws SQLException {
 		hs.delete(id);
 		return "redirect:/hotplacelist";
 	}
+	
+	@GetMapping("/noticelist")
+	public String noticelist(Model m) throws SQLException {
+		m.addAttribute("notices", ns.selectAll());
+		return "board/noticelist";
+	}
+	
+	@PostMapping("/noticelist")
+	public String noticelist(Notice notice, Model m) {
+		try {
+			notice.setWriter_id("ssafy");
+			ns.insert(notice);
+			m.addAttribute("msg", "등록되었습니다.");
+		} catch (Exception e) {
+			m.addAttribute("err","등록 중 오류가 발생했습니다..");
+			e.printStackTrace();
+		}
+		return "redirect:/noticelist";
+	}
+	
+	@GetMapping("/noticeview")
+	public String noticeview(int id, Model m) throws SQLException {
+		m.addAttribute("notice", ns.select(id));
+		System.out.println(ns.select(id));
+		return "board/noticeview";
+	}
+	
+	@GetMapping("/noticedel")
+	public String noticedel(int id) throws SQLException {
+		ns.delete(id);
+		return "redirect:/noticelist";
+	}
+	
+	@GetMapping("/noticeupdate")
+	public String noticeupdate(int id, Model m) throws SQLException {
+		m.addAttribute("notice", ns.select(id));
+		return "board/noticeupdate";
+	}
+	
+	@PostMapping("/noticeupdate")
+	public String noticeupdate(Notice notice, Model m) {
+		try {
+			ns.update(notice);
+			m.addAttribute("msg", "등록되었습니다.");
+		} catch (Exception e) {
+			m.addAttribute("err","등록 중 오류가 발생했습니다..");
+			e.printStackTrace();
+		}
+		return "redirect:/noticelist";
+	}
+	
+	@GetMapping("/noticewrite")
+	public String noticewrite() throws SQLException{
+		return "board/noticewrite";
+	}
+	
 	
 	@GetMapping("/searchPlace")
 	public String searchPlace() {

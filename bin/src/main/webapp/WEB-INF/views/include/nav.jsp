@@ -1,15 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
-<c:if test="${pageContext.request.requestURL == 'http://localhost:8080/tripback/index.jsp'}">
+<c:if test="${pageContext.request.requestURL == 'http://localhost:8080/trip/'}">
 		<c:set var="subHeaderClass" value=""></c:set>
 </c:if>
-<c:if test="${pageContext.request.requestURL != 'http://localhost:8080/tripback/index.jsp'}">
+<c:if test="${pageContext.request.requestURL != 'http://localhost:8080/trip/'}">
 		<c:set var="subHeaderClass" value="sub-header"></c:set>
 </c:if>
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top ${subHeaderClass}" id="mainNav">
 	<div class="container">
-		<a class="navbar-brand" href="${root}/index.jsp">Enjoy Trip</a>
+		<a class="navbar-brand" href="${root}/">Enjoy Trip</a>
 		<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
 			data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" 
 			aria-expanded="false" aria-label="Toggle navigation"> Menu <i class="fas fa-bars ms-1"></i>
@@ -18,7 +18,7 @@
 		<c:if test="${empty userinfo}">
 			<ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
 				<li class="nav-item"><a class="nav-link" href="${root}/main?action=noticeList">공지사항</a></li>
-				<li class="nav-item"><a class="nav-link" href="${root}/main?action=reviewList">핫플레이스</a></li>
+				<li class="nav-item"><a class="nav-link" href="${root}/hotplacelist">핫플레이스</a></li>
 				<li class="nav-item"><a class="nav-link" href="${root}/root.jsp">여행 루트 짜기</a></li>
 				<li class="nav-item"><a class="nav-link" href="${root}/main?action=topList">TOP 5 우수회원</a></li>
 				<li class="nav-item"><a class="nav-link" href="#"
@@ -30,7 +30,7 @@
 		<c:if test="${not empty userinfo}">
 			<ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
 				<li class="nav-item"><a class="nav-link" href="${root}/main?action=noticeList">공지사항</a></li>
-				<li class="nav-item"><a class="nav-link" href="${root}/main?action=reviewList">핫플레이스</a></li>
+				<li class="nav-item"><a class="nav-link" href="${root}/hotplacelist">핫플레이스</a></li>
 				<li class="nav-item"><a class="nav-link" href="${root}/root.jsp">여행 루트 짜기</a></li>
 				<li class="nav-item"><a class="nav-link" href="${root}/main?action=topList">TOP 5 우수회원</a></li>
 				<li class="nav-item"><a class="nav-link" aria-current="page"

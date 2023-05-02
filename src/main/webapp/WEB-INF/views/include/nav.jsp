@@ -17,7 +17,7 @@
 		<div class="collapse navbar-collapse" id="navbarResponsive">
 		<c:if test="${empty userinfo}">
 			<ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
-				<li class="nav-item"><a class="nav-link" href="${root}/main?action=noticeList">공지사항</a></li>
+				<li class="nav-item"><a class="nav-link" href="${root}/noticelist">공지사항</a></li>
 				<li class="nav-item"><a class="nav-link" href="${root}/hotplacelist">핫플레이스</a></li>
 				<li class="nav-item"><a class="nav-link" href="${root}/root.jsp">여행 루트 짜기</a></li>
 				<li class="nav-item"><a class="nav-link" href="${root}/main?action=topList">TOP 5 우수회원</a></li>
@@ -29,7 +29,7 @@
 		</c:if>
 		<c:if test="${not empty userinfo}">
 			<ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
-				<li class="nav-item"><a class="nav-link" href="${root}/main?action=noticeList">공지사항</a></li>
+				<li class="nav-item"><a class="nav-link" href="${root}/noticelist">공지사항</a></li>
 				<li class="nav-item"><a class="nav-link" href="${root}/hotplacelist">핫플레이스</a></li>
 				<li class="nav-item"><a class="nav-link" href="${root}/root.jsp">여행 루트 짜기</a></li>
 				<li class="nav-item"><a class="nav-link" href="${root}/main?action=topList">TOP 5 우수회원</a></li>
