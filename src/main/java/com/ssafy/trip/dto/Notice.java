@@ -9,16 +9,16 @@ import lombok.*;
 @ToString
 public class Notice {
 	private int id;
-	private String write_id;
+	private String writer_id;
 	private String title;
 	private String content;
 	private int hit;
 	private String write_time;
 	
 	
-	public Notice(String title, String content, String write_id) {
+	public Notice(String title, String content, String writer_id) {
 		super();
-		this.write_id = write_id;
+		this.writer_id = writer_id;
 		this.title = title;
 		this.content = content;
 	}

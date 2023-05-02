@@ -10,7 +10,6 @@ import org.springframework.web.multipart.MultipartFile;
 import com.ssafy.trip.dto.HotPlace;
 import com.ssafy.trip.dto.Place;
 
-@Mapper
 public interface HotPlaceService {
 	int insert(HotPlace hotplace, MultipartFile file) throws Exception;
 	int update(HotPlace hotplace, MultipartFile file) throws Exception;
