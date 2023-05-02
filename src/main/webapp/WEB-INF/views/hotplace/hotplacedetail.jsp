@@ -13,8 +13,8 @@
         <div class="dropdown">
              <i id="threeDot" class="bi bi-three-dots fs-3" data-bs-toggle="dropdown" aria-expanded="false"></i>
              <ul class="dropdown-menu">
-                 <li><a class="dropdown-item" href="${root}/hotplupdate/id=${hotpl.id}">수정</a></li>
-                 <li><a class="dropdown-item" href="${root}/hotpldel/id=${hotpl.id}">삭제</a></li>
+                 <li><a class="dropdown-item" href="${root}/hotplupdate?id=${hotpl.id}">수정</a></li>
+                 <li><a class="dropdown-item" href="${root}/hotpldel?id=${hotpl.id}">삭제</a></li>
              </ul>
         </div>
         <i id="like" class="bi fs-4 ${cookie.setLikeClass.value}" style="color:#${cookie.setLikeColor.value};"></i>

@@ -19,3 +19,7 @@
 <link href="${root}/assets/css/style.css" rel="stylesheet"/>
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css" />
+<script>
+let msg = "${msg}";
+if(msg) alert(msg);
+</script>

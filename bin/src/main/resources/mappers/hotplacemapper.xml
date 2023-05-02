@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ssafy.trip.model.repo.HotPlaceRepo" >
+	
+	<insert id="insert">
+		INSERT INTO hotplace (title, content, writer_id, latitude, longitude, img)
+		VALUES (#{title}, #{content}, #{writer_id}, #{latitude}, #{longitude}, #{img})
+	</insert>
+	
+	<update id="update">
+		UPDATE hotplace
+		SET title=#{title}, content=#{content}, img=#{img}
+		WHERE id=#{id}
+	</update>
+
+	<delete id="delete">
+		DELETE FROM hotplace
+		WHERE id=#{id}
+	</delete>
+
+	<select id="select" resultType="HotPlace">
+		SELECT * FROM hotplace
+		WHERE id=#{id}
+	</select>
+
+	<select id="selectAll" resultType="HotPlace">
+		SELECT * FROM hotplace
+	</select>
+
+</mapper>
