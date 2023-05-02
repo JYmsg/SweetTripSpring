@@ -15,7 +15,10 @@ import org.springframework.web.multipart.MultipartFile;
 import com.ssafy.trip.dto.HotPlace;
 import com.ssafy.trip.model.repo.HotPlaceRepo;
 
+import lombok.extern.slf4j.Slf4j;
+
 @Service
+@Slf4j
 public class HotPlaceServiceImpl implements HotPlaceService {
 	
 	@Autowired
@@ -40,7 +43,8 @@ public class HotPlaceServiceImpl implements HotPlaceService {
 
 	private void fileHandling(HotPlace hotplace, MultipartFile file) throws IllegalStateException, IOException {
 		// 파일을 저장할 폴더 지정
-		Resource res = resLoader.getResource("resources/upload");
+		Resource res = resLoader.getResource("classpath:/static/resources/upload");
+		log.debug("res: {}", res.getFile().getCanonicalPath());
 		if (file != null && file.getSize() > 0) {
 			hotplace.setImg(System.currentTimeMillis() + "_" + file.getOriginalFilename());
 			file.transferTo(new File(res.getFile().getCanonicalPath() + "/" + hotplace.getImg()));
@@ -61,14 +65,5 @@ public class HotPlaceServiceImpl implements HotPlaceService {
 	@Override
 	public List<HotPlace> selectAll() throws SQLException {
 		return repo.selectAll();
-	}
-	
-	public void main(String[] args) throws Exception{
-		HotPlaceService sv = new HotPlaceServiceImpl();
-		List<HotPlace> list = new ArrayList<HotPlace>();
-		list = sv.selectAll();
-		for(HotPlace l : list) {
-			System.out.println(l);
-		}
 	}
 }
