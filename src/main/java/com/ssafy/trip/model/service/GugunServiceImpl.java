@@ -15,12 +15,12 @@ public class GugunServiceImpl implements GugunService {
 		this.repo = repo;
 	}
 	@Override
-	public List<Gugun> selectAll(int sidoCode) throws Exception {
-		return repo.selectAll(sidoCode);
+	public List<Gugun> selectAll(int sido_code) throws Exception {
+		return repo.selectAll(sido_code);
 	}
 	@Override
-	public String selete(int gugunCode) throws Exception {
-		return repo.selete(gugunCode);
+	public String select(int gugun_code, int sido_code) throws Exception {
+		return repo.select(gugun_code, sido_code);
 	}
 
 }

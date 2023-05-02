@@ -8,7 +8,7 @@ import lombok.*;
 @AllArgsConstructor
 @ToString
 public class Gugun {
-	private int sidoCode;
-	private String gugun;
-	private int gugunCode;
+	private int sido_code;
+	private String gugun_name;
+	private int gugun_code;
 }

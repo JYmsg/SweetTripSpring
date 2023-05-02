@@ -5,6 +5,6 @@ import java.util.List;
 import com.ssafy.trip.dto.Gugun;
 
 public interface GugunService {
-	List<Gugun> selectAll(int sidoCode) throws Exception;
-	String selete(int gugunCode) throws Exception;
+	List<Gugun> selectAll(int sido_code) throws Exception;
+	String select(int gugun_code, int sido_code) throws Exception;
 }
