@@ -36,7 +36,7 @@ public class SwaggerConfig {
 				.apiInfo(apiInfo) 							// 문서에 대한 정보를 설정한다.
 				.select()									// ApiSelectorBuilder를 반환하며 상세한 설정 처리
 				.apis(RequestHandlerSelectors.basePackage("com.ssafy.trip.controller"))// 대상으로하는 api 설정
-				.paths(PathSelectors.ant("/**/userapi/**"))	// controller에서 swagger를 지정할 대상 path 설정
+				.paths(PathSelectors.ant("/**/gugunapi/**"))	// controller에서 swagger를 지정할 대상 path 설정
 				.build();									// Docket 객체 생성			
 	}
 }

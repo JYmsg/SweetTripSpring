@@ -42,21 +42,21 @@ public class UserRestController {
 		return new ResponseEntity<Void> (HttpStatus.NO_CONTENT);
 	}
 	
-	@PutMapping("/User")
+	@PutMapping("/user")
 	public ResponseEntity<?> update(@RequestBody User user) throws Exception{
 		int r = us.update(user);
 		if(r==1) return new ResponseEntity<Integer>(r, HttpStatus.CREATED);
 		return new ResponseEntity<Void> (HttpStatus.NO_CONTENT);
 	}
 	
-	@DeleteMapping("/User/{id}")
+	@DeleteMapping("/user/{id}")
 	public ResponseEntity<?> delete(@PathVariable String id) throws Exception{
 		int r = us.delete(id);
 		if(r==1) return new ResponseEntity<Integer>(r, HttpStatus.CREATED);
 		return new ResponseEntity<Void> (HttpStatus.NO_CONTENT);
 	}
 	
-	@GetMapping("/User/{id}")
+	@GetMapping("/user/{id}")
 	public ResponseEntity<?> select(@PathVariable String id) throws Exception{
 		User user = us.select(id);
 		if(user!=null) return new ResponseEntity<User>(user, HttpStatus.CREATED);
