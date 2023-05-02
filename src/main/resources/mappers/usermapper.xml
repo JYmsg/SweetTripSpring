@@ -19,7 +19,7 @@
 
 	<update id="update">
 		UPDATE user
-		SET name=#{name}, password=#{password}, email=#{email}, age=#{age}
+		SET name=#{name}, email=#{email}, age=#{age}
 		WHERE id=#{id}
 	</update>
 

@@ -3,52 +3,86 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <%@ include file="/include/header.jsp" %>
+    <%@ include file="/WEB-INF/views/include/header.jsp"%>
   </head>
   <body>
-    <%@ include file="/include/nav.jsp" %> 
+    <%@ include file="/WEB-INF/views/include/nav.jsp"%>
     <div class="container mt-5 justify-content-center">
       <div style="height: 70px"></div>
       <div class="row">
-      <form action="${root}/main" method="post">
-      	<input type="hidden" name="action" value="update">
-      	<input type="hidden" name="password" value="${userinfo.password}">
-      	<input type="hidden" name="salt" value="${userinfo.salt}">
+      <form>
         <div class="mb-3">
           <p class="fs-3 fw-bold">이름</p>
-          <input type="text" class="form-control" name="name" value="${userinfo.name}">
+          <input id="updateName" type="text" class="form-control" name="name" value="${userinfo.name}">
         </div>
         <hr>
         <div class="mb-3">
           <p class="fs-3 fw-bold">아이디</p>
           <div id="myId" class="fs-5">${userinfo.id}</div>
-          <input type="hidden" name="id" value="${userinfo.id}">
+          <input id="updateId" type="hidden" name="id" value="${userinfo.id}">
         </div>
-        <hr>
-        <div class="mb-3">
-          <p class="fs-3 fw-bold">비밀번호</p>
-          <input type="password" class="form-control" name="newPassword">
-        </div>
+        
         <hr>
         <div class="mb-3">
           <p class="fs-3 fw-bold">이메일</p>
-          <input type="text" class="form-control" name="email" value="${userinfo.email}">
+          <input id="updateEmail" type="text" class="form-control" name="email" value="${userinfo.email}">
         </div>
         <hr>
         <div class="mb-3">
           <p class="fs-3 fw-bold">나이</p>
-          <input type="text" class="form-control" name="age" value="${userinfo.age}">
+          <input id="updateAge" type="text" class="form-control" name="age" value="${userinfo.age}">
         </div>
-        <hr>
-        <input type="submit" class="btn btn-outline-primary w-20 float-end" value="수정 완료">
+        <input id="btn-update" type="button" class="btn btn-outline-primary w-20 float-end ms-2" value="수정 완료">
+        <input id="btn-delete" type="button" class="btn btn-outline-danger w-20 float-end" value="탈퇴">
         </form>
-        <form action="${root}/main" method="post" class="mt-3">
-        	<input type="hidden" name="action" value="delete">
-        	<input type="hidden" name="id" value="${userinfo.id}">
-        	<input type="submit" class="btn btn-outline-danger w-20 float-end" value="탈퇴">
+        <form class="mt-3">
         </form>
       </div>
     </div>
-    <%@ include file="/include/footer.jsp" %>
+    <%@ include file="/WEB-INF/views/include/footer.jsp"%>
   </body>
+  <script>
+  function updateForm() {
+		let user = {};
+		user.id = document.querySelector("#updateId").value;
+		user.name =  document.querySelector("#updateName").value;
+		user.email =  document.querySelector("#updateEmail").value;
+		user.age =  document.querySelector("#updateAge").value;
+		console.log(user);
+		return user;
+	}
+    window.onload = function(){
+		document.querySelector("#btn-update").addEventListener("click", function() {
+			fetch("${root}/userapi/user", {
+				method : "put",
+				headers: {
+					"Content-Type" : "application/json",
+				},
+				body: JSON.stringify(updateForm()),
+			})
+			.then((response) => response.json())
+			.then((data) => {
+        alert("수정 성공");
+				location.href="${root}/";
+			})
+			.catch((error) => {
+				alert("수정 실패");
+			});
+		})
+		document.querySelector("#btn-delete").addEventListener("click", function() {
+			fetch("${root}/userapi/user/"+document.querySelector("#updateId").value, {
+        method: "delete"
+      })
+			.then((response) => response.json())
+			.then((data) => {
+				alert("탈퇴 성공")
+				location.href="${root}/";
+			})
+			.catch((error) => {
+				alert("탈퇴 실패")
+			});
+		})
+	}
+
+  </script>
 </html>
