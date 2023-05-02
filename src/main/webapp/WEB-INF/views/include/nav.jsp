@@ -16,7 +16,7 @@
 		</button>
 		<div class="collapse navbar-collapse" id="navbarResponsive">
 		<c:if test="${empty userinfo}">
-			<ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
+			<ul id="none-user" class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
 				<li class="nav-item"><a class="nav-link" href="${root}/noticelist">공지사항</a></li>
 				<li class="nav-item"><a class="nav-link" href="${root}/hotplacelist">핫플레이스</a></li>
 				<li class="nav-item"><a class="nav-link" href="${root}/root.jsp">여행 루트 짜기</a></li>
@@ -28,13 +28,13 @@
 			</ul>
 		</c:if>
 		<c:if test="${not empty userinfo}">
-			<ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
+			<ul id="exist-user" class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
 				<li class="nav-item"><a class="nav-link" href="${root}/noticelist">공지사항</a></li>
 				<li class="nav-item"><a class="nav-link" href="${root}/hotplacelist">핫플레이스</a></li>
 				<li class="nav-item"><a class="nav-link" href="${root}/root.jsp">여행 루트 짜기</a></li>
 				<li class="nav-item"><a class="nav-link" href="${root}/main?action=topList">TOP 5 우수회원</a></li>
 				<li class="nav-item"><a class="nav-link" aria-current="page"
-					href="${root}/main?action=logout">로그아웃</a></li>
+					href="${root}/logout">로그아웃</a></li>
 				<li class="nav-item"><a class="nav-link" aria-current="page"
 					href="mypage.jsp">마이페이지</a></li>
 			</ul>
@@ -66,7 +66,7 @@
 						<input type="password" class="form-control" id="loginPassword" name="password"
 							placeholder="Password" /> <label for="loginPassword">Password</label>
 					</div>
-					<div class="p-1 mt-3"></div>				
+					<div id="login-fail" class="p-1 mt-3"></div>				
 			</div>
 			<!-- Modal footer -->
 			<div class="modal-footer">
@@ -98,11 +98,10 @@
 			.then((response) => response.json())
 			.then((data) => {
 				document.querySelector(".btn-close").click();
-				alert("로그인 성공S2");
+				location.reload();
 			})
 			.catch((error) => {
 				document.querySelector("#login-fail").innerHTML = "아이디와 비밀번호를 다시 확인해주세요.";
-				alert("로그인 실패");
 			});
 		})
 	}

@@ -62,9 +62,7 @@ public class UserRestController {
 	}
 	@PostMapping("/login")
 	public ResponseEntity<?> login(@RequestBody User user, HttpSession session) throws Exception{
-		System.out.println("get = "+user);
 		User loginUser = us.select(user.getId());
-		System.out.println(loginUser);
 		if(loginUser != null && loginUser.getPassword().equals(user.getPassword())) {
 			session.setAttribute("userinfo", loginUser);
 			return new ResponseEntity<User>(loginUser, HttpStatus.OK);
