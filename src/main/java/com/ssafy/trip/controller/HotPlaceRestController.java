@@ -33,15 +33,15 @@ public class HotPlaceRestController {
 	private HotPlaceService hs;
 	
 	@PostMapping("/hotplace")
-	public ResponseEntity<?> insert(@RequestBody HotPlace hotplace, @RequestPart(required = false) MultipartFile file) throws Exception{
-		int result = hs.insert(hotplace,file);
+	public ResponseEntity<?> insert(@RequestBody HotPlace hotplace) throws Exception{
+		int result = hs.insert(hotplace);
 		if(result==1) return new ResponseEntity<Integer>(result, HttpStatus.CREATED);
 		return new ResponseEntity<Void> (HttpStatus.NO_CONTENT);
 	}
 	
 	@PutMapping("/hotplace")
-	public ResponseEntity<?> update(@RequestBody HotPlace hotplace, @RequestPart(required = false) MultipartFile file) throws Exception{
-		int r = hs.update(hotplace,file);
+	public ResponseEntity<?> update(@RequestBody HotPlace hotplace) throws Exception{
+		int r = hs.update(hotplace);
 		if(r==1) return new ResponseEntity<Integer>(r, HttpStatus.CREATED);
 		return new ResponseEntity<Void> (HttpStatus.NO_CONTENT);
 	}

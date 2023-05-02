@@ -1,5 +1,7 @@
 package com.ssafy.trip.dto;
 
+import org.springframework.web.multipart.MultipartFile;
+
 import lombok.*;
 
 @Getter
@@ -18,9 +20,10 @@ public class HotPlace {
 	private int like;
 	private String write_time;
 	private String writer_id;
+	private MultipartFile file;
 	
 	
-	public HotPlace(String title, String content, String writer_id, double latitude, double longitude, String img) {
+	public HotPlace(String title, String content, String writer_id, double latitude, double longitude, String img, MultipartFile file) {
 		super();
 		this.latitude = latitude;
 		this.longitude = longitude;
@@ -28,5 +31,6 @@ public class HotPlace {
 		this.content = content;
 		this.img = img;
 		this.writer_id = writer_id;
+		this.file=file;
 	}
 }

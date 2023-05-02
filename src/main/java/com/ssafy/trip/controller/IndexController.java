@@ -47,12 +47,12 @@ public class IndexController {
 	}
 	
 	@PostMapping("/hotplacelist")
-	public String hotplacelist(HotPlace hotplace, @RequestPart(required = false) MultipartFile file, Model m) throws SQLException {
+	public String hotplacelist(HotPlace hotplace, Model m) throws SQLException {
 		try {
 			hotplace.setLatitude(1.1);
 			hotplace.setLongitude(1.1);
 			hotplace.setWriter_id("ssafy");
-			hs.insert(hotplace, file);
+			hs.insert(hotplace);
 			m.addAttribute("msg", "등록되었습니다.");
 		} catch (Exception e) {
 			m.addAttribute("err","등록 중 오류가 발생했습니다..");

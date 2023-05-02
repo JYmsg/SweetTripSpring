@@ -11,8 +11,8 @@ import com.ssafy.trip.dto.HotPlace;
 import com.ssafy.trip.dto.Place;
 
 public interface HotPlaceService {
-	int insert(HotPlace hotplace, MultipartFile file) throws Exception;
-	int update(HotPlace hotplace, MultipartFile file) throws Exception;
+	int insert(HotPlace hotplace) throws Exception;
+	int update(HotPlace hotplace) throws Exception;
 	int delete(int id) throws SQLException;
 	HotPlace select(int id) throws SQLException;
 	List<HotPlace> selectAll() throws SQLException;

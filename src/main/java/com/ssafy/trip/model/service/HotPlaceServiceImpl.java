@@ -29,26 +29,32 @@ public class HotPlaceServiceImpl implements HotPlaceService {
 	
 	@Override
 	@Transactional
-	public int insert(HotPlace hotplace, MultipartFile file) throws Exception {
-		fileHandling(hotplace, file);
+	public int insert(HotPlace hotplace) throws Exception {
+		MultipartFile file = hotplace.getFile();
+		if (file != null && file.getSize() > 0) {
+			// 파일을 저장할 위치 지정
+			Resource res = resLoader.getResource("classpath:static/resources/upload");
+			hotplace.setImg(file.getOriginalFilename());
+			// 파일 저장
+			file.transferTo(new File(res.getFile().getCanonicalPath() + "/" + hotplace.getImg()));
+
+		}
 		return repo.insert(hotplace);
 	}
 
 	@Override
 	@Transactional
-	public int update(HotPlace hotplace, MultipartFile file) throws Exception {
-		fileHandling(hotplace, file);
-		return repo.update(hotplace);
-	}
-
-	private void fileHandling(HotPlace hotplace, MultipartFile file) throws IllegalStateException, IOException {
-		// 파일을 저장할 폴더 지정
-		Resource res = resLoader.getResource("classpath:/static/resources/upload");
-		log.debug("res: {}", res.getFile().getCanonicalPath());
+	public int update(HotPlace hotplace) throws Exception {
+		MultipartFile file = hotplace.getFile();
 		if (file != null && file.getSize() > 0) {
-			hotplace.setImg(System.currentTimeMillis() + "_" + file.getOriginalFilename());
+			// 파일을 저장할 위치 지정
+			Resource res = resLoader.getResource("classpath:static/resources/upload");
+			hotplace.setImg(file.getOriginalFilename());
+			// 파일 저장
 			file.transferTo(new File(res.getFile().getCanonicalPath() + "/" + hotplace.getImg()));
+
 		}
+		return repo.update(hotplace);
 	}
 	
 	@Override
