@@ -43,4 +43,8 @@ public class IndexController {
 	public String hotplaceregist() {
 		return "hotplace/hotplaceregist";
 	}
+	@GetMapping("/searchPlace")
+	public String searchPlace() {
+		return "maketrip/searchPlace";
+	}
 }

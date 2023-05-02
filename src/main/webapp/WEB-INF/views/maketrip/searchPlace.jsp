@@ -3,78 +3,76 @@ uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
   <head>
-    <%@ include file="/include/header.jsp" %>
+    <%@ include file="/WEB-INF/views/include/header.jsp"%>
 
     <script>
-      document.querySelector("#search-area").addEventListener("change", function () {
-        let sido = document.querySelector("#search-area");
-        fetch("${root}/gugunapi/gugun/" + document.querySelector("#search-area"))
-          .then((reponse) => response.json())
-          .then((guguns) => {
-            console.log(guguns);
-            let lis = "";
-            guguns.forEach((gugun) => {
-              console.log(gugun);
-              lis += "<option value =" + gugun.gugun_code + ">" + gugun.gugun_name + "</option>";
-            });
-            console.log(lis);
-            document.querySelector("#search-gugun-id").innerHTML += lis;
-          })
-          .catch((error) => alert("요청 실패"));
-      });
-      document.querySelector("#btn-search").addEventListener("click", function () {
-        fetch(
-          "${root}/placeapi/place/list/" +
-            document.querySelector("#search-area") +
-            "/" +
-            document.querySelector("#search-gugun-id") +
-            "/" +
-            document.querySelector("#search-content-id")
-        )
-          .then((reponse) => response.json())
-          .then((places) => {
-            let list = "";
-            places.forEach((place) => {
-              let markerInfo = {
-                title: "${place.title}",
-                latlng: new kakao.maps.LatLng("${place.latitude}", "${place.longitude}"),
-              };
-              positions.push(markerInfo);
-              list +=
-                "<div class='card mb-3' onclick='moveCenter(" +
-                place.latitude +
-                ", " +
-                place.longitude +
-                ")'>" +
-                "<div class='row g-0'><div class='col-md-4'><img style='height:300px' src=" +
-                place.first_image +
-                " class='img-fluid rounded-start' alt=" +
-                place.title +
-                "></div><div class='col-md-8'><div class='card-body'><h5 class='card-title'>" +
-                place.title +
-                "</h5><p class='card-text'><small class='text-muted'>" +
-                place.addr1 +
-                " " +
-                place.addr2 +
-                "</small><p>" +
-                place.overview +
-                "</p></p></div></div> </div></div>";
-            });
-            document.querySelector("#resultBox").innerHTML += list;
-            displayMarker();
-          })
-          .catch((error) => alert("요청 실패"));
-      });
+      window.onload = function () {
+        document.querySelector("#search-area").addEventListener("change", function (event) {
+          fetch("${root}/gugunapi/gugun/" + event.target.value)
+            .then((response) => response.json())
+            .then((guguns) => {
+              let lis = "<option value='0' selected>구군선택</option>";
+              guguns.forEach((gugun) => {
+                console.log(gugun);
+                lis += "<option value =" + gugun.gugun_code + ">" + gugun.gugun_name + "</option>";
+              });
+              console.log(lis);
+              document.querySelector("#search-gugun-id").innerHTML = lis;
+            })
+            .catch((error) => alert("요청 실패"));
+        });
+        document.querySelector("#btn-search").addEventListener("click", function () {
+          fetch(
+            "${root}/placeapi/place/list/" +
+              document.querySelector("#search-area").value +
+              "/" +
+              document.querySelector("#search-gugun-id").value +
+              "/" +
+              document.querySelector("#search-content-id").value
+          )
+            .then((response) => response.json())
+            .then((places) => {
+              let lest = "";
+              places.forEach((place) => {
+                let markerInfo = {
+                  title: place.title,
+                  latlng: new kakao.maps.LatLng(place.latitude, place.longitude),
+                };
+                positions.push(markerInfo);
+                lest +=
+                  "<div class='card mb-3' onclick='moveCenter(" +
+                  place.latitude +
+                  ", " +
+                  place.longitude +
+                  ")'>" +
+                  "<div class='row g-0'><div class='col-md-4'><img style='height:300px' src=" +
+                  place.first_image +
+                  " class='img-fluid rounded-start' alt=" +
+                  place.title +
+                  "></div><div class='col-md-8'><div class='card-body'><h5 class='card-title'>" +
+                  place.title +
+                  "</h5><p class='card-text'><small class='text-muted'>" +
+                  place.addr1 +
+                  " " +
+                  place.addr2 +
+                  "</small></p></div></div> </div></div>";
+              });
+              document.querySelector("#resultBox").innerHTML += lest;
+              displayMarker();
+            })
+            .catch((error) => alert("요청 실패"));
+        });
+      };
     </script>
   </head>
   <body>
-    <%@ include file="/include/nav.jsp" %>
+    <%@ include file="/WEB-INF/views/include/nav.jsp"%>
     <!--main-->
     <section class="page-section container text-center">
       <span class="text-center mt-5 h3" id="tripListTitle">우리 지역 여행지 검색</span>
       <!-- 관광지 검색 start -->
-      <form class="my-5 row w-100 justify-content-center" role="search" action="${root}/main" method="get">
-        <select id="search-area" class="form-select me-2 rounded-4 col-3">
+      <form class="my-5 row w-100 justify-content-center" role="search">
+        <select id="search-area" class="form-select me-2 rounded-4 col-2">
           <option value="0" selected>검색 할 지역 선택</option>
           <option value="1">서울</option>
           <option value="2">인천</option>
@@ -94,10 +92,10 @@ uri="http://java.sun.com/jsp/jstl/core" %>
           <option value="38">음식점</option>
           <option value="39">음식점</option>
         </select>
-        <select id="search-gugun-id" class="form-select me-2 rounded-4 col-3">
+        <select id="search-gugun-id" class="form-select me-2 rounded-4 col-2">
           <option value="0" selected>구군선택</option>
         </select>
-        <select id="search-content-id" class="form-select me-2 rounded-4 col-3" name="cotentTypeId">
+        <select id="search-content-id" class="form-select me-2 rounded-4 col-2" name="cotentTypeId">
           <option value="0" selected>관광지 유형</option>
           <option value="12">관광지</option>
           <option value="14">문화시설</option>
@@ -116,7 +114,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
           placeholder="검색어"
           aria-label="검색어"
         />
-        <button id="btn-search" class="btn btn-outline-warning col-1" type="submit">검색</button>
+        <button id="btn-search" class="btn btn-outline-warning col-1" type="button">검색</button>
       </form>
       <!-- kakao map start -->
       <div id="map" class="mt-3" style="width: 100%; height: 400px"></div>
@@ -183,6 +181,6 @@ uri="http://java.sun.com/jsp/jstl/core" %>
         map.setCenter(new kakao.maps.LatLng(lat, lng));
       }
     </script>
-    <%@ include file="/include/footer.jsp" %>
+    <%@ include file="/WEB-INF/views/include/footer.jsp"%>
   </body>
 </html>

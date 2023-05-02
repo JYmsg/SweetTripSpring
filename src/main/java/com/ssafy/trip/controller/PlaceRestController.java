@@ -31,6 +31,7 @@ public class PlaceRestController {
 	@GetMapping("/place/list/{sido_code}/{gugun_code}/{contentTypeId}")
 	public ResponseEntity<?> selectAllDay(@PathVariable int sido_code, @PathVariable int gugun_code, @PathVariable int contentTypeId) throws Exception{
 		List<Place> places = ps.selectAll(sido_code, gugun_code, contentTypeId);
+		System.out.println(places);
 		if(places != null && places.size() > 0) return new ResponseEntity<List<Place>> (places, HttpStatus.OK);
 		else return new ResponseEntity<Void>(HttpStatus.NO_CONTENT);
 	}
