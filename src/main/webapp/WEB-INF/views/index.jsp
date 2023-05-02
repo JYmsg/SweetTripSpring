@@ -9,7 +9,7 @@
     <%@ include file="/WEB-INF/views/include/nav.jsp"%>
     <header class="masthead">
       <div class="container">
-        <a class="btn btn-secondary btn-xl rounded-5 w-100 text-center" href="./tripList.jsp">
+        <a class="btn btn-secondary btn-xl rounded-5 w-100 text-center" href="${root }/searchPlace">
           <i class="bi bi-search"></i> 어디든지 언제든지
         </a>
       </div>

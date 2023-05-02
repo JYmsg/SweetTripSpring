@@ -20,7 +20,7 @@
 				<li class="nav-item"><a class="nav-link" href="${root}/noticelist">공지사항</a></li>
 				<li class="nav-item"><a class="nav-link" href="${root}/hotplacelist">핫플레이스</a></li>
 				<li class="nav-item"><a class="nav-link" href="${root}/searchPlace">여행 루트 짜기</a></li>
-				<li class="nav-item"><a class="nav-link" href="${root}/main?action=topList">TOP 5 우수회원</a></li>
+				<li class="nav-item"><a class="nav-link" href="${root}/toplist">TOP 5 우수회원</a></li>
 				<li class="nav-item"><a class="nav-link" href="#"
 					data-bs-toggle="modal" data-bs-target="#registerModal">회원가입</a></li>
 				<li class="nav-item"><a class="nav-link" href="#"
@@ -32,7 +32,7 @@
 				<li class="nav-item"><a class="nav-link" href="${root}/noticelist">공지사항</a></li>
 				<li class="nav-item"><a class="nav-link" href="${root}/hotplacelist">핫플레이스</a></li>
 				<li class="nav-item"><a class="nav-link" href="${root}/searchPlace">여행 루트 짜기</a></li>
-				<li class="nav-item"><a class="nav-link" href="${root}/main?action=topList">TOP 5 우수회원</a></li>
+				<li class="nav-item"><a class="nav-link" href="${root}/toplist">TOP 5 우수회원</a></li>
 				<li class="nav-item"><a class="nav-link" aria-current="page"
 					href="${root}/logout">로그아웃</a></li>
 				<li class="nav-item"><a class="nav-link" aria-current="page"
