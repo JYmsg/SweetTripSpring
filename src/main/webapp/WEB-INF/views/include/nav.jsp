@@ -55,7 +55,7 @@
 				<button type="button" class="btn-close" data-bs-dismiss="modal"></button>
 			</div>
 			<!-- Modal body -->
-			<form action="${root}/main" method="post">
+			<form>
 			<div class="modal-body">
 					<input type="hidden" name="action" value="login">
 					<div class="form-floating mb-3">
@@ -71,13 +71,42 @@
 			<!-- Modal footer -->
 			<div class="modal-footer">
 				<a href="#" data-bs-toggle="modal" data-bs-target="#findModal" class="btn btn-outline-danger">비밀번호 찾기</a>
-				<button type="submit" class="btn btn-outline-primary" data-bs-dismiss="modal" aria-label="Close">로그인</button>
+				<button id="btn-login" type="button" class="btn btn-outline-primary">로그인</button>
 			</div>
 			</form>
 		</div>
 	</div>
 </div>
 <!-- 로그인 modal end -->
+<script>
+	function loginForm() {
+		let user = {};
+		user.id = document.querySelector("#loginId").value;
+		user.password = document.querySelector("#loginPassword").value;
+		console.log(user);
+		return user;
+	}
+	window.onload = function(){
+		document.querySelector("#btn-login").addEventListener("click", function() {
+			fetch("${root}/userapi/login", {
+				method : "post",
+				headers: {
+					"Content-Type" : "application/json",
+				},
+				body: JSON.stringify(loginForm()),
+			})
+			.then((response) => response.json())
+			.then((data) => {
+				document.querySelector(".btn-close").click();
+				alert("로그인 성공S2");
+			})
+			.catch((error) => {
+				document.querySelector("#login-fail").innerHTML = "아이디와 비밀번호를 다시 확인해주세요.";
+				alert("로그인 실패");
+			});
+		})
+	}
+</script>
 
 <!-- 비밀번호찾기 modal start -->
 <div class="modal fade" id="findModal" data-bs-backdrop="static"
@@ -104,7 +133,8 @@
 						<input type="email" class="form-control" id="floatingPassword" placeholder="Email" name="email"required /> <label for="floatingPassword">이메일</label>
 						<div class="invalid-feedback">이메일을 입력하세요</div>
 					</div>
-					<div class="p-1 mt-3"></div>				
+					<div class="p-1 mt-3"></div>	
+					<div id="login-fail" class="invalid-feedback"></div>			
 			</div>
 			<!-- Modal footer -->
 			<div class="modal-footer">
@@ -174,7 +204,7 @@
 			</div>
 			<!-- Modal footer -->
 			<div class="modal-footer float-end">
-				<input type="submit"
+				<input id="btn-regist" type="button"
 					class="btn btn-outline-primary w-20" value="회원가입">
 			</div>
 			</form>
