@@ -6,8 +6,8 @@ import java.util.List;
 import com.ssafy.trip.dto.Day;
 
 public interface DayService {
-	void insert(Day day) throws SQLException;
-	void update(Day day) throws SQLException;
+	int insert(Day day) throws SQLException;
+	int update(Day day) throws SQLException;
 	int delete(int id) throws SQLException;
 	Day select(int id) throws SQLException;
 	int insertAttraction(int id, int attraction_id) throws SQLException;

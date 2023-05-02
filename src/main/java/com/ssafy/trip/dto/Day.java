@@ -14,5 +14,11 @@ public class Day {
 	private String date;
 	private String weather;
 	private int travel_id;
-	private List<Place> attractions;
+	private List<Integer> attractions;
+	public Day(String date, String weather, int travel_id) {
+		super();
+		this.date = date;
+		this.weather = weather;
+		this.travel_id = travel_id;
+	}
 }

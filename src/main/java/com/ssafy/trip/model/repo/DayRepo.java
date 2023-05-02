@@ -17,4 +17,5 @@ public interface DayRepo {
 	int deleteAttraction(int id) throws SQLException;
 	List<Integer> selectAttraction(int id) throws SQLException;
 	List<Day> selectAll(int travel_id) throws SQLException;
+	int last() throws SQLException;
 }

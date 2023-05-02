@@ -13,26 +13,29 @@ import com.ssafy.trip.model.repo.PlaceRepo;
 @Service
 public class DayServiceImpl implements DayService {
 	private DayRepo repo;
-	private PlaceRepo Prepo;
 	
-	public DayServiceImpl(DayRepo repo, PlaceRepo prepo) {
+	public DayServiceImpl(DayRepo repo) {
 		this.repo = repo;
-		Prepo = prepo;
 	}
 	@Override
-	public void insert(Day day) throws SQLException {
-		repo.insert(day);
-		for(Place p : day.getAttractions()) {
-			repo.insertAttraction(day.getId(), p.getContentId());
+	public int insert(Day day) throws SQLException {
+		int r = repo.insert(day);
+		if(r == 0) return 0;
+		r = repo.last();
+		for(int p : day.getAttractions()) {
+			repo.insertAttraction(r, p);
 		}
+		return r;
 	}
 	@Override
-	public void update(Day day) throws SQLException {
+	public int update(Day day) throws SQLException {
 		repo.deleteAttraction(day.getId());
-		repo.update(day);
-		for(Place p: day.getAttractions()) {
-			repo.insertAttraction(day.getId(), p.getContentId());
+		int r = repo.update(day);
+		if(r == 0) return 0;
+		for(int p: day.getAttractions()) {
+			repo.insertAttraction(day.getId(), p);
 		}
+		return r;
 	}
 	@Override
 	public int delete(int id) throws SQLException {
@@ -42,8 +45,7 @@ public class DayServiceImpl implements DayService {
 	@Override
 	public Day select(int id) throws SQLException {
 		Day day = repo.select(id);
-		List<Integer> places = repo.selectAttraction(id);
-		for(int p : places) day.getAttractions().add(Prepo.select(p));
+		day.setAttractions(repo.selectAttraction(id));
 		return repo.select(id);
 	}
 
@@ -61,8 +63,7 @@ public class DayServiceImpl implements DayService {
 	public List<Day> selectAll(int travel_id) throws SQLException {
 		List<Day> results = repo.selectAll(travel_id);
 		for(Day result: results) {
-			List<Integer> places = repo.selectAttraction(result.getId());
-			for(int p : places) result.getAttractions().add(Prepo.select(p));
+			result.setAttractions(repo.selectAttraction(result.getId()));
 		}
 		return results;
 	}
@@ -70,8 +71,5 @@ public class DayServiceImpl implements DayService {
 	@Override
 	public int deleteAttraction(int id) throws SQLException {
 		return repo.deleteAttraction(id);
-	}
-	public static void main(String[] args) {
-		
 	}
 }

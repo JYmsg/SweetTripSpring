@@ -25,4 +25,7 @@
 	<delete id="deleteAttraction">
 		delete from dayattraction where day_id=#{id}
 	</delete>
+	<select id="last" resultType="int">
+		select LAST_INSERT_ID()
+	</select>
 </mapper>
