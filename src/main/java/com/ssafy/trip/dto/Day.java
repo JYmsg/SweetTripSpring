@@ -15,6 +15,7 @@ public class Day {
 	private String weather;
 	private int travel_id;
 	private List<Integer> attractions;
+	private List<Place> places;
 	public Day(String date, String weather, int travel_id) {
 		super();
 		this.date = date;

@@ -40,8 +40,8 @@ public class TravelRestController {
 		if(r > 0) return new ResponseEntity<Integer>(r, HttpStatus.CREATED); // 201
 		else       return new ResponseEntity<Void>   (HttpStatus.NO_CONTENT); // 204
 	}
-	@PostMapping("/day/{travel_id}")
-	public ResponseEntity<?> insert(@RequestBody Day day, @PathVariable int travel_id) throws SQLException{
+	@PostMapping("/day")
+	public ResponseEntity<?> insert(@RequestBody Day day) throws SQLException{
 		int r = ds.insert(day);
 		if(r == 0) return new ResponseEntity<Void>   (HttpStatus.NO_CONTENT); // 204
 		return new ResponseEntity<Integer>(r, HttpStatus.CREATED); // 201
@@ -70,25 +70,26 @@ public class TravelRestController {
 		if(r == 1) return new ResponseEntity<Integer> (r, HttpStatus.OK);
 		else return new ResponseEntity<Void>(HttpStatus.NO_CONTENT);
 	}
-	@GetMapping("/travel/{travel_id}")
+	@GetMapping("/travel/one/{travel_id}")
 	public ResponseEntity<?> selectTravel(@PathVariable int travel_id) throws SQLException{
 		Travel travel = ts.select(travel_id);
 		if(travel != null) return new ResponseEntity<Travel> (travel, HttpStatus.OK);
 		else return new ResponseEntity<Void>(HttpStatus.NO_CONTENT);
 	}
-	@GetMapping("/day/{day_id}")
+	@GetMapping("/day/one/{day_id}")
 	public ResponseEntity<?> selectDay(@PathVariable int day_id) throws SQLException{
 		Day day = ds.select(day_id);
 		if(day != null) return new ResponseEntity<Day> (day, HttpStatus.OK);
 		else return new ResponseEntity<Void>(HttpStatus.NO_CONTENT);
 	}
-	@GetMapping("/travel/{user_id}")
+	@GetMapping("/travel/list/{user_id}")
 	public ResponseEntity<?> selectAllTravel(@PathVariable String user_id) throws SQLException{
+		System.out.println(user_id);
 		List<Travel> travels = ts.selectAll(user_id);
 		if(travels != null && travels.size() > 0) return new ResponseEntity<List<Travel>> (travels, HttpStatus.OK);
 		else return new ResponseEntity<Void>(HttpStatus.NO_CONTENT);
 	}
-	@GetMapping("/day/{travel_id}")
+	@GetMapping("/day/list/{travel_id}")
 	public ResponseEntity<?> selectAllDay(@PathVariable int travel_id) throws SQLException{
 		List<Day> days = ds.selectAll(travel_id);
 		if(days != null && days.size() > 0) return new ResponseEntity<List<Day>> (days, HttpStatus.OK);
