@@ -6,7 +6,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
     <%@ include file="/WEB-INF/views/include/header.jsp"%>
 
     <script>
-      window.onload = function () {
+    window.onload = function () {
         document.querySelector("#search-area").addEventListener("change", function (event) {
           fetch("${root}/gugunapi/gugun/" + event.target.value)
             .then((response) => response.json())

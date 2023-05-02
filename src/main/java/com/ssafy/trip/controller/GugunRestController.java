@@ -37,6 +37,7 @@ public class GugunRestController {
 	@GetMapping("/gugun/{sido_code}")
 	public ResponseEntity<?> selectAll(@PathVariable int sido_code) throws Exception{
 		List<Gugun> guguns = gs.selectAll(sido_code);
+		System.out.println(guguns);
 		if(guguns!=null && guguns.size()>0) return new ResponseEntity<List<Gugun>>(guguns, HttpStatus.CREATED);
 		return new ResponseEntity<Void> (HttpStatus.NO_CONTENT);
 	}

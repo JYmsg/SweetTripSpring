@@ -144,6 +144,10 @@ public class IndexController {
 		session.invalidate();
 		return "redirect:/";
 	}
+	@GetMapping("/mypage")
+	public String mypage() {
+		return "user/mypage";
+	}
 	
 	
 }

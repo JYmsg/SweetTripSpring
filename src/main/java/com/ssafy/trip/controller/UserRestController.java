@@ -1,6 +1,10 @@
 package com.ssafy.trip.controller;
 
 
+import java.security.NoSuchAlgorithmException;
+import java.sql.SQLException;
+import java.sql.SQLIntegrityConstraintViolationException;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,27 +34,39 @@ public class UserRestController {
 	private UserService us;
 	
 	@PostMapping("/user")
-	public ResponseEntity<?> insert(@RequestBody User user) throws Exception{
+	public ResponseEntity<?> insert(@RequestBody User user) throws SQLException, NoSuchAlgorithmException{
 		String salt = SHA256Util.generateSalt();
 		String password = SHA256Util.getEncrypt(user.getPassword(), salt);
 		user.setSalt(salt);
 		user.setPassword(password);
 		int result = us.insert(user);
-		if(result==1) return new ResponseEntity<Integer>(result, HttpStatus.CREATED);
+		if(result == 0)
 		return new ResponseEntity<Void> (HttpStatus.NO_CONTENT);
+		return new ResponseEntity<Integer>(result, HttpStatus.CREATED);
 	}
 	
 	@PutMapping("/user")
-	public ResponseEntity<?> update(@RequestBody User user) throws Exception{
+	public ResponseEntity<?> update(@RequestBody User user, HttpSession session) throws Exception{
+		System.out.println(user);
+		User update = (User)session.getAttribute("userinfo");
 		int r = us.update(user);
-		if(r==1) return new ResponseEntity<Integer>(r, HttpStatus.CREATED);
+		if(r==1) {
+			update.setAge(user.getAge());
+			update.setEmail(user.getEmail());
+			update.setName(user.getName());
+			session.setAttribute("userinfo", update);
+			return new ResponseEntity<Integer>(r, HttpStatus.CREATED);
+		}
 		return new ResponseEntity<Void> (HttpStatus.NO_CONTENT);
 	}
 	
 	@DeleteMapping("/user/{id}")
-	public ResponseEntity<?> delete(@PathVariable String id) throws Exception{
+	public ResponseEntity<?> delete(@PathVariable String id, HttpSession session) throws Exception{
 		int r = us.delete(id);
-		if(r==1) return new ResponseEntity<Integer>(r, HttpStatus.CREATED);
+		if(r==1) {
+			session.invalidate();
+			return new ResponseEntity<Integer>(r, HttpStatus.OK);
+		}
 		return new ResponseEntity<Void> (HttpStatus.NO_CONTENT);
 	}
 	
@@ -63,17 +79,16 @@ public class UserRestController {
 	@PostMapping("/login")
 	public ResponseEntity<?> login(@RequestBody User user, HttpSession session) throws Exception{
 		User loginUser = us.select(user.getId());
-		if(loginUser != null && loginUser.getPassword().equals(user.getPassword())) {
-			session.setAttribute("userinfo", loginUser);
-			return new ResponseEntity<User>(loginUser, HttpStatus.OK);
-		}
-//		String salt = SHA256Util.generateSalt();
-//		String password = SHA256Util.getEncrypt(user.getPassword(), salt);
-//		loginUser.getPassword().equals(password);
+		System.out.println(loginUser);
 //		if(loginUser != null && loginUser.getPassword().equals(user.getPassword())) {
 //			session.setAttribute("userinfo", loginUser);
 //			return new ResponseEntity<User>(loginUser, HttpStatus.OK);
 //		}
+		String password = SHA256Util.getEncrypt(user.getPassword(), loginUser.getSalt());
+		if(loginUser != null && loginUser.getPassword().equals(password)) {
+			session.setAttribute("userinfo", loginUser);
+			return new ResponseEntity<User>(loginUser, HttpStatus.OK);
+		}
 		return new ResponseEntity<Void> (HttpStatus.NO_CONTENT);
 	}
 }
