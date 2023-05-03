@@ -45,6 +45,7 @@
       	</c:if>
       </div>
     </section>
+    <%@ include file="/WEB-INF/views/include/paging.jsp" %>
     <%@ include file="/WEB-INF/views/include/footer.jsp"%>
   </body>
 </html>
