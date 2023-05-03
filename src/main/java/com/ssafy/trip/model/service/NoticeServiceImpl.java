@@ -62,14 +62,4 @@ public class NoticeServiceImpl implements NoticeService {
 		map.put("navigation", nav);
 		return map;
 	}
-	
-	public static void main(String[] args) throws Exception{
-		NoticeService sv = new NoticeServiceImpl();
-		
-		sv.insert(new Notice("test","test-ing","ssafy"));
-		
-		List<Notice> list = new ArrayList<Notice>();
-		list = sv.selectAll();
-		for(Notice l : list) System.out.println(l);
-	}
 }
