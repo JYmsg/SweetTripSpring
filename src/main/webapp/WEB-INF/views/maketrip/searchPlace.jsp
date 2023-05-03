@@ -104,9 +104,9 @@ uri="http://java.sun.com/jsp/jstl/core" %>
           <option value="34">충청남도</option>
           <option value="35">경상북도</option>
           <option value="36">경상남도</option>
-          <option value="37">음식점</option>
-          <option value="38">음식점</option>
-          <option value="39">음식점</option>
+          <option value="37">전라북도</option>
+          <option value="38">전라남도</option>
+          <option value="39">제주도</option>
         </select>
         <select id="search-gugun-id" class="form-select me-2 rounded-4 col-2">
           <option value="0" selected>구군선택</option>
