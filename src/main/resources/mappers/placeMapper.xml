@@ -7,4 +7,8 @@
 	<select id="selectAll" resultType="com.ssafy.trip.dto.Place">
 		select * from attraction_info where sido_code=#{sidoCode} and gugun_code=#{gugunCode} and content_type_id=#{ContentTypeID}
 	</select>
+	<select id="selectByKeyword" resultType="com.ssafy.trip.dto.Place">
+		select * from attraction_info where sido_code=#{sidoCode} and gugun_code=#{gugunCode} and content_type_id=#{ContentTypeID}
+		and title like concat('%', #{keyword}, '%')
+	</select>
 </mapper>

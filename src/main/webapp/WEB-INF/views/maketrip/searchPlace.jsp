@@ -6,7 +6,16 @@ uri="http://java.sun.com/jsp/jstl/core" %>
     <%@ include file="/WEB-INF/views/include/header.jsp"%>
 
     <script>
-    window.onload = function () {
+      function SearchForm() {
+        let search = {};
+        search.sido_code = document.querySelector("#search-area").value;
+        search.gugun_code = document.querySelector("#search-gugun-id").value;
+        search.contentTypeId = document.querySelector("#search-content-id").value;
+        search.keyword = document.querySelector("#search-keyword").value;
+        console.log(search);
+        return search;
+      }
+      window.onload = function () {
         document.querySelector("#search-area").addEventListener("change", function (event) {
           fetch("${root}/gugunapi/gugun/" + event.target.value)
             .then((response) => response.json())
@@ -22,14 +31,21 @@ uri="http://java.sun.com/jsp/jstl/core" %>
             .catch((error) => alert("요청 실패"));
         });
         document.querySelector("#btn-search").addEventListener("click", function () {
-          fetch(
-            "${root}/placeapi/place/list/" +
-              document.querySelector("#search-area").value +
-              "/" +
-              document.querySelector("#search-gugun-id").value +
-              "/" +
-              document.querySelector("#search-content-id").value
-          )
+          // fetch(
+          //   "${root}/placeapi/place/list/" +
+          //     document.querySelector("#search-area").value +
+          //     "/" +
+          //     document.querySelector("#search-gugun-id").value +
+          //     "/" +
+          //     document.querySelector("#search-content-id").value
+          // )
+          fetch("${root}/placeapi/place/list", {
+            method: "post",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(SearchForm()),
+          })
             .then((response) => response.json())
             .then((places) => {
               let lest = "";
