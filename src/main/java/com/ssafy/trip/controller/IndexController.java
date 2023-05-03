@@ -125,6 +125,7 @@ public class IndexController {
 	
 	@PostMapping("/noticeupdate")
 	public String noticeupdate(Notice notice, Model m) {
+		System.out.println(notice);
 		try {
 			ns.update(notice);
 			m.addAttribute("msg", "등록되었습니다.");
