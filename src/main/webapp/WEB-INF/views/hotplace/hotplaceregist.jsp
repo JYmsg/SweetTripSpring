@@ -14,9 +14,9 @@
       </div>
       <form class="was-validated" method="post" action="${root}/hotplacelist" enctype="multipart/form-data">
         <div class="mb-4" id="write-title-div">
-          <label for="title" class="h5">제목</label>
-          <input type="text" class="form-control" id="title" name="title" placeholder="제목을 입력하세요" required />
-          <div class="invalid-feedback">제목을 입력하세요</div>
+          <label for="title" class="h5">위치</label>
+          <input type="text" class="form-control" id="title" name="title" placeholder="핫플레이스 위치를 입력하세요" required />
+          <div class="invalid-feedback">위치를 입력하세요</div>
         </div>
         <div class="mb-4" id="write-content-div">
           <label for="content" class="h5">내용</label>

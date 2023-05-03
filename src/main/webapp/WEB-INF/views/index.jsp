@@ -34,7 +34,7 @@
 					                  		<i class="bi bi-plus-lg fs-1"></i>
 					                  	</div>
 					                </div>
-					                <img class="img-fluid" src="${root }/assets/resources/upload/${hotpl.img}" />
+					                <img class="img-fluid" src="${root }/resources/upload/${hotpl.img}" />
 					              </a>
 					              <div class="portfolio-caption">
 					                <div class="portfolio-caption-heading">${hotpl.title }</div>

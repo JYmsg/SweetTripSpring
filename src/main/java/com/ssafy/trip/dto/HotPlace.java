@@ -21,7 +21,11 @@ public class HotPlace {
 	private String write_time;
 	private String writer_id;
 	private MultipartFile file;
+	private String orgImg;
 	
+	public HotPlace(String title, String content, String writer_id, double latitude, double longitude, String img) {
+		this(title, content, writer_id, latitude, longitude, img, null);
+	}
 	
 	public HotPlace(String title, String content, String writer_id, double latitude, double longitude, String img, MultipartFile file) {
 		super();

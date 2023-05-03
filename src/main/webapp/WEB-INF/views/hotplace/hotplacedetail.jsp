@@ -20,7 +20,7 @@
         <i id="like" class="bi fs-4 ${cookie.setLikeClass.value}" style="color:#${cookie.setLikeColor.value};"></i>
       </div>
       <h3 class="section-subheading text-muted">${hotpl.write_time} <br> ${hotpl.writer_id}</h3>
-      <img class="w-100" src="${root }/assets/resources/upload/${hotpl.img}" />
+      <img class="w-50" src="${root }/resources/upload/${hotpl.img}" />
       <div id="view" class="textBox text-start mt-3">
         <p>
          ${hotpl.content}
