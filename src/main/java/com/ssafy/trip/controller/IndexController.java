@@ -2,7 +2,9 @@ package com.ssafy.trip.controller;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
+import java.util.PriorityQueue;
 
 import javax.servlet.http.HttpSession;
 
@@ -18,8 +20,10 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.ssafy.trip.dto.HotPlace;
 import com.ssafy.trip.dto.Notice;
+import com.ssafy.trip.dto.User;
 import com.ssafy.trip.model.service.HotPlaceService;
 import com.ssafy.trip.model.service.NoticeService;
+import com.ssafy.trip.model.service.UserService;
 
 @Controller
 public class IndexController {
@@ -27,6 +31,8 @@ public class IndexController {
 	private HotPlaceService hs;
 	@Autowired
 	private NoticeService ns;
+	@Autowired
+	private UserService us;
 	
 	@GetMapping({"/","/index"})
 	public String index(Model m) throws SQLException {
@@ -119,6 +125,7 @@ public class IndexController {
 	
 	@PostMapping("/noticeupdate")
 	public String noticeupdate(Notice notice, Model m) {
+		System.out.println(notice);
 		try {
 			ns.update(notice);
 			m.addAttribute("msg", "등록되었습니다.");
@@ -134,6 +141,18 @@ public class IndexController {
 		return "board/noticewrite";
 	}
 	
+	@GetMapping("/toplist")
+	public String toplist(Model m) throws SQLException {
+		List<User> list = us.selectAll();
+		List<User> top = new ArrayList<User>();
+		int size = list.size();
+		for(int i=0;i<size;i++) {
+			if(i>=5) break;
+			top.add(list.get(i));
+		}
+		m.addAttribute("topusers", top);
+		return "user/top";
+	}
 	
 	@GetMapping("/searchPlace")
 	public String searchPlace() {

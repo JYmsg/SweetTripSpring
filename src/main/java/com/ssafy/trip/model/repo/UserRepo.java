@@ -1,6 +1,7 @@
 package com.ssafy.trip.model.repo;
 
 import java.sql.SQLException;
+import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
 
@@ -12,4 +13,5 @@ public interface UserRepo {
 	int delete(String id) throws SQLException;
 	int insert(User user) throws SQLException;
 	int update(User user) throws SQLException;
+	List<User> selectAll() throws SQLException;
 }

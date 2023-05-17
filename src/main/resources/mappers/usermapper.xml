@@ -22,5 +22,10 @@
 		SET name=#{name}, email=#{email}, age=#{age}
 		WHERE id=#{id}
 	</update>
+	
+	<select id="selectAll" resultType="User">
+		SELECT * FROM user
+		ORDER BY writeArticle DESC;
+	</select>
 
 </mapper>

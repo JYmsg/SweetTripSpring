@@ -18,6 +18,11 @@ public class PlaceServiceImpl implements PlaceService {
 	public List<Place> selectAll(int sidoCode, int gugunCode, int ContentTypeID) throws SQLException {
 		return repo.selectAll(sidoCode, gugunCode, ContentTypeID);
 	}
+	
+	@Override
+	public List<Place> selectByKeyword(int sidoCode, int gugunCode, int ContentTypeID, String keyword) throws SQLException {
+		return repo.selectByKeyword(sidoCode, gugunCode, ContentTypeID, keyword);
+	}
 
 	@Override
 	public Place select(int ContentId) throws SQLException {

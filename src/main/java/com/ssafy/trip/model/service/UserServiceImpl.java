@@ -1,6 +1,7 @@
 package com.ssafy.trip.model.service;
 
 import java.sql.SQLException;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -32,6 +33,11 @@ public class UserServiceImpl implements UserService{
 	@Override
 	public int update(User user) throws SQLException {
 		return repo.update(user);
+	}
+
+	@Override
+	public List<User> selectAll() throws SQLException {
+		return repo.selectAll();
 	}
 
 }
