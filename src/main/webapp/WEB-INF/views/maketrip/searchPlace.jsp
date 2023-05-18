@@ -31,14 +31,6 @@ uri="http://java.sun.com/jsp/jstl/core" %>
             .catch((error) => alert("요청 실패"));
         });
         document.querySelector("#btn-search").addEventListener("click", function () {
-          // fetch(
-          //   "${root}/placeapi/place/list/" +
-          //     document.querySelector("#search-area").value +
-          //     "/" +
-          //     document.querySelector("#search-gugun-id").value +
-          //     "/" +
-          //     document.querySelector("#search-content-id").value
-          // )
           fetch("${root}/placeapi/place/list", {
             method: "post",
             headers: {
