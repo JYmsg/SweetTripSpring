@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.bind.annotation.RestController;
@@ -21,8 +22,6 @@ import com.ssafy.trip.dto.Review;
 import com.ssafy.trip.model.service.HotPlaceService;
 import com.ssafy.trip.model.service.NoticeService;
 import com.ssafy.trip.model.service.ReviewService;
-
-import io.swagger.v3.oas.annotations.parameters.RequestBody;
 
 @RestController
 @CrossOrigin("*")
@@ -41,6 +40,7 @@ public class HotPlaceRestController {
 	
 	@PutMapping("/hotplace")
 	public ResponseEntity<?> update(@RequestBody HotPlace hotplace) throws Exception{
+		System.out.println(hotplace);
 		int r = hs.update(hotplace);
 		if(r==1) return new ResponseEntity<Integer>(r, HttpStatus.CREATED);
 		return new ResponseEntity<Void> (HttpStatus.NO_CONTENT);
