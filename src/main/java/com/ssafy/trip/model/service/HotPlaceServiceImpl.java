@@ -74,4 +74,9 @@ public class HotPlaceServiceImpl implements HotPlaceService {
 	public List<HotPlace> selectAll() throws SQLException {
 		return repo.selectAll();
 	}
+
+	@Override
+	public int update_hit(HotPlace hotplace) throws SQLException {
+		return repo.update_hit(hotplace);
+	}
 }

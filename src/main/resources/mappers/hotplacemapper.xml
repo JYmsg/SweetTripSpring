@@ -26,5 +26,11 @@
 	<select id="selectAll" resultType="HotPlace">
 		SELECT * FROM hotplace
 	</select>
+	
+	<update id="update_hit">
+		UPDATE hotplace
+		SET hit=hit+1
+		WHERE id=#{id}
+	</update>
 
 </mapper>

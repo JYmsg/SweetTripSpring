@@ -66,4 +66,13 @@ public class HotPlaceRestController {
 		if(hotpls!=null && hotpls.size()>0) return new ResponseEntity<List<HotPlace>>(hotpls, HttpStatus.CREATED);
 		return new ResponseEntity<Void> (HttpStatus.NO_CONTENT);
 	}
+	
+	@PutMapping("/hit")
+	public ResponseEntity<?> update_hit(@RequestBody HotPlace hotplace) throws Exception{
+		System.out.println(hotplace);
+		int r = hs.update_hit(hotplace);
+		System.out.println(r);
+		if(r==1) return new ResponseEntity<Integer>(r, HttpStatus.CREATED);
+		return new ResponseEntity<Void> (HttpStatus.NO_CONTENT);
+	}
 }

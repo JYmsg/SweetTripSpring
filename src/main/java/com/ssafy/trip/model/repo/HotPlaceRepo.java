@@ -15,4 +15,6 @@ public interface HotPlaceRepo {
 	int delete(int id) throws SQLException;
 	HotPlace select(int id) throws SQLException;
 	List<HotPlace> selectAll() throws SQLException;
+	
+	int update_hit(HotPlace hotplace) throws SQLException;
 }
