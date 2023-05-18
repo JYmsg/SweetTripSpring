@@ -22,8 +22,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.ssafy.trip.dto.User;
 import com.ssafy.trip.model.service.UserService;
-
-import SHA256Util.SHA256Util;
+import com.ssafy.trip.util.SHA256Util;
 
 @RestController
 @CrossOrigin("*")

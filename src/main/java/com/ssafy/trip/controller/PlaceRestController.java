@@ -43,7 +43,7 @@ public class PlaceRestController {
 	public ResponseEntity<?> selectAllPlace(@RequestBody Map<String, String> map) throws Exception{
 		List<Place> places = ps.selectByKeyword(Integer.parseInt(map.get("sido_code")), Integer.parseInt(map.get("gugun_code")), Integer.parseInt(map.get("contentTypeId")), map.get("keyword"));
 		System.out.println(places);
-		if(places != null && places.size() > 0) return new ResponseEntity<List<Place>> (places, HttpStatus.OK);
+		if(places != null) return new ResponseEntity<List<Place>> (places, HttpStatus.OK);
 		else return new ResponseEntity<Void>(HttpStatus.NO_CONTENT);
 	}
 }
