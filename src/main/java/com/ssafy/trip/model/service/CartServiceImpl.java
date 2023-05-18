@@ -22,7 +22,7 @@ public class CartServiceImpl implements CartService {
 
 	@Override
 	public int insertplace(Cart cart) throws SQLException {
-		return repo.inserthot(cart);
+		return repo.insertplace(cart);
 	}
 
 	@Override
@@ -37,13 +37,15 @@ public class CartServiceImpl implements CartService {
 
 	@Override
 	public List<Cart> select(String id) throws SQLException {
-		System.out.println("in");
 		List<Cart> hot = repo.selecthot(id);
-		System.out.println("hot"+hot);
-		List<Cart> place = repo.selectplace(id);
-		System.out.println("place"+place);
+		List<Cart> place = repo.selectAllplace(id);
 		place.addAll(hot);
 		return place;
+	}
+
+	@Override
+	public int selectplace(String user_id, int attraction_id) throws SQLException {
+		return repo.selectplace(user_id, attraction_id);
 	}
 
 }

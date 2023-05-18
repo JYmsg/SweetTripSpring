@@ -14,6 +14,7 @@ public class Cart {
 	User user;
 	HotPlace hotplace;
 	Place place;
+	boolean in;
 	public Cart(String id, HotPlace hotplace) {
 		super();
 		this.user_id = id;

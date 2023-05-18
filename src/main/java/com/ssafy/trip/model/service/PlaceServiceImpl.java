@@ -7,25 +7,42 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.ssafy.trip.dto.Place;
+import com.ssafy.trip.model.repo.CartRepo;
 import com.ssafy.trip.model.repo.PlaceRepo;
 
 @Service
 public class PlaceServiceImpl implements PlaceService {
 	@Autowired
 	private PlaceRepo repo;
-
+	@Autowired
+	private CartService csv;
+	
 	@Override
 	public List<Place> selectAll(int sidoCode, int gugunCode, int ContentTypeID) throws SQLException {
 		return repo.selectAll(sidoCode, gugunCode, ContentTypeID);
 	}
 	
 	@Override
-	public List<Place> selectByKeyword(int sidoCode, int gugunCode, int ContentTypeID, String keyword) throws SQLException {
-		return repo.selectByKeyword(sidoCode, gugunCode, ContentTypeID, keyword);
+	public List<Place> selectByKeyword(int sidoCode, int gugunCode, int ContentTypeID, String keyword, String id) throws SQLException {
+		List<Place> places = repo.selectByKeyword(sidoCode, gugunCode, ContentTypeID, keyword);
+		for(int i=0; i<places.size(); i++) {
+			if(csv.selectplace(id, places.get(i).getContent_id()) > 0) places.get(i).setIn(true);
+		}
+		return places;
 	}
 
 	@Override
 	public Place select(int ContentId) throws SQLException {
 		return repo.select(ContentId);
+	}
+
+	@Override
+	public List<Place> selectAlluser(int sidoCode, int gugunCode, int ContentTypeID, String user_id)
+			throws SQLException {
+//		List<Place> places = selectAll(sidoCode, gugunCode, ContentTypeID);
+//		for(int i=0; i<places.size(); i++) {
+//			if(crepo.selectplace(user_id, places.get(i).getContent_id()) > 0) places.get(i).setIn(true);
+//		}
+		return null;
 	}
 }

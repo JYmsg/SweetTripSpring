@@ -14,5 +14,6 @@ public interface CartRepo {
 	int deletehot(Cart cart) throws SQLException;
 	int deleteplace(Cart cart) throws SQLException;
 	List<Cart> selecthot(String id) throws SQLException;
-	List<Cart> selectplace(String id) throws SQLException;
+	List<Cart> selectAllplace(String id) throws SQLException;
+	int selectplace(String user_id, int attraction_id) throws SQLException;
 }

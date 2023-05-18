@@ -26,9 +26,9 @@ public class CartRestController {
 	
 	@GetMapping("/cart/list/{user_id}")
 	public ResponseEntity<?> selectAll(@PathVariable String user_id) throws Exception{
-		System.out.println(user_id);
 		List<Cart> carts = cs.select(user_id);
-		if(carts != null && carts.size() > 0) return new ResponseEntity<List<Cart>>(carts, HttpStatus.OK);
+		System.out.println(carts);
+		if(carts != null) return new ResponseEntity<List<Cart>>(carts, HttpStatus.OK);
 		return new ResponseEntity<Void>(HttpStatus.NO_CONTENT);
 	}
 	@PostMapping("/cart/hotplace")
@@ -40,7 +40,7 @@ public class CartRestController {
 	}
 	@PostMapping("/cart/place")
 	public ResponseEntity<?> insertatt(@RequestBody Cart cart) throws Exception{
-		System.out.println(cart);
+		System.out.println("place " + cart);
 		int r = cs.insertplace(cart);
 		if(r==1) return new ResponseEntity<Integer>(r, HttpStatus.CREATED);
 		return new ResponseEntity<Void>(HttpStatus.NO_CONTENT);
@@ -59,5 +59,4 @@ public class CartRestController {
 		if(r==1) return new ResponseEntity<Integer>(r, HttpStatus.CREATED);
 		return new ResponseEntity<Void>(HttpStatus.NO_CONTENT);
 	}
-
 }

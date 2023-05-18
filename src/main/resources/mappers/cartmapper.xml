@@ -21,9 +21,14 @@
 		select * from cartHot
 		where user_id = #{id}
 	</select>
-	<select id="selectplace" resultType="Cart">
+	<select id="selectAllplace" resultType="Cart">
 		select * from cartAtt
 		where user_id = #{id}
+	</select>
+	<select id="selectplace" resultType="int">
+		select count(*)
+		from cartAtt
+		where user_id=#{user_id} and attraction_id=#{attraction_id}
 	</select>
 
 </mapper>
