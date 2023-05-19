@@ -25,6 +25,7 @@
 
 	<select id="selectAll" resultType="Notice">
 		SELECT * FROM notice
+		ORDER BY title DESC
 	</select>
 	
 	<select id="search" resultType="Notice">

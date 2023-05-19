@@ -262,7 +262,7 @@ drop table if exists comment;
 CREATE TABLE IF NOT EXISTS `tripdb`.`comment` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `content` VARCHAR(1000) NOT NULL,
-  `private` TINYINT(1) NULL DEFAULT 0,
+  `pr` TINYINT(1) NULL DEFAULT 0,
   `writer_id` VARCHAR(20) NOT NULL,
   `notice_id` INT NOT NULL,
   PRIMARY KEY (`id`),
@@ -290,7 +290,6 @@ insert into user values ('토끼', 'ssafy', '1234', 'test', 'test@naver.com', 12
 insert into notice (title, content, writer_id) values ('test', 'test', 'ssafy');
 insert into travel (title, startdate, enddate, user_id) values ('test2', '2023-01-01', '2023-01-03', 'ssafy');
 insert into review (title, content, writer_id, travel_id) values ('test1', 'test1', 'ssafy', 1);
-insert into hotplace (title, content, writer_id, latitude, longitude, img) values ('test1', 'test1', 'ssafy', 2.12, 2.12, 'test.png');
 insert into day (date, travel_id, weather) values ('2023-01-01',3, '맑음');
 insert into dayattraction values (2, 125266);
 
