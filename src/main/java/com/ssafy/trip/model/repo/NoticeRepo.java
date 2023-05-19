@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
 
+import com.ssafy.trip.dto.HotPlace;
 import com.ssafy.trip.dto.Notice;
 import com.ssafy.trip.dto.SearchCondition;
 
@@ -16,6 +17,7 @@ public interface NoticeRepo {
 	Notice select(int id) throws SQLException;
 	List<Notice> selectAll() throws SQLException;
 	
+	int update_hit(Notice notice) throws SQLException;
 	
 	List<Notice> search(SearchCondition condition) throws SQLException;
 	int getTotalSearchCount(SearchCondition condition) throws SQLException;

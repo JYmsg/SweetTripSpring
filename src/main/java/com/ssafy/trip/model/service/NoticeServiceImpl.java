@@ -62,4 +62,9 @@ public class NoticeServiceImpl implements NoticeService {
 		map.put("navigation", nav);
 		return map;
 	}
+
+	@Override
+	public int update_hit(Notice notice) throws SQLException {
+		return repo.update_hit(notice);
+	}
 }
