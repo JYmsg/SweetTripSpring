@@ -46,5 +46,11 @@
 			WHERE ${key} LIKE concat('%', #{word}, '%')
 		</if>
 	</select>
+	
+	<update id="update_hit">
+		UPDATE notice
+		SET hit=hit+1
+		WHERE id=#{id}
+	</update>
 
 </mapper>

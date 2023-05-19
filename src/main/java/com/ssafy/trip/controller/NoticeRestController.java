@@ -29,6 +29,7 @@ public class NoticeRestController {
 	
 	@PostMapping("/notice")
 	public ResponseEntity<?> insert(@RequestBody Notice notice) throws Exception{
+		System.out.println(notice);
 		int result = ns.insert(notice);
 		if(result==1) return new ResponseEntity<Integer>(result, HttpStatus.CREATED);
 		return new ResponseEntity<Void> (HttpStatus.NO_CONTENT);
@@ -59,6 +60,14 @@ public class NoticeRestController {
 	public ResponseEntity<?> selectAll() throws Exception{
 		List<Notice> notices = ns.selectAll();
 		if(notices!=null && notices.size()>0) return new ResponseEntity<List<Notice>>(notices, HttpStatus.CREATED);
+		return new ResponseEntity<Void> (HttpStatus.NO_CONTENT);
+	}
+	
+	@PutMapping("/hit")
+	public ResponseEntity<?> update_hit(@RequestBody Notice notice) throws Exception{
+		System.out.println(notice);
+		int r = ns.update_hit(notice);
+		if(r==1) return new ResponseEntity<Integer>(r, HttpStatus.CREATED);
 		return new ResponseEntity<Void> (HttpStatus.NO_CONTENT);
 	}
 }
