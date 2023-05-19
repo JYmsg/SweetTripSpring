@@ -21,4 +21,5 @@ public class Place {
 	private int content_type_id;
 	private double latitude;
 	private double longitude;
+	private boolean in;
 }

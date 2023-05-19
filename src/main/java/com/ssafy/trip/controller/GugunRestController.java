@@ -22,8 +22,8 @@ import com.ssafy.trip.model.service.GugunService;
 import com.ssafy.trip.model.service.NoticeService;
 import com.ssafy.trip.model.service.ReviewService;
 import com.ssafy.trip.model.service.UserService;
+import com.ssafy.trip.util.SHA256Util;
 
-import SHA256Util.SHA256Util;
 import io.swagger.v3.oas.annotations.parameters.RequestBody;
 
 @RestController
@@ -38,14 +38,14 @@ public class GugunRestController {
 	public ResponseEntity<?> selectAll(@PathVariable int sido_code) throws Exception{
 		List<Gugun> guguns = gs.selectAll(sido_code);
 		System.out.println(guguns);
-		if(guguns!=null && guguns.size()>0) return new ResponseEntity<List<Gugun>>(guguns, HttpStatus.CREATED);
+		if(guguns!=null && guguns.size()>0) return new ResponseEntity<List<Gugun>>(guguns, HttpStatus.OK);
 		return new ResponseEntity<Void> (HttpStatus.NO_CONTENT);
 	}
 
 	@GetMapping("/gugun/{sido_code}/{gugun_code}")
 	public ResponseEntity<?> select(@PathVariable int gugun_code, @PathVariable int sido_code) throws Exception{
 		String gugun = gs.select(gugun_code, sido_code);
-		if(gugun!=null) return new ResponseEntity<String>(gugun, HttpStatus.CREATED);
+		if(gugun!=null) return new ResponseEntity<String>(gugun, HttpStatus.OK);
 		return new ResponseEntity<Void> (HttpStatus.NO_CONTENT);
 	}
 	

@@ -1,4 +1,4 @@
-package SHA256Util;
+package com.ssafy.trip.util;
 
 import java.util.*;
 import java.math.BigInteger;

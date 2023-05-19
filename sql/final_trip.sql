@@ -51,7 +51,7 @@ CREATE TABLE IF NOT EXISTS `tripdb`.`travel` (
     FOREIGN KEY (`user_id`)
     REFERENCES `tripdb`.`user` (`id`) on delete cascade)
 ENGINE = InnoDB
-AUTO_INCREMENT = 3
+AUTO_INCREMENT = 1
 DEFAULT CHARACTER SET = utf8mb4
 COLLATE = utf8mb4_0900_ai_ci;
 
@@ -71,7 +71,7 @@ CREATE TABLE IF NOT EXISTS `tripdb`.`day` (
     FOREIGN KEY (`travel_id`)
     REFERENCES `tripdb`.`travel` (`id`) on delete cascade)
 ENGINE = InnoDB
-AUTO_INCREMENT = 4
+AUTO_INCREMENT = 1
 DEFAULT CHARACTER SET = utf8mb4
 COLLATE = utf8mb4_0900_ai_ci;
 
@@ -117,7 +117,7 @@ CREATE TABLE IF NOT EXISTS `tripdb`.`hotplace` (
     FOREIGN KEY (`writer_id`)
     REFERENCES `tripdb`.`user` (`id`) on delete cascade)
 ENGINE = InnoDB
-AUTO_INCREMENT = 3
+AUTO_INCREMENT = 1
 DEFAULT CHARACTER SET = utf8mb4
 COLLATE = utf8mb4_0900_ai_ci;
 
@@ -181,7 +181,7 @@ CREATE TABLE IF NOT EXISTS `tripdb`.`notice` (
     FOREIGN KEY (`writer_id`)
     REFERENCES `tripdb`.`user` (`id`) on delete cascade)
 ENGINE = InnoDB
-AUTO_INCREMENT = 5
+AUTO_INCREMENT = 1
 DEFAULT CHARACTER SET = utf8mb4
 COLLATE = utf8mb4_0900_ai_ci;
 
@@ -211,17 +211,61 @@ ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb4
 COLLATE = utf8mb4_0900_ai_ci;
 
+-- -----------------------------------------------------
+-- Table `tripdb`.`cartAtt`
+-- -----------------------------------------------------
+drop table if exists cartAtt;
+CREATE TABLE IF NOT EXISTS `tripdb`.`cartAtt` (
+  `attraction_id` INT NOT NULL,
+  `user_id` VARCHAR(20) NOT NULL,
+  INDEX `fk_cartHot_attraction_info1_idx` (`attraction_id` ASC) VISIBLE,
+  INDEX `fk_cartHot_user1_idx` (`user_id` ASC) VISIBLE,
+  PRIMARY KEY (`attraction_id`, `user_id`),
+  CONSTRAINT `fk_cartHot_attraction_info1`
+    FOREIGN KEY (`attraction_id`)
+    REFERENCES `tripdb`.`attraction_info` (`content_id`) on delete cascade,
+  CONSTRAINT `fk_cartHot_user1`
+    FOREIGN KEY (`user_id`)
+    REFERENCES `tripdb`.`user` (`id`) on delete cascade)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `tripdb`.`cartHot`
+-- -----------------------------------------------------
+drop table if exists cartHot;
+CREATE TABLE IF NOT EXISTS `tripdb`.`cartHot` (
+  `hotplace_id` INT NOT NULL,
+  `user_id` VARCHAR(20) NOT NULL,
+  INDEX `fk_cartHot_hotplace1_idx` (`hotplace_id` ASC) VISIBLE,
+  INDEX `fk_cartHot_user2_idx` (`user_id` ASC) VISIBLE,
+  PRIMARY KEY (`hotplace_id`, `user_id`),
+  CONSTRAINT `fk_cartHot_hotplace1`
+    FOREIGN KEY (`hotplace_id`)
+    REFERENCES `tripdb`.`hotplace` (`id`) on delete cascade,
+  CONSTRAINT `fk_cartHot_user2`
+    FOREIGN KEY (`user_id`)
+    REFERENCES `tripdb`.`user` (`id`) on delete cascade)
+ENGINE = InnoDB;
+
 
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 
 select * from travel;
-select last_insert_id();
 insert into user values ('토끼', 'ssafy', '1234', 'test', 'test@naver.com', 12, 0);
 insert into notice (title, content, writer_id) values ('test', 'test', 'ssafy');
 insert into travel (title, startdate, enddate, user_id) values ('test2', '2023-01-01', '2023-01-03', 'ssafy');
-insert into review (title, content, writer_id, travel_id) values ('test1', 'test1', 'ssafy', 5);
+insert into review (title, content, writer_id, travel_id) values ('test1', 'test1', 'ssafy', 1);
 insert into hotplace (title, content, writer_id, latitude, longitude, img) values ('test1', 'test1', 'ssafy', 2.12, 2.12, 'test.png');
-insert into day (date, travel_id, weather) values ('2023-01-01',7, '맑음');
-insert into dayattraction values (5, 125266);
+insert into day (date, travel_id, weather) values ('2023-01-01',3, '맑음');
+insert into dayattraction values (2, 125266);
+
+insert into cartHot (user_id, hotplace_id)
+values ('my', 1);
+insert into cartAtt(user_id, attraction_id)
+values ('ssafy', 125266);
+select * from cartAtt where user_id='my';
+select * from cartHot where user_id='my';
+delete from cartHot where user_id = 'my' and hotplace_id = 1;

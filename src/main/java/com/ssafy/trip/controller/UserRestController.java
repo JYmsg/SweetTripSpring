@@ -22,8 +22,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.ssafy.trip.dto.User;
 import com.ssafy.trip.model.service.UserService;
-
-import SHA256Util.SHA256Util;
+import com.ssafy.trip.util.SHA256Util;
 
 @RestController
 @CrossOrigin("*")
@@ -41,7 +40,7 @@ public class UserRestController {
 		user.setPassword(password);
 		int result = us.insert(user);
 		if(result == 0)
-		return new ResponseEntity<Void> (HttpStatus.NO_CONTENT);
+			return new ResponseEntity<Void> (HttpStatus.NO_CONTENT);
 		return new ResponseEntity<Integer>(result, HttpStatus.CREATED);
 	}
 	
