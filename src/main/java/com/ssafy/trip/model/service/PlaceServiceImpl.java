@@ -28,6 +28,7 @@ public class PlaceServiceImpl implements PlaceService {
 		for(int i=0; i<places.size(); i++) {
 			if(csv.selectplace(id, places.get(i).getContent_id()) > 0) places.get(i).setIn(true);
 		}
+		System.out.println("places" + places);
 		return places;
 	}
 

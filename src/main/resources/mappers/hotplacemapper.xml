@@ -3,8 +3,8 @@
 <mapper namespace="com.ssafy.trip.model.repo.HotPlaceRepo" >
 	
 	<insert id="insert">
-		INSERT INTO hotplace (title, content, writer_id, latitude, longitude, img)
-		VALUES (#{title}, #{content}, #{writer_id}, #{latitude}, #{longitude}, #{img})
+		INSERT INTO hotplace (title, content, writer_id, latitude, longitude, img, address, name, sido_code)
+		VALUES (#{title}, #{content}, #{writer_id}, #{latitude}, #{longitude}, #{img}, #{address}, #{name}, #{sido})
 	</insert>
 	
 	<update id="update">

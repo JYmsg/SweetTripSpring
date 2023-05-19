@@ -110,12 +110,19 @@ CREATE TABLE IF NOT EXISTS `tripdb`.`hotplace` (
   `hit` INT NULL DEFAULT '0',
   `like` INT NULL DEFAULT '0',
   `write_time` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
+  `name` VARCHAR(45) NOT NULL,
+  `address` VARCHAR(100) NOT NULL,
   `writer_id` VARCHAR(20) NOT NULL,
+  `sido_code` INT NOT NULL,
   PRIMARY KEY (`id`),
   INDEX `fk_hotplace_user1_idx` (`writer_id` ASC) VISIBLE,
+  INDEX `fk_hotplace_sido1_idx` (`sido_code` ASC) VISIBLE,
   CONSTRAINT `fk_hotplace_user1`
     FOREIGN KEY (`writer_id`)
-    REFERENCES `tripdb`.`user` (`id`) on delete cascade)
+    REFERENCES `tripdb`.`user` (`id`) on delete cascade,
+  CONSTRAINT `fk_hotplace_sido1`
+    FOREIGN KEY (`sido_code`)
+    REFERENCES `tripdb`.`sido` (`sido_code`) on delete cascade)
 ENGINE = InnoDB
 AUTO_INCREMENT = 1
 DEFAULT CHARACTER SET = utf8mb4
@@ -248,6 +255,31 @@ CREATE TABLE IF NOT EXISTS `tripdb`.`cartHot` (
     REFERENCES `tripdb`.`user` (`id`) on delete cascade)
 ENGINE = InnoDB;
 
+-- -----------------------------------------------------
+-- Table `tripdb`.`comment`
+-- -----------------------------------------------------
+drop table if exists comment;
+CREATE TABLE IF NOT EXISTS `tripdb`.`comment` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `content` VARCHAR(1000) NOT NULL,
+  `private` TINYINT(1) NULL DEFAULT 0,
+  `writer_id` VARCHAR(20) NOT NULL,
+  `notice_id` INT NOT NULL,
+  PRIMARY KEY (`id`),
+  INDEX `fk_comment_user1_idx` (`writer_id` ASC) VISIBLE,
+  INDEX `fk_comment_notice1_idx` (`notice_id` ASC) VISIBLE,
+  CONSTRAINT `fk_comment_user1`
+    FOREIGN KEY (`writer_id`)
+    REFERENCES `tripdb`.`user` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_comment_notice1`
+    FOREIGN KEY (`notice_id`)
+    REFERENCES `tripdb`.`notice` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+AUTO_INCREMENT = 1
+ENGINE = InnoDB;
 
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;

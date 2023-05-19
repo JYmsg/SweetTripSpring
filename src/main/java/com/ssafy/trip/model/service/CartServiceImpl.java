@@ -7,9 +7,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.ssafy.trip.dto.Cart;
+import com.ssafy.trip.dto.HotPlace;
 import com.ssafy.trip.dto.Place;
 import com.ssafy.trip.model.repo.CartRepo;
 import com.ssafy.trip.model.repo.DayRepo;
+import com.ssafy.trip.model.repo.HotPlaceRepo;
 import com.ssafy.trip.model.repo.PlaceRepo;
 
 @Service
@@ -18,6 +20,8 @@ public class CartServiceImpl implements CartService {
 	private CartRepo repo;
 	@Autowired
 	private PlaceRepo srepo;
+	@Autowired
+	private HotPlaceRepo hrepo;
 	
 	@Override
 	public int inserthot(Cart cart) throws SQLException {
@@ -42,9 +46,14 @@ public class CartServiceImpl implements CartService {
 	@Override
 	public List<Cart> select(String id) throws SQLException {
 		List<Cart> hot = repo.selecthot(id);
+		for(int i=0; i<hot.size(); i++) {
+			HotPlace hp = hrepo.select(hot.get(i).getHotplace_id());
+			hot.get(i).setHotplace(hp);
+		}
 		List<Cart> place = repo.selectAllplace(id);
 		for(int i=0; i<place.size(); i++) {
 			Place p = srepo.select(place.get(i).getAttraction_id());
+			if(p.getFirst_image() == null) p.setFirst_image("img/logo/no-image.PNG");
 			System.out.println(p);
 			place.get(i).setPlace(p);
 		}

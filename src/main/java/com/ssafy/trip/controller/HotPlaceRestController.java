@@ -33,6 +33,7 @@ public class HotPlaceRestController {
 	
 	@PostMapping("/hotplace")
 	public ResponseEntity<?> insert(@RequestBody HotPlace hotplace) throws Exception{
+		System.out.println(hotplace);
 		int result = hs.insert(hotplace);
 		if(result==1) return new ResponseEntity<Integer>(result, HttpStatus.CREATED);
 		return new ResponseEntity<Void> (HttpStatus.NO_CONTENT);
