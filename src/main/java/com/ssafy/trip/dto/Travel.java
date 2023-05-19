@@ -17,6 +17,7 @@ public class Travel {
 	private String user_id;
 	private List<User> users;
 	private List<Day> days;
+	private int save; // 저장 유무를 표현(0- 임시저장, 1-등록완료)
 	public Travel(String title, String startdate, String enddate, String user_id) {
 		super();
 		this.title = title;

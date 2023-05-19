@@ -26,7 +26,7 @@ CREATE TABLE IF NOT EXISTS `tripdb`.`user` (
   `id` VARCHAR(20) NOT NULL,
   `password` VARCHAR(200) NOT NULL,
   `salt` VARCHAR(100) NOT NULL,
-  `email` VARCHAR(20) NOT NULL,
+  `email` VARCHAR(100) NOT NULL,
   `age` INT NOT NULL,
   `writeArticle` INT NULL DEFAULT '0',
   PRIMARY KEY (`id`))
@@ -45,6 +45,7 @@ CREATE TABLE IF NOT EXISTS `tripdb`.`travel` (
   `startdate` DATE NOT NULL,
   `enddate` DATE NOT NULL,
   `user_id` VARCHAR(20) NOT NULL,
+  `save` TINYINT(1) NULL DEFAULT 0,
   PRIMARY KEY (`id`),
   INDEX `fk_travel_user1_idx` (`user_id` ASC) VISIBLE,
   CONSTRAINT `fk_travel_user1`
@@ -290,13 +291,10 @@ insert into user values ('토끼', 'ssafy', '1234', 'test', 'test@naver.com', 12
 insert into notice (title, content, writer_id) values ('test', 'test', 'ssafy');
 insert into travel (title, startdate, enddate, user_id) values ('test2', '2023-01-01', '2023-01-03', 'ssafy');
 insert into review (title, content, writer_id, travel_id) values ('test1', 'test1', 'ssafy', 1);
-insert into day (date, travel_id, weather) values ('2023-01-01',3, '맑음');
-insert into dayattraction values (2, 125266);
+insert into day (date, travel_id, weather) values ('2023-01-01',1, '맑음');
+insert into dayattraction values (1, 125266);
 
 insert into cartHot (user_id, hotplace_id)
-values ('my', 1);
+values ('ssafy', 1);
 insert into cartAtt(user_id, attraction_id)
 values ('ssafy', 125266);
-select * from cartAtt where user_id='my';
-select * from cartHot where user_id='my';
-delete from cartHot where user_id = 'my' and hotplace_id = 1;

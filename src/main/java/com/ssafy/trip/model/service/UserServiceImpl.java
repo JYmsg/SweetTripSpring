@@ -27,6 +27,7 @@ public class UserServiceImpl implements UserService{
 
 	@Override
 	public int insert(User user) throws SQLException {
+		System.out.println(user);
 		return repo.insert(user);
 	}
 
@@ -38,6 +39,11 @@ public class UserServiceImpl implements UserService{
 	@Override
 	public List<User> selectAll() throws SQLException {
 		return repo.selectAll();
+	}
+
+	@Override
+	public List<User> selectUsers(String keyword) throws SQLException {
+		return repo.selectUsers(keyword);
 	}
 
 }

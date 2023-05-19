@@ -2,7 +2,6 @@ package com.ssafy.trip.controller;
 
 import java.sql.SQLException;
 import java.util.List;
-import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -36,6 +35,7 @@ public class TravelRestController {
 	
 	@PostMapping("/travel")
 	public ResponseEntity<?> insert(@RequestBody Travel travel) throws SQLException{
+		System.out.println(travel);
 		int r = ts.insert(travel);
 		if(r > 0) return new ResponseEntity<Integer>(r, HttpStatus.CREATED); // 201
 		else       return new ResponseEntity<Void>   (HttpStatus.NO_CONTENT); // 204

@@ -25,7 +25,10 @@
 	
 	<select id="selectAll" resultType="User">
 		SELECT * FROM user
-		ORDER BY writeArticle DESC;
+		ORDER BY writeArticle DESC
 	</select>
-
+	<select id="selectUsers" resultType="User">
+		SELECT * FROM user
+		WHERE id like concat('%', #{keyword}, '%')
+	</select>
 </mapper>

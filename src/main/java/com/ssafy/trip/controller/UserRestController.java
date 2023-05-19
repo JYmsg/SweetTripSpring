@@ -4,6 +4,7 @@ package com.ssafy.trip.controller;
 import java.security.NoSuchAlgorithmException;
 import java.sql.SQLException;
 import java.sql.SQLIntegrityConstraintViolationException;
+import java.util.List;
 
 import javax.servlet.http.HttpSession;
 
@@ -73,6 +74,14 @@ public class UserRestController {
 	public ResponseEntity<?> select(@PathVariable String id) throws Exception{
 		User user = us.select(id);
 		if(user!=null) return new ResponseEntity<User>(user, HttpStatus.CREATED);
+		return new ResponseEntity<Void> (HttpStatus.NO_CONTENT);
+	}
+	@GetMapping("/user/keyword/{keyword}")
+	public ResponseEntity<?> selectUsers(@PathVariable String keyword) throws Exception{
+		System.out.println(keyword);
+		List<User> users = us.selectUsers(keyword);
+		System.out.println(users);
+		if(users!=null) return new ResponseEntity<List<User>>(users, HttpStatus.CREATED);
 		return new ResponseEntity<Void> (HttpStatus.NO_CONTENT);
 	}
 	@PostMapping("/login")

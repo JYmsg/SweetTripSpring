@@ -23,9 +23,11 @@ public class TravelServiceImpl implements TravelService {
 	@Override
 	@Transactional
 	public int insert(Travel travel)  throws SQLException{
-		int r = repo.insert(travel);
-		if(r == 0) return 0;
-		return repo.last();
+		int id = repo.insert(travel);
+		for(User user: travel.getUsers()) {
+			repo.invite(travel.getId(), user.getId());
+		}
+		return id;
 	}
 
 	@Override

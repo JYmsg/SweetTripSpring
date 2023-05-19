@@ -11,4 +11,5 @@ public interface UserService {
 	int insert(User user) throws SQLException;
 	int update(User user) throws SQLException;
 	List<User> selectAll() throws SQLException;
+	List<User> selectUsers(String keyword) throws SQLException;
 }
