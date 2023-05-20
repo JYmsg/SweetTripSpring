@@ -56,9 +56,9 @@ public class NoticeRestController {
 		return new ResponseEntity<Void> (HttpStatus.NO_CONTENT);
 	}
 	
-	@GetMapping("/notice")
-	public ResponseEntity<?> selectAll() throws Exception{
-		List<Notice> notices = ns.selectAll();
+	@GetMapping("/notice/{find}/{find_content}")
+	public ResponseEntity<?> selectAll(@PathVariable String find, @PathVariable String find_content) throws Exception{
+		List<Notice> notices = ns.selectAll(find, find_content);
 		if(notices!=null && notices.size()>0) return new ResponseEntity<List<Notice>>(notices, HttpStatus.CREATED);
 		return new ResponseEntity<Void> (HttpStatus.NO_CONTENT);
 	}

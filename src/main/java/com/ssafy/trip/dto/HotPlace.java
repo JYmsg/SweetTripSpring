@@ -17,7 +17,7 @@ public class HotPlace {
 	private String content;
 	private String img;
 	private int hit;
-	private int like;
+	private int good;
 	private String address;
 	private String name;
 	private int sido;

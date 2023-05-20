@@ -15,7 +15,7 @@ public interface NoticeRepo {
 	int update(Notice notice) throws SQLException;
 	int delete(int id) throws SQLException;
 	Notice select(int id) throws SQLException;
-	List<Notice> selectAll() throws SQLException;
+	List<Notice> selectAll(String find, String find_content) throws SQLException;
 	
 	int update_hit(Notice notice) throws SQLException;
 	

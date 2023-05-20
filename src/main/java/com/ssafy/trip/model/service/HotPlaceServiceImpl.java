@@ -13,6 +13,7 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.ssafy.trip.dto.HotPlace;
+import com.ssafy.trip.dto.SearchCondition;
 import com.ssafy.trip.model.repo.HotPlaceRepo;
 
 import lombok.extern.slf4j.Slf4j;
@@ -71,12 +72,17 @@ public class HotPlaceServiceImpl implements HotPlaceService {
 	}
 
 	@Override
-	public List<HotPlace> selectAll() throws SQLException {
-		return repo.selectAll();
+	public List<HotPlace> selectAll(String sort, String find) throws SQLException {
+		return repo.selectAll(sort,find);
 	}
 
 	@Override
 	public int update_hit(HotPlace hotplace) throws SQLException {
 		return repo.update_hit(hotplace);
 	}
+
+//	@Override
+//	public List<HotPlace> search(SearchCondition condition) throws SQLException {
+//		return repo.search(condition);
+//	}
 }

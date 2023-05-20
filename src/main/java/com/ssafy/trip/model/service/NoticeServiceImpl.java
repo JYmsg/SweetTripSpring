@@ -42,8 +42,8 @@ public class NoticeServiceImpl implements NoticeService {
 	}
 
 	@Override
-	public List<Notice> selectAll() throws SQLException {
-		return repo.selectAll();
+	public List<Notice> selectAll(String find, String find_content) throws SQLException {
+		return repo.selectAll(find, find_content);
 	}
 
 	@Override

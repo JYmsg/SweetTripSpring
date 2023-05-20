@@ -25,6 +25,17 @@
 
 	<select id="selectAll" resultType="HotPlace">
 		SELECT * FROM hotplace
+		<if test="find!='none'">
+			WHERE title LIKE concat('%', #{find}, '%')
+		</if>
+		<if test="sort=='write_time'">
+			ORDER BY write_time
+		</if>
+		<if test="sort!='none'">
+			<if test="sort!='write_time'">
+				ORDER BY ${sort} DESC
+			</if>
+		</if>
 	</select>
 	
 	<update id="update_hit">

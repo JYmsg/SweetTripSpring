@@ -25,6 +25,9 @@
 
 	<select id="selectAll" resultType="Notice">
 		SELECT * FROM notice
+		<if test="find!='none'">
+			WHERE ${find} LIKE concat('%', #{find_content}, '%')
+		</if>
 		ORDER BY title DESC
 	</select>
 	
