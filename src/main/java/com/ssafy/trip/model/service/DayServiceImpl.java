@@ -20,13 +20,7 @@ public class DayServiceImpl implements DayService {
 	
 	@Override
 	public int insert(Day day) throws SQLException {
-		int r = repo.insert(day);
-		if(r == 0) return 0;
-		r = repo.last();
-		for(int p : day.getAttractions()) {
-			repo.insertAttraction(r, p);
-		}
-		return r;
+		return repo.insert(day);
 	}
 	@Override
 	public int update(Day day) throws SQLException {

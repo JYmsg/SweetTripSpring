@@ -34,10 +34,10 @@ public class TravelRestController {
 	
 	
 	@PostMapping("/travel")
-	public ResponseEntity<?> insert(@RequestBody Travel travel) throws SQLException{
+	public ResponseEntity<?> insert(@RequestBody Travel travel) throws Exception{
 		System.out.println(travel);
 		int r = ts.insert(travel);
-		if(r > 0) return new ResponseEntity<Integer>(r, HttpStatus.CREATED); // 201
+		if(r >= 0) return new ResponseEntity<Integer>(r, HttpStatus.CREATED); // 201
 		else       return new ResponseEntity<Void>   (HttpStatus.NO_CONTENT); // 204
 	}
 	@PostMapping("/day")
@@ -72,6 +72,7 @@ public class TravelRestController {
 	}
 	@GetMapping("/travel/one/{travel_id}")
 	public ResponseEntity<?> selectTravel(@PathVariable int travel_id) throws SQLException{
+		System.out.println(travel_id);
 		Travel travel = ts.select(travel_id);
 		if(travel != null) return new ResponseEntity<Travel> (travel, HttpStatus.OK);
 		else return new ResponseEntity<Void>(HttpStatus.NO_CONTENT);
