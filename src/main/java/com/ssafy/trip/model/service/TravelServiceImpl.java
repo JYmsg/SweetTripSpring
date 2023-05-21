@@ -48,7 +48,17 @@ public class TravelServiceImpl implements TravelService {
 	}
 	
 	@Override
+	@Transactional
 	public int update(Travel travel) throws SQLException {
+//		repo.update(travel);
+		List<Day> days = svc.selectAll(travel.getId());
+		// start와 end가 다른 경우 삭제 및 추가 필요.
+		// 받은 days 전부 삭제 후 새로 삽입.
+		for(Day day: travel.getDays()) {
+			for(int p: day.getAttractions()) {
+				svc.insertAttraction(day.getId(), p);
+			}
+		}
 		return repo.update(travel);
 	}
 

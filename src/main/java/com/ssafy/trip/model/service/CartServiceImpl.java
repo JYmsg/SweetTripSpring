@@ -45,11 +45,11 @@ public class CartServiceImpl implements CartService {
 
 	@Override
 	public List<Cart> select(String id) throws SQLException {
-		List<Cart> hot = repo.selecthot(id);
-		for(int i=0; i<hot.size(); i++) {
-			HotPlace hp = hrepo.select(hot.get(i).getHotplace_id());
-			hot.get(i).setHotplace(hp);
-		}
+//		List<Cart> hot = repo.selecthot(id);
+//		for(int i=0; i<hot.size(); i++) {
+//			HotPlace hp = hrepo.select(hot.get(i).getHotplace_id());
+//			hot.get(i).setHotplace(hp);
+//		}
 		List<Cart> place = repo.selectAllplace(id);
 		for(int i=0; i<place.size(); i++) {
 			Place p = srepo.select(place.get(i).getAttraction_id());
@@ -57,7 +57,7 @@ public class CartServiceImpl implements CartService {
 			System.out.println(p);
 			place.get(i).setPlace(p);
 		}
-		place.addAll(hot);
+//		place.addAll(hot);
 		return place;
 	}
 

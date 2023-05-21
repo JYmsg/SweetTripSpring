@@ -1,6 +1,7 @@
 package com.ssafy.trip.model.service;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -61,10 +62,14 @@ public class DayServiceImpl implements DayService {
 	public List<Day> selectAll(int travel_id) throws SQLException {
 		List<Day> results = repo.selectAll(travel_id);
 		for(Day result: results) {
+			System.out.println(result.getId());
 			result.setAttractions(repo.selectAttraction(result.getId()));
+			if(result.getAttractions() == null || result.getAttractions().size() == 0) continue;
+			List<Place> add = new ArrayList<>();
 			for(int p: result.getAttractions()) {
-				result.getPlaces().add(Prepo.select(p));
+				add.add(Prepo.select(p));
 			}
+			result.setPlaces(add);
 		}
 		return results;
 	}
