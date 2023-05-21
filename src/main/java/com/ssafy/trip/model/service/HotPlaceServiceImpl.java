@@ -72,8 +72,8 @@ public class HotPlaceServiceImpl implements HotPlaceService {
 	}
 
 	@Override
-	public List<HotPlace> selectAll(String sort, String find) throws SQLException {
-		return repo.selectAll(sort,find);
+	public List<HotPlace> selectAll(int id, String sort, String find) throws SQLException {
+		return repo.selectAll(id,sort,find);
 	}
 
 	@Override

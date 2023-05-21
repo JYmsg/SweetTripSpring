@@ -61,10 +61,10 @@ public class HotPlaceRestController {
 		return new ResponseEntity<Void> (HttpStatus.NO_CONTENT);
 	}
 	
-	@GetMapping("/hotplace/{sort}/{find}")
-	public ResponseEntity<?> selectAll(@PathVariable String sort, @PathVariable String find) throws Exception{
+	@GetMapping("/hotplace/{id}/{sort}/{find}")
+	public ResponseEntity<?> selectAll(@PathVariable int id,@PathVariable String sort, @PathVariable String find) throws Exception{
 		System.out.println(sort+" "+find);
-		List<HotPlace> hotpls = hs.selectAll(sort,find);
+		List<HotPlace> hotpls = hs.selectAll(id,sort,find);
 		System.out.println(hotpls);
 		if(hotpls!=null && hotpls.size()>0) return new ResponseEntity<List<HotPlace>>(hotpls, HttpStatus.CREATED);
 		return new ResponseEntity<Void> (HttpStatus.NO_CONTENT);

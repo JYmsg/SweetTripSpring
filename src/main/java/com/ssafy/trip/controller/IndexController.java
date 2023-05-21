@@ -36,7 +36,7 @@ public class IndexController {
 	
 	@GetMapping({"/","/index"})
 	public String index(Model m) throws SQLException {
-		List<HotPlace> list = hs.selectAll("none","none");
+		List<HotPlace> list = hs.selectAll(0,"none","none");
 		List<HotPlace> result = new ArrayList<HotPlace>();
 		for(HotPlace place : list) {
 			if(result.size()>=6) break;
@@ -48,7 +48,7 @@ public class IndexController {
 	
 	@GetMapping("/hotplacelist")
 	public String hotplacelist(Model m) throws SQLException {
-		m.addAttribute("hotpls", hs.selectAll("none","none"));
+		m.addAttribute("hotpls", hs.selectAll(0,"none","none"));
 		return "hotplace/hotplacelist";
 	}
 	

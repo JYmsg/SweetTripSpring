@@ -4,7 +4,7 @@
 	
 	<insert id="insert">
 		INSERT INTO hotplace (title, content, writer_id, latitude, longitude, img, address, name, sido_code)
-		VALUES (#{title}, #{content}, #{writer_id}, #{latitude}, #{longitude}, #{img}, #{address}, #{name}, #{sido})
+		VALUES (#{title}, #{content}, #{writer_id}, #{latitude}, #{longitude}, #{img}, #{address}, #{name}, #{sido_code})
 	</insert>
 	
 	<update id="update">
@@ -26,7 +26,17 @@
 	<select id="selectAll" resultType="HotPlace">
 		SELECT * FROM hotplace
 		<if test="find!='none'">
-			WHERE title LIKE concat('%', #{find}, '%')
+			<if test="id==0">
+				WHERE title LIKE concat('%', #{find}, '%')
+			</if>
+			<if test="id!=0">
+				WHERE sido_code=#{id} AND title LIKE concat('%', #{find}, '%')
+			</if>
+		</if>
+		<if test="find=='none'">
+			<if test="id!=0">
+				WHERE sido_code=#{id}
+			</if>
 		</if>
 		<if test="sort=='write_time'">
 			ORDER BY write_time

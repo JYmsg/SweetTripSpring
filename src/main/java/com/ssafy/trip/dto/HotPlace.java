@@ -20,17 +20,17 @@ public class HotPlace {
 	private int good;
 	private String address;
 	private String name;
-	private int sido;
+	private int sido_code;
 	private String write_time;
 	private String writer_id;
 	private MultipartFile file;
 	private String orgImg;
 	
-	public HotPlace(String title, String content, String writer_id, double latitude, double longitude, String img, String address, String name, int sido) {
-		this(title, content, writer_id, latitude, longitude, img, address, name, sido, null);
+	public HotPlace(String title, String content, String writer_id, double latitude, double longitude, String img, String address, String name, int sido_code) {
+		this(title, content, writer_id, latitude, longitude, img, address, name, sido_code, null);
 	}
 	
-	public HotPlace(String title, String content, String writer_id, double latitude, double longitude, String img, String address, String name, int sido, MultipartFile file) {
+	public HotPlace(String title, String content, String writer_id, double latitude, double longitude, String img, String address, String name, int sido_code, MultipartFile file) {
 		super();
 		this.latitude = latitude;
 		this.longitude = longitude;
@@ -39,7 +39,7 @@ public class HotPlace {
 		this.img = img;
 		this.writer_id = writer_id;
 		this.file=file;
-		this.sido=sido;
+		this.sido_code=sido_code;
 		this.address=address;
 		this.name=name;
 	}
