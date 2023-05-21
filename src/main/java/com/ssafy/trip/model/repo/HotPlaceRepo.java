@@ -19,6 +19,7 @@ public interface HotPlaceRepo {
 	List<HotPlace> selectAll(String sort, String find) throws SQLException;
 	
 	int update_hit(HotPlace hotplace) throws SQLException;
+	int update_good(int id, int act) throws SQLException;
 	
 //	List<HotPlace> search(SearchCondition condition) throws SQLException;
 }
