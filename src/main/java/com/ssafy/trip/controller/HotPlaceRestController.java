@@ -78,4 +78,12 @@ public class HotPlaceRestController {
 		if(r==1) return new ResponseEntity<Integer>(r, HttpStatus.CREATED);
 		return new ResponseEntity<Void> (HttpStatus.NO_CONTENT);
 	}
+	
+	@PutMapping("/good/{id}/{act}")
+	public ResponseEntity<?> update_good(@PathVariable int id, @PathVariable int act) throws Exception{
+		System.out.println(id+" "+act);
+		int r = hs.update_good(id,act);
+		if(r==1) return new ResponseEntity<Integer>(r, HttpStatus.CREATED);
+		return new ResponseEntity<Void> (HttpStatus.NO_CONTENT);
+	}
 }

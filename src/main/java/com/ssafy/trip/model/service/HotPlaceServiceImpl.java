@@ -81,6 +81,11 @@ public class HotPlaceServiceImpl implements HotPlaceService {
 		return repo.update_hit(hotplace);
 	}
 
+	@Override
+	public int update_good(int id, int act) throws SQLException {
+		return repo.update_good(id, act);
+	}
+
 //	@Override
 //	public List<HotPlace> search(SearchCondition condition) throws SQLException {
 //		return repo.search(condition);

@@ -43,5 +43,11 @@
 		SET hit=hit+1
 		WHERE id=#{id}
 	</update>
+	
+	<update id="update_good">
+		UPDATE hotplace
+		SET good=good+#{act}
+		WHERE id=#{id}
+	</update>
 
 </mapper>
