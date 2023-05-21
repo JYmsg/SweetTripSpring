@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.ssafy.trip.model.repo.PlaceRepo">
 	<select id="select" resultType="com.ssafy.trip.dto.Place">
-		select * from attraction_info where content_id = #{ContentId}
+		select * from attraction_description where content_id=#{ContentId}
 	</select>
 	<select id="selectAll" resultType="com.ssafy.trip.dto.Place">
 		select * from attraction_info where sido_code=#{sidoCode} and gugun_code=#{gugunCode} and content_type_id=#{ContentTypeID}
@@ -10,5 +10,17 @@
 	<select id="selectByKeyword" resultType="com.ssafy.trip.dto.Place">
 		select * from attraction_info where sido_code=#{sidoCode} and gugun_code=#{gugunCode} and content_type_id=#{ContentTypeID}
 		and title like concat('%', #{keyword}, '%')
+	</select>
+	<select id="selectAllPlaces" resultType="com.ssafy.trip.dto.Place">
+		select * from attraction_info
+	</select>
+	<select id="selectAllSido" resultType="com.ssafy.trip.dto.Place">
+		select * from attraction_info where sido_code=#{sidoCode}
+	</select>
+	<select id="selectAllSidoGugun" resultType="com.ssafy.trip.dto.Place">
+		select * from attraction_info where sido_code=#{sidoCode} and gugun_code=#{gugunCode}
+	</select>
+	<select id="selectAllSidoType" resultType="com.ssafy.trip.dto.Place">
+		select * from attraction_info where sido_code=#{sidoCode} and content_type_id=#{content_type_id}
 	</select>
 </mapper>

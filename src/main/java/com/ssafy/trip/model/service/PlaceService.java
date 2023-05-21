@@ -10,4 +10,8 @@ public interface PlaceService {
 	List<Place> selectAlluser(int sidoCode, int gugunCode, int ContentTypeID, String user_id) throws SQLException;
 	List<Place> selectByKeyword(int sidoCode, int gugunCode, int ContentTypeID, String keyword, String id) throws SQLException;
 	Place select(int ContentId) throws SQLException;
+	List<Place> selectAllPlaces() throws SQLException;
+	List<Place> selectAllSido(int sidoCode) throws SQLException;
+	List<Place> selectAllSidoGugun(int sidoCode, int gugunCode) throws SQLException;
+	List<Place> selectAllSidoType(int sidoCode, int content_type_id) throws SQLException;
 }
