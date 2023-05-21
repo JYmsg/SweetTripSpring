@@ -12,7 +12,7 @@
 		and title like concat('%', #{keyword}, '%')
 	</select>
 	<select id="selectAllPlaces" resultType="com.ssafy.trip.dto.Place">
-		select * from attraction_info
+		select * from attraction_info 
 	</select>
 	<select id="selectAllSido" resultType="com.ssafy.trip.dto.Place">
 		select * from attraction_info where sido_code=#{sidoCode}
