@@ -16,7 +16,7 @@
 	<insert id="insertAttraction">
 		insert into dayattraction values (#{id}, #{attraction_id})
 	</insert>
-	<select id="selectAttraction" resultType="int">
+	<select id="selectAttraction" resultType="Integer">
 		select attraction_id from dayattraction where day_id=#{id}
 	</select>
 	<select id="selectAll" resultType="Day">
@@ -25,7 +25,4 @@
 	<delete id="deleteAttraction">
 		delete from dayattraction where day_id=#{id}
 	</delete>
-	<select id="last" resultType="int">
-		select LAST_INSERT_ID()
-	</select>
 </mapper>
