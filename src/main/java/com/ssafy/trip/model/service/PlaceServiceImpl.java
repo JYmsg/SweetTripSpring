@@ -46,4 +46,24 @@ public class PlaceServiceImpl implements PlaceService {
 //		}
 		return null;
 	}
+
+	@Override
+	public List<Place> selectAllPlaces() throws SQLException {
+		return repo.selectAllPlaces();
+	}
+
+	@Override
+	public List<Place> selectAllSido(int sidoCode) throws SQLException {
+		return repo.selectAllSido(sidoCode);
+	}
+
+	@Override
+	public List<Place> selectAllSidoGugun(int sidoCode, int gugunCode) throws SQLException {
+		return repo.selectAllSidoGugun(sidoCode, gugunCode);
+	}
+
+	@Override
+	public List<Place> selectAllSidoType(int sidoCode, int content_type_id) throws SQLException {
+		return repo.selectAllSidoType(sidoCode, content_type_id);
+	}
 }

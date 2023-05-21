@@ -22,4 +22,5 @@ public class Place {
 	private double latitude;
 	private double longitude;
 	private boolean in;
+	private String overview;
 }
