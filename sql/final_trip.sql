@@ -84,6 +84,9 @@ drop table if exists dayattraction;
 CREATE TABLE IF NOT EXISTS `tripdb`.`dayattraction` (
   `day_id` INT NOT NULL,
   `attraction_id` INT NOT NULL,
+  `memo` VARCHAR(500) NULL,
+  `start_time` VARCHAR(45) NULL,
+  `end_time` VARCHAR(45) NULL,
   PRIMARY KEY (`attraction_id`, `day_id`),
   INDEX `fk_dayattraction_day1_idx` (`day_id` ASC) VISIBLE,
   CONSTRAINT `fk_dayattraction_attraction_info1`
