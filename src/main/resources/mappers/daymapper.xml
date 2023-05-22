@@ -25,4 +25,7 @@
 	<delete id="deleteAttraction">
 		delete from dayattraction where day_id=#{id}
 	</delete>
+	<delete id="deleteoneAttraction">
+		delete from dayattraction where day_id=#{id} and attraction_id=#{content_id};
+	</delete>
 </mapper>

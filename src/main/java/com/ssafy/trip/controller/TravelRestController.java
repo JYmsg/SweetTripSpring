@@ -48,6 +48,7 @@ public class TravelRestController {
 	}
 	@PutMapping("/travel")
 	public ResponseEntity<?> update(@RequestBody Travel travel) throws SQLException{
+		System.out.println(travel);
 		int r = ts.update(travel);
 		if(r == 1) return new ResponseEntity<Void> (HttpStatus.OK);
 		else return new ResponseEntity<Void>(HttpStatus.NO_CONTENT);
