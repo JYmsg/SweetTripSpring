@@ -27,7 +27,7 @@ public class CartRestController {
 	@GetMapping("/cart/list/{user_id}")
 	public ResponseEntity<?> selectAll(@PathVariable String user_id) throws Exception{
 		List<Cart> carts = cs.select(user_id);
-		System.out.println(carts);
+		System.out.println("mycart = "+carts);
 		if(carts != null) return new ResponseEntity<List<Cart>>(carts, HttpStatus.OK);
 		return new ResponseEntity<Void>(HttpStatus.NO_CONTENT);
 	}

@@ -66,4 +66,9 @@ public class PlaceServiceImpl implements PlaceService {
 	public List<Place> selectAllSidoType(int sidoCode, int content_type_id) throws SQLException {
 		return repo.selectAllSidoType(sidoCode, content_type_id);
 	}
+
+	@Override
+	public Place selectoverview(int ContentId) throws SQLException {
+		return repo.selectoverview(ContentId);
+	}
 }

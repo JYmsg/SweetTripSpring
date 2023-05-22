@@ -12,6 +12,7 @@ public interface PlaceRepo {
 	List<Place> selectAll(int sidoCode, int gugunCode, int ContentTypeID) throws SQLException;
 	List<Place> selectByKeyword(int sidoCode, int gugunCode, int ContentTypeID, String keyword) throws SQLException;
 	Place select(int ContentId) throws SQLException;
+	Place selectoverview(int ContentId) throws SQLException;
 	List<Place> selectAllPlaces() throws SQLException;
 	List<Place> selectAllSido(int sidoCode) throws SQLException;
 	List<Place> selectAllSidoGugun(int sidoCode, int gugunCode) throws SQLException;

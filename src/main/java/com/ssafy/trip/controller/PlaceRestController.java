@@ -28,7 +28,7 @@ public class PlaceRestController {
 	@GetMapping("/place/one/{content_id}")
 	public ResponseEntity<?> selectAllTravel(@PathVariable int content_id) throws SQLException{
 		System.out.println(content_id);
-		Place place = ps.select(content_id);
+		Place place = ps.selectoverview(content_id);
 		if(place != null) return new ResponseEntity<Place> (place, HttpStatus.OK);
 		else return new ResponseEntity<Void>(HttpStatus.NO_CONTENT);
 	}
