@@ -26,17 +26,16 @@ public class HotPlace {
 	private MultipartFile file;
 	private String orgImg;
 	
-	public HotPlace(String title, String content, String writer_id, double latitude, double longitude, String img, String address, String name, int sido_code) {
-		this(title, content, writer_id, latitude, longitude, img, address, name, sido_code, null);
+	public HotPlace(String title, String content, String writer_id, double latitude, double longitude, String address, String name, int sido_code) {
+		this(title, content, writer_id, latitude, longitude, address, name, sido_code, null);
 	}
 	
-	public HotPlace(String title, String content, String writer_id, double latitude, double longitude, String img, String address, String name, int sido_code, MultipartFile file) {
+	public HotPlace(String title, String content, String writer_id, double latitude, double longitude, String address, String name, int sido_code, MultipartFile file) {
 		super();
 		this.latitude = latitude;
 		this.longitude = longitude;
 		this.title = title;
 		this.content = content;
-		this.img = img;
 		this.writer_id = writer_id;
 		this.file=file;
 		this.sido_code=sido_code;

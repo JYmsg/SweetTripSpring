@@ -34,12 +34,16 @@ public class HotPlaceServiceImpl implements HotPlaceService {
 		MultipartFile file = hotplace.getFile();
 		if (file != null && file.getSize() > 0) {
 			// 파일을 저장할 위치 지정
-			Resource res = resLoader.getResource("classpath:static/resources/upload");
+//			Resource res = resLoader.getResource("classpath:static/resources/upload");
+			
+			String uploadFolder = "C:/SSAFY/work_pjt/SweetTripVue/public/img/upload";
 			// 중복방지를 위해 파일 이름앞에 현재 시간 추가
-			hotplace.setImg(System.currentTimeMillis() + "_" + file.getOriginalFilename());
-			hotplace.setOrgImg(file.getOriginalFilename());
+			hotplace.setOrgImg(System.currentTimeMillis() + "_" + file.getOriginalFilename());
 			// 파일 저장
-			file.transferTo(new File(res.getFile().getCanonicalPath() + "/" + hotplace.getImg()));
+			file.transferTo(new File(uploadFolder, hotplace.getOrgImg()));
+//			file.transferTo(new File(res.getFile().getCanonicalPath() + "/" + hotplace.getOrgImg()));
+//			hotplace.setImg(res.getFile().getCanonicalPath() + "/" + hotplace.getOrgImg());
+			hotplace.setImg(hotplace.getOrgImg());
 		}
 		return repo.insert(hotplace);
 	}

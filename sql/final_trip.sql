@@ -300,11 +300,11 @@ insert into user value ('테스트', 'my', '86e41a3324104a4710f2a40ce65bee17a8a7
 
 -- 더미데이터 FOR 공지사항
 -- 공지
-insert into notice (title, content, writer_id) values ('공지사항입니다.', '공지사항을 전달드립니다.', 'admin');
-insert into notice (title, content, writer_id) values ('이벤트 당첨자를 알려드립니다.', 'my님 축하드립니다.', 'admin');
+insert into notice (title, content, writer_id) values ('[공지사항] 공지사항입니다.', '공지사항을 전달드립니다.', 'admin');
+insert into notice (title, content, writer_id) values ('[공지사항] 이벤트 당첨자를 알려드립니다.', 'my님 축하드립니다.', 'admin');
 -- QnA
-insert into notice (title, content, writer_id) values ('질문이 있습니다~', '오늘 점심이 궁금해용.', 'jungeun');
-insert into notice (title, content, writer_id) values ('이벤트 문의드려용', '누가 당첨인가요?', 'yujin');
+insert into notice (title, content, writer_id) values ('[QnA] 질문이 있습니다~', '오늘 점심이 궁금해용.', 'jungeun');
+insert into notice (title, content, writer_id) values ('[QnA] 이벤트 문의드려용', '누가 당첨인가요?', 'yujin');
 -- 댓글
 insert into comment (content, pr, writer_id, notice_id) value ('로제떡볶이입니다.', 1, 'yujin', 3);
 insert into comment (content, pr, writer_id, notice_id) value ('언니 뭐 먹을거야?', 0, 'yujin', 3);
@@ -339,3 +339,11 @@ insert into cartAtt(user_id, attraction_id)
 values ('jungeun', 125467);
 insert into cartAtt(user_id, attraction_id)
 values ('jungeun', 125489);
+
+-- 더미데이터 FOR 핫플레이스
+INSERT INTO hotplace (title, content, writer_id, latitude, longitude, img, address, name, sido_code)
+VALUES ('멀티캠퍼스 서울캠', '20반 최고', 'yujin', 37.50128609313050000, 127.03960466386200000, '1684763995603_logo.png', '서울 강남구 역삼동 718-5', '멀티캠퍼스 역삼', 1)
+INSERT INTO hotplace (title, content, writer_id, latitude, longitude, img, address, name, sido_code)
+VALUES ('놀이동산', '재밌어요', 'my', 35.85322716591636000, 128.56658131032162000, '1684765030632_test.jpg', '대구 달서구 두류동 산 302-11', '대구이월드', 4)
+
+
