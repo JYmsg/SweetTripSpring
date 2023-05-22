@@ -286,15 +286,56 @@ SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 
-select * from travel;
-insert into user values ('토끼', 'ssafy', '1234', 'test', 'test@naver.com', 12, 0);
-insert into notice (title, content, writer_id) values ('test', 'test', 'ssafy');
-insert into travel (title, startdate, enddate, user_id) values ('test2', '2023-01-01', '2023-01-03', 'ssafy');
-insert into review (title, content, writer_id, travel_id) values ('test1', 'test1', 'ssafy', 1);
-insert into day (date, travel_id, weather) values ('2023-01-01',1, '맑음');
-insert into dayattraction values (1, 125266);
+-- 유저 정보 더미 데이터
+insert into user value ('관리자', 'admin', '86e41a3324104a4710f2a40ce65bee17a8a70082f3132e217effc01d49e6b046',
+'VkUNVPcmvK0=', 'admin@admin.com', 0, 0);
+insert into user value ('박정은', 'jungeun', '86e41a3324104a4710f2a40ce65bee17a8a70082f3132e217effc01d49e6b046',
+'VkUNVPcmvK0=', 'evecomcom98@naver.com', 26, 0);
+insert into user value ('김유진', 'yujin', '86e41a3324104a4710f2a40ce65bee17a8a70082f3132e217effc01d49e6b046',
+'VkUNVPcmvK0=', 'rladbwls30@gmail.com', 25, 0);
+insert into user value ('김싸피', 'ssafy', '86e41a3324104a4710f2a40ce65bee17a8a70082f3132e217effc01d49e6b046',
+'VkUNVPcmvK0=', 'ssafy@ssafy.com', 30, 0);
+insert into user value ('테스트', 'my', '86e41a3324104a4710f2a40ce65bee17a8a70082f3132e217effc01d49e6b046',
+'VkUNVPcmvK0=', 'my@my.com', 20, 0);
 
-insert into cartHot (user_id, hotplace_id)
-values ('ssafy', 1);
+-- 더미데이터 FOR 공지사항
+-- 공지
+insert into notice (title, content, writer_id) values ('공지사항입니다.', '공지사항을 전달드립니다.', 'admin');
+insert into notice (title, content, writer_id) values ('이벤트 당첨자를 알려드립니다.', 'my님 축하드립니다.', 'admin');
+-- QnA
+insert into notice (title, content, writer_id) values ('질문이 있습니다~', '오늘 점심이 궁금해용.', 'jungeun');
+insert into notice (title, content, writer_id) values ('이벤트 문의드려용', '누가 당첨인가요?', 'yujin');
+-- 댓글
+insert into comment (content, pr, writer_id, notice_id) value ('로제떡볶이입니다.', 1, 'yujin', 3);
+insert into comment (content, pr, writer_id, notice_id) value ('언니 뭐 먹을거야?', 0, 'yujin', 3);
+-- 더미데이터 FOR 여행
+-- 여행
+insert into travel (title, startdate, enddate, user_id) values ('즐거운 제주도 여행', '2023-01-01', '2023-01-03', 'jungeun');
+-- 날짜별
+insert into day (date, travel_id, weather) values ('2023-01-01',1, '맑음');
+insert into day (date, travel_id, weather) values ('2023-01-02',1, '흐림');
+insert into day (date, travel_id, weather) values ('2023-01-03',1, '맑음');
+-- 날짜별 방문하는 곳
+insert into dayattraction values (1, 125266);
+insert into dayattraction values (1, 125405);
+insert into dayattraction values (1, 125407);
+insert into dayattraction values (2, 125413);
+insert into dayattraction values (2, 125421);
+insert into dayattraction values (3, 125432);
+insert into dayattraction values (3, 125455);
+-- 초대
+insert into invite value (1, 'yujin');
+
+-- 더미데이터 FOR 장바구니
 insert into cartAtt(user_id, attraction_id)
-values ('ssafy', 125266);
+values ('my', 125266);
+insert into cartAtt(user_id, attraction_id)
+values ('my', 125467);
+insert into cartAtt(user_id, attraction_id)
+values ('my', 125489);
+insert into cartAtt(user_id, attraction_id)
+values ('jungeun', 125266);
+insert into cartAtt(user_id, attraction_id)
+values ('jungeun', 125467);
+insert into cartAtt(user_id, attraction_id)
+values ('jungeun', 125489);
