@@ -35,11 +35,9 @@ public class TravelServiceImpl implements TravelService {
 		long diff = (end.getTime()- start.getTime()) / (24*60*60*1000);
 		Calendar cal = Calendar.getInstance();
 		cal.setTime(start);
-		System.out.println(diff);
 		svc.insert(new Day(travel.getStartdate(), "맑음", travel.getId()));
 		for(int i=0; i<diff; i++) {
 			cal.add(Calendar.DATE, 1);
-			System.out.println(format.format(cal.getTime()));
 			Day add = new Day(format.format(cal.getTime()), "맑음", travel.getId());
 			svc.insert(add);
 		}
@@ -50,13 +48,21 @@ public class TravelServiceImpl implements TravelService {
 	@Override
 	@Transactional
 	public int update(Travel travel) throws SQLException {
-//		repo.update(travel);
-		List<Day> days = svc.selectAll(travel.getId());
-		// start와 end가 다른 경우 삭제 및 추가 필요.
-		// 받은 days 전부 삭제 후 새로 삽입.
-		for(Day day: travel.getDays()) {
-			for(int p: day.getAttractions()) {
-				svc.insertAttraction(day.getId(), p);
+		List<Day> days = svc.selectAll(travel.getId()); // 기존 정보
+		List<Day> travelDays = travel.getDays(); // 업데이트할 정보
+		for(int i=0; i<travel.getDays().size(); i++) {
+			if(!days.contains(travelDays.get(i))) {
+				System.out.println("insertDay = "+travelDays.get(i));
+				svc.insert(travelDays.get(i));
+			}else {
+				System.out.println("updateDay = "+travelDays.get(i));
+				svc.update(travelDays.get(i));
+			}		
+		}
+		for(Day d : days) {
+			if(!travelDays.contains(d)) {
+				System.out.println("delteDay = "+d);
+				svc.delete(d.getId());
 			}
 		}
 		return repo.update(travel);

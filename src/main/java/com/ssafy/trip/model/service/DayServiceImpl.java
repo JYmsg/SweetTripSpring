@@ -6,6 +6,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.ssafy.trip.dto.Day;
 import com.ssafy.trip.dto.Place;
@@ -25,12 +26,23 @@ public class DayServiceImpl implements DayService {
 	}
 	@Override
 	public int update(Day day) throws SQLException {
-		repo.deleteAttraction(day.getId());
+		System.out.println("before = "+repo.selectAttraction(day.getId())+day);
+		List<Integer> atts = repo.selectAttraction(day.getId());
+		for(Place p : day.getPlaces()) {
+			if(!atts.contains(p.getContent_id())) {
+				System.out.println("place Add = "+p.getContent_id()+", Day = "+day.getId()); 
+				repo.insertAttraction(day.getId(), p.getContent_id());
+			}
+		}
+		for(int a : atts) {
+			if(!day.getPlaces().contains(new Place(a))) {
+				System.out.println("place Del = "+a+", Day = "+day.getId());
+				repo.deleteoneAttraction(day.getId(), a);
+			}
+		}
+		System.out.println("after = "+repo.selectAttraction(day.getId())+day);
 		int r = repo.update(day);
 		if(r == 0) return 0;
-		for(int p: day.getAttractions()) {
-			repo.insertAttraction(day.getId(), p);
-		}
 		return r;
 	}
 	@Override
