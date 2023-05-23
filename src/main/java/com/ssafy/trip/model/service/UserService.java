@@ -3,6 +3,8 @@ package com.ssafy.trip.model.service;
 import java.sql.SQLException;
 import java.util.List;
 
+import javax.mail.internet.AddressException;
+
 import com.ssafy.trip.dto.User;
 
 public interface UserService {
@@ -12,4 +14,7 @@ public interface UserService {
 	int update(User user) throws SQLException;
 	List<User> selectAll() throws SQLException;
 	List<User> selectUsers(String keyword) throws SQLException;
+	
+	String makeCode() throws SQLException;
+	String sendMail(String email) throws SQLException, AddressException;
 }

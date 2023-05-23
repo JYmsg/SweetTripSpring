@@ -95,8 +95,18 @@ public class UserRestController {
 		String password = SHA256Util.getEncrypt(user.getPassword(), loginUser.getSalt());
 		if(loginUser != null && loginUser.getPassword().equals(password)) {
 			session.setAttribute("userinfo", loginUser);
+			System.out.println("진자");
 			return new ResponseEntity<User>(loginUser, HttpStatus.OK);
 		}
+		System.out.println("가짜");
+		return new ResponseEntity<User> (loginUser, HttpStatus.NO_CONTENT);
+	}
+	
+	@PostMapping("/mailcheck")
+	public ResponseEntity<?> check(@RequestBody User user) throws Exception{
+		System.out.println(user.getEmail());
+		String code = us.sendMail(user.getEmail());
+		if(code!=null) return new ResponseEntity<String>(code, HttpStatus.CREATED);
 		return new ResponseEntity<Void> (HttpStatus.NO_CONTENT);
 	}
 }
