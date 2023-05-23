@@ -104,7 +104,6 @@ public class UserRestController {
 	
 	@PostMapping("/mailcheck")
 	public ResponseEntity<?> check(@RequestBody User user) throws Exception{
-		System.out.println(user.getEmail());
 		String code = us.sendMail(user.getEmail());
 		if(code!=null) return new ResponseEntity<String>(code, HttpStatus.CREATED);
 		return new ResponseEntity<Void> (HttpStatus.NO_CONTENT);
