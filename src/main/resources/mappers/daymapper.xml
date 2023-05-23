@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.ssafy.trip.model.repo.DayRepo">
-	<insert id="insert">
+	<insert id="insert" parameterType="Day" useGeneratedKeys="true" keyProperty="id">
 		insert into day (date, weather, travel_id) values(#{date}, #{weather}, #{travel_id})
 	</insert>
 	<update id="update">
@@ -14,13 +14,26 @@
 		select * from day where id=#{id}
 	</select>
 	<insert id="insertAttraction">
-		insert into dayattraction values (#{id}, #{attraction_id})
+		insert into dayattraction (day_id,attraction_id, memo, start_time, end_time, turn)
+		values (#{id}, #{attraction_id}, #{memo}, #{starttime}, #{endtime}, #{turn})
 	</insert>
-	<select id="selectAttraction" resultType="Integer">
-		select attraction_id from dayattraction where day_id=#{id}
+	<update id="updateAttraction">
+		update dayattraction
+		set memo=#{memo},
+		start_time=#{starttime}, end_time=#{endtime}, turn=#{turn}
+		where day_id=#{id} and attraction_id=#{attraction_id}
+	</update>
+	<select id="selectAllAttraction" resultType="int">
+		select attraction_id as content_id from dayattraction where day_id=#{id}
+	</select>
+	<select id="selectAttraction" resultType="Place">
+		select attraction_id as content_id, memo, turn, start_time as starttime, end_time as endtime from dayattraction where day_id=#{id} order by turn	
 	</select>
 	<select id="selectAll" resultType="Day">
 		select * from day where travel_id=#{travel_id}
+	</select>
+	<select id="selectoneAttraction" resultType="Place">
+		select * from dayattraction where day_id=#{day_id} and attraction_id=#{content_id}
 	</select>
 	<delete id="deleteAttraction">
 		delete from dayattraction where day_id=#{id}

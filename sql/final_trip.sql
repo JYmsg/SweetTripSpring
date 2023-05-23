@@ -46,6 +46,7 @@ CREATE TABLE IF NOT EXISTS `tripdb`.`travel` (
   `enddate` DATE NOT NULL,
   `user_id` VARCHAR(20) NOT NULL,
   `save` TINYINT(1) NULL DEFAULT 0,
+  `reveal` TINYINT(1) NULL DEFAULT '0',
   PRIMARY KEY (`id`),
   INDEX `fk_travel_user1_idx` (`user_id` ASC) VISIBLE,
   CONSTRAINT `fk_travel_user1`
@@ -87,6 +88,7 @@ CREATE TABLE IF NOT EXISTS `tripdb`.`dayattraction` (
   `memo` VARCHAR(500) NULL,
   `start_time` VARCHAR(45) NULL,
   `end_time` VARCHAR(45) NULL,
+  `turn` INT NULL,
   PRIMARY KEY (`attraction_id`, `day_id`),
   INDEX `fk_dayattraction_day1_idx` (`day_id` ASC) VISIBLE,
   CONSTRAINT `fk_dayattraction_attraction_info1`
@@ -328,13 +330,15 @@ insert into day (date, travel_id, weather) values ('2023-01-01',1, '맑음');
 insert into day (date, travel_id, weather) values ('2023-01-02',1, '흐림');
 insert into day (date, travel_id, weather) values ('2023-01-03',1, '맑음');
 -- 날짜별 방문하는 곳
--- insert into dayattraction values (1, 125266);
--- insert into dayattraction values (1, 125405);
--- insert into dayattraction values (1, 125407);
--- insert into dayattraction values (2, 125413);
--- insert into dayattraction values (2, 125421);
--- insert into dayattraction values (3, 125432);
--- insert into dayattraction values (3, 125455);
+
+insert into dayattraction (day_id, attraction_id) values (1, 125266);
+insert into dayattraction (day_id, attraction_id) values (1, 125405);
+insert into dayattraction (day_id, attraction_id) values (1, 125407);
+insert into dayattraction (day_id, attraction_id) values (2, 125413);
+insert into dayattraction (day_id, attraction_id) values (2, 125421);
+insert into dayattraction (day_id, attraction_id) values (3, 125432);
+insert into dayattraction (day_id, attraction_id) values (3, 125455);
+
 -- 초대
 insert into invite value (1, 'yujin');
 

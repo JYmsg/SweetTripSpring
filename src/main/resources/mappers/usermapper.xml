@@ -27,6 +27,12 @@
 		SELECT * FROM user
 		ORDER BY writeArticle DESC
 	</select>
+	<select id="selectInviteAll" resultType="User">
+		select * from user
+		join invite
+		on user.id = invite.user_id
+		where travel_id=#{travel_id};
+	</select>
 	<select id="selectUsers" resultType="User">
 		SELECT * FROM user
 		WHERE id like concat('%', #{keyword}, '%')

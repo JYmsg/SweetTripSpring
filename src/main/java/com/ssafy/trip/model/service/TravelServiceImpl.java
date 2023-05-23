@@ -21,6 +21,8 @@ public class TravelServiceImpl implements TravelService {
 	private TravelRepo repo;
 	@Autowired
 	private DayService svc;
+	@Autowired
+	private UserService usvc;
 	
 	@Override
 	@Transactional
@@ -52,16 +54,16 @@ public class TravelServiceImpl implements TravelService {
 		List<Day> travelDays = travel.getDays(); // 업데이트할 정보
 		for(int i=0; i<travel.getDays().size(); i++) {
 			if(!days.contains(travelDays.get(i))) {
-				System.out.println("insertDay = "+travelDays.get(i));
+//				System.out.println("insertDay = "+travelDays.get(i));
 				svc.insert(travelDays.get(i));
 			}else {
-				System.out.println("updateDay = "+travelDays.get(i));
+//				System.out.println("updateDay = "+travelDays.get(i));
 				svc.update(travelDays.get(i));
 			}		
 		}
 		for(Day d : days) {
 			if(!travelDays.contains(d)) {
-				System.out.println("delteDay = "+d);
+//				System.out.println("delteDay = "+d);
 				svc.delete(d.getId());
 			}
 		}
@@ -78,6 +80,7 @@ public class TravelServiceImpl implements TravelService {
 		Travel travel = repo.select(id);
 		if(travel == null) return null;
 		travel.setDays(svc.selectAll(travel.getId()));
+		travel.setUsers(usvc.selectInviteAll(id));
 		return travel;
 	}
 

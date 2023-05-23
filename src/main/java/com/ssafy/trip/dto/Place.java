@@ -23,6 +23,10 @@ public class Place {
 	private double longitude;
 	private boolean in;
 	private String overview;
+	private String memo;
+	private String starttime;
+	private String endtime;
+	private int turn;
 	
 	@Override
 	public int hashCode() {

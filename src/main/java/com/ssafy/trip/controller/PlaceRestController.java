@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.ssafy.trip.dto.Place;
+import com.ssafy.trip.model.service.DayService;
 import com.ssafy.trip.model.service.PlaceService;
 
 @CrossOrigin("*")
@@ -24,6 +25,8 @@ import com.ssafy.trip.model.service.PlaceService;
 public class PlaceRestController {
 	@Autowired
 	private PlaceService ps;
+	@Autowired
+	private DayService ds;
 	
 	@GetMapping("/place/one/{content_id}")
 	public ResponseEntity<?> selectAllTravel(@PathVariable int content_id) throws SQLException{
@@ -31,6 +34,17 @@ public class PlaceRestController {
 		Place place = ps.selectoverview(content_id);
 		if(place != null) return new ResponseEntity<Place> (place, HttpStatus.OK);
 		else return new ResponseEntity<Void>(HttpStatus.NO_CONTENT);
+	}
+	@GetMapping("/place/one/{day_id}/{content_id}")
+	public ResponseEntity<?> selectPlace(@PathVariable int day_id, @PathVariable int content_id) throws SQLException{
+		System.out.println(content_id);
+		Place place = ps.selectoverview(content_id);
+		Place memo = ds.selectoneAttraction(day_id, content_id);
+		if(place == null) return new ResponseEntity<Void>(HttpStatus.NO_CONTENT);
+		place.setMemo(memo.getMemo());
+		place.setEndtime(memo.getEndtime());
+		place.setStarttime(memo.getStarttime());
+		return new ResponseEntity<Place> (place, HttpStatus.OK);
 	}
 	@GetMapping("/place/list/{sido_code}/{gugun_code}/{contentTypeId}")
 	public ResponseEntity<?> selectAllDay(@PathVariable int sido_code, @PathVariable int gugun_code, @PathVariable int contentTypeId) throws Exception{

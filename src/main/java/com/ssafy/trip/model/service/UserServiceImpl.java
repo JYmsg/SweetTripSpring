@@ -98,5 +98,8 @@ public class UserServiceImpl implements UserService{
         }
         return key.toString();
 	}
+	public List<User> selectInviteAll(int travel_id) throws SQLException {
+		return repo.selectInviteAll(travel_id);
+	}
 
 }

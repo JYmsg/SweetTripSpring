@@ -35,23 +35,32 @@ public class TravelRestController {
 	
 	@PostMapping("/travel")
 	public ResponseEntity<?> insert(@RequestBody Travel travel) throws Exception{
-		System.out.println(travel);
 		int r = ts.insert(travel);
 		if(r >= 0) return new ResponseEntity<Integer>(r, HttpStatus.CREATED); // 201
 		else       return new ResponseEntity<Void>   (HttpStatus.NO_CONTENT); // 204
 	}
-	@PostMapping("/day")
-	public ResponseEntity<?> insert(@RequestBody Day day) throws SQLException{
-		int r = ds.insert(day);
-		if(r == 0) return new ResponseEntity<Void>   (HttpStatus.NO_CONTENT); // 204
-		return new ResponseEntity<Integer>(r, HttpStatus.CREATED); // 201
-	}
+	
 	@PutMapping("/travel")
 	public ResponseEntity<?> update(@RequestBody Travel travel) throws SQLException{
 		System.out.println(travel);
 		int r = ts.update(travel);
 		if(r == 1) return new ResponseEntity<Void> (HttpStatus.OK);
 		else return new ResponseEntity<Void>(HttpStatus.NO_CONTENT);
+	}
+	@GetMapping("/travel/one/{travel_id}")
+	public ResponseEntity<?> selectTravel(@PathVariable int travel_id) throws SQLException{
+		Travel travel = ts.select(travel_id);
+		System.out.println(travel);
+		if(travel != null) return new ResponseEntity<Travel> (travel, HttpStatus.OK);
+		else return new ResponseEntity<Void>(HttpStatus.NO_CONTENT);
+	}
+
+	
+	@PostMapping("/day")
+	public ResponseEntity<?> insert(@RequestBody Day day) throws SQLException{
+		int r = ds.insert(day);
+		if(r < 0) return new ResponseEntity<Void>   (HttpStatus.NO_CONTENT); // 204
+		return new ResponseEntity<Integer>(r, HttpStatus.CREATED); // 201
 	}
 	@PutMapping("/day")
 	public ResponseEntity<?> update(@RequestBody Day day) throws SQLException{
@@ -69,13 +78,6 @@ public class TravelRestController {
 	public ResponseEntity<?> deleteDay(@PathVariable int day_id) throws SQLException{
 		int r = ds.delete(day_id);
 		if(r == 1) return new ResponseEntity<Integer> (r, HttpStatus.OK);
-		else return new ResponseEntity<Void>(HttpStatus.NO_CONTENT);
-	}
-	@GetMapping("/travel/one/{travel_id}")
-	public ResponseEntity<?> selectTravel(@PathVariable int travel_id) throws SQLException{
-		System.out.println(travel_id);
-		Travel travel = ts.select(travel_id);
-		if(travel != null) return new ResponseEntity<Travel> (travel, HttpStatus.OK);
 		else return new ResponseEntity<Void>(HttpStatus.NO_CONTENT);
 	}
 	@GetMapping("/day/one/{day_id}")
