@@ -62,7 +62,6 @@ public class UserServiceImpl implements UserService{
 	public String sendMail(String email) throws SQLException, AddressException {
 		String code = makeCode(), subject = "SweetTrip 이메일 인증 코드", msg = "";
 		
-        msg += "<img width=\"120\" height=\"36\" style=\"margin-top: 0; margin-right: 0; margin-bottom: 32px; margin-left: 0px; padding-right: 30px; padding-left: 30px;\" src=\"https://slack.com/x-a1607371436052/img/slack_logo_240.png\" alt=\"\" loading=\"lazy\">";
         msg += "<h1 style=\"font-size: 30px; padding-right: 30px; padding-left: 30px;\">이메일 주소 확인</h1>";
         msg += "<p style=\"font-size: 17px; padding-right: 30px; padding-left: 30px;\">아래 확인 코드를 SweetTrip 회원가입 창에 입력하세요.</p>";
         msg += "<div style=\"padding-right: 30px; padding-left: 30px; margin: 32px 0 40px;\"><table style=\"border-collapse: collapse; border: 0; background-color: #F4F4F4; height: 70px; table-layout: fixed; word-wrap: break-word; border-radius: 6px;\"><tbody><tr><td style=\"text-align: center; vertical-align: middle; font-size: 30px;\">";
@@ -70,21 +69,15 @@ public class UserServiceImpl implements UserService{
         msg += "</td></tr></tbody></table></div>";
 		
         System.out.println("code = "+code);
-//		MimeMessage mail = mailSender.createMimeMessage();
-
-        SimpleMailMessage simpleMailMessage = new SimpleMailMessage();
-		simpleMailMessage.setTo(email);
-		simpleMailMessage.setSubject(subject);
-		simpleMailMessage.setText(msg);
-		
-//			mail.addRecipient(RecipientType.TO, new InternetAddress(email));
-//			mail.setSubject(subject,"utf-8");
-//			mail.setText(msg,"utf-8","html");
-		System.out.println("11");
-//			mailSender.send(mail);
-		javaMailSender.send(simpleMailMessage);
-		System.out.println("22");
-		
+		MimeMessage mail = javaMailSender.createMimeMessage();
+		try {
+			mail.addRecipient(RecipientType.TO, new InternetAddress(email));
+			mail.setSubject(subject,"utf-8");
+			mail.setText(msg,"utf-8","html");
+			javaMailSender.send(mail);
+		} catch (MessagingException e) {
+			e.printStackTrace();
+		}
 		return code;
 	}
 
