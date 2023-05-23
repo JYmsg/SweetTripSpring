@@ -319,13 +319,13 @@ insert into day (date, travel_id, weather) values ('2023-01-01',1, '맑음');
 insert into day (date, travel_id, weather) values ('2023-01-02',1, '흐림');
 insert into day (date, travel_id, weather) values ('2023-01-03',1, '맑음');
 -- 날짜별 방문하는 곳
-insert into dayattraction values (1, 125266);
-insert into dayattraction values (1, 125405);
-insert into dayattraction values (1, 125407);
-insert into dayattraction values (2, 125413);
-insert into dayattraction values (2, 125421);
-insert into dayattraction values (3, 125432);
-insert into dayattraction values (3, 125455);
+-- insert into dayattraction values (1, 125266);
+-- insert into dayattraction values (1, 125405);
+-- insert into dayattraction values (1, 125407);
+-- insert into dayattraction values (2, 125413);
+-- insert into dayattraction values (2, 125421);
+-- insert into dayattraction values (3, 125432);
+-- insert into dayattraction values (3, 125455);
 -- 초대
 insert into invite value (1, 'yujin');
 
@@ -345,8 +345,6 @@ values ('jungeun', 125489);
 
 -- 더미데이터 FOR 핫플레이스
 INSERT INTO hotplace (title, content, writer_id, latitude, longitude, img, address, name, sido_code)
-VALUES ('멀티캠퍼스 서울캠', '20반 최고', 'yujin', 37.50128609313050000, 127.03960466386200000, '1684763995603_logo.png', '서울 강남구 역삼동 718-5', '멀티캠퍼스 역삼', 1)
+VALUES ('멀티캠퍼스 서울캠', '20반 최고', 'yujin', 37.50128609313050000, 127.03960466386200000, '1684763995603_logo.png', '서울 강남구 역삼동 718-5', '멀티캠퍼스 역삼', 1);
 INSERT INTO hotplace (title, content, writer_id, latitude, longitude, img, address, name, sido_code)
-VALUES ('놀이동산', '재밌어요', 'my', 35.85322716591636000, 128.56658131032162000, '1684765030632_test.jpg', '대구 달서구 두류동 산 302-11', '대구이월드', 4)
-
-
+VALUES ('놀이동산', '재밌어요', 'my', 35.85322716591636000, 128.56658131032162000, '1684765030632_test.jpg', '대구 달서구 두류동 산 302-11', '대구이월드', 4);
