@@ -35,7 +35,7 @@ public class SwaggerConfig {
 		return new Docket(DocumentationType.SWAGGER_2)		// Swagger 2.0 기반의 문서 작성
 				.apiInfo(apiInfo) 							// 문서에 대한 정보를 설정한다.
 				.select()									// ApiSelectorBuilder를 반환하며 상세한 설정 처리
-				.paths(PathSelectors.ant("/**/likeapi/**"))
+				.paths(PathSelectors.ant("/**/travelapi/**"))
 				.build();									// Docket 객체 생성			
 	}
 }

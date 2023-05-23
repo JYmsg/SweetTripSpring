@@ -11,5 +11,6 @@ public interface UserService {
 	int insert(User user) throws SQLException;
 	int update(User user) throws SQLException;
 	List<User> selectAll() throws SQLException;
+	List<User> selectInviteAll(int travel_id) throws SQLException;
 	List<User> selectUsers(String keyword) throws SQLException;
 }

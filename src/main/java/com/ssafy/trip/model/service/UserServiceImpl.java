@@ -46,4 +46,9 @@ public class UserServiceImpl implements UserService{
 		return repo.selectUsers(keyword);
 	}
 
+	@Override
+	public List<User> selectInviteAll(int travel_id) throws SQLException {
+		return repo.selectInviteAll(travel_id);
+	}
+
 }

@@ -21,26 +21,38 @@ public class DayServiceImpl implements DayService {
 	private PlaceRepo Prepo;
 	
 	@Override
+	@Transactional
 	public int insert(Day day) throws SQLException {
-		return repo.insert(day);
+		int r = repo.insert(day);
+		if(r == 0) { // day 생성 실패.
+			return r;
+			
+		}
+		if(day.getPlaces() == null) return r;
+		for(int i=0; i<day.getPlaces().size(); i++) {
+			Place p = day.getPlaces().get(i);
+			repo.insertAttraction(day.getId(), p.getContent_id(), p.getStarttime(), p.getEndtime(), p.getMemo(), i);
+		}
+		return day.getId();
 	}
 	@Override
 	public int update(Day day) throws SQLException {
-		System.out.println("before = "+repo.selectAttraction(day.getId())+day);
-		List<Integer> atts = repo.selectAttraction(day.getId());
-		for(Place p : day.getPlaces()) {
-			if(!atts.contains(p.getContent_id())) {
-				System.out.println("place Add = "+p.getContent_id()+", Day = "+day.getId()); 
-				repo.insertAttraction(day.getId(), p.getContent_id());
+//		System.out.println("before = "+repo.selectAttraction(day.getId())+day);
+		List<Integer> atts = repo.selectAllAttraction(day.getId());
+		if(atts != null) {
+			for(int a : atts) {
+				if(!day.getPlaces().contains(new Place(a))) {
+					repo.deleteoneAttraction(day.getId(), a);
+				}
 			}
 		}
-		for(int a : atts) {
-			if(!day.getPlaces().contains(new Place(a))) {
-				System.out.println("place Del = "+a+", Day = "+day.getId());
-				repo.deleteoneAttraction(day.getId(), a);
+		repo.deleteAttraction(day.getId());
+		if(day.getPlaces() != null) {
+			for(int i=0; i<day.getPlaces().size(); i++) {
+				Place p = day.getPlaces().get(i);
+				repo.insertAttraction(day.getId(), p.getContent_id(), p.getStarttime(), p.getEndtime(), p.getMemo(), i);
 			}
 		}
-		System.out.println("after = "+repo.selectAttraction(day.getId())+day);
 		int r = repo.update(day);
 		if(r == 0) return 0;
 		return r;
@@ -53,35 +65,50 @@ public class DayServiceImpl implements DayService {
 	@Override
 	public Day select(int id) throws SQLException {
 		Day day = repo.select(id);
-		day.setAttractions(repo.selectAttraction(id));
-		for(int p: day.getAttractions()) {
-			day.getPlaces().add(Prepo.select(p));
+		List<Place> places = repo.selectAttraction(id);
+		for(Place p: places) {
+			Place any = Prepo.select(p.getContent_id());
+			any.setMemo(p.getMemo());
+			any.setStarttime(p.getStarttime());
+			any.setEndtime(p.getEndtime());
+			any.setTurn(p.getTurn());
+			day.getPlaces().add(any);
+			day.getAttractions().add(p.getContent_id());
 		}
 		return day;
 	}
 
 	@Override
 	public int insertAttraction(int id, int attraction_id) throws SQLException {
-		return repo.insertAttraction(id, attraction_id);
+		return repo.insertAttraction(id, attraction_id, "00:00", "00:00", "", 0);
 	}
-
-	@Override
-	public List<Integer> selectAttraction(int id) throws SQLException {
-		return repo.selectAttraction(id);
-	}
+//
+//	@Override
+//	public List<Integer> selectAttraction(int id) throws SQLException {
+//		return repo.selectAttraction(id);
+//	}
 
 	@Override
 	public List<Day> selectAll(int travel_id) throws SQLException {
 		List<Day> results = repo.selectAll(travel_id);
+		System.out.println("day - "+results);
 		for(Day result: results) {
-			System.out.println(result.getId());
-			result.setAttractions(repo.selectAttraction(result.getId()));
-			if(result.getAttractions() == null || result.getAttractions().size() == 0) continue;
-			List<Place> add = new ArrayList<>();
-			for(int p: result.getAttractions()) {
-				add.add(Prepo.select(p));
+			List<Place> places = repo.selectAttraction(result.getId());
+			System.out.println(places);
+			if(places == null || places.size() == 0) continue;
+			result.setPlaces(new ArrayList<Place>());
+			result.setAttractions(new ArrayList<Integer>());
+			for(Place p: places) {
+				Place any = Prepo.select(p.getContent_id());
+				if(p.getMemo() != null) any.setMemo(p.getMemo());
+				System.out.println("any - "+any);
+				any.setStarttime(p.getStarttime());
+				any.setEndtime(p.getEndtime());
+				any.setTurn(p.getTurn());
+				result.getPlaces().add(any);
+				result.getAttractions().add(p.getContent_id());
 			}
-			result.setPlaces(add);
+			System.out.println(result);
 		}
 		return results;
 	}
@@ -89,5 +116,14 @@ public class DayServiceImpl implements DayService {
 	@Override
 	public int deleteAttraction(int id) throws SQLException {
 		return repo.deleteAttraction(id);
+	}
+	@Override
+	public List<Integer> selectAttraction(int id) throws SQLException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	@Override
+	public Place selectoneAttraction(int day_id, int content_id) throws SQLException {
+		return repo.selectoneAttraction(day_id, content_id);
 	}
 }
