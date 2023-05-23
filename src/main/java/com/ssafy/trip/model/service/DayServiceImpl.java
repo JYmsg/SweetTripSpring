@@ -94,8 +94,7 @@ public class DayServiceImpl implements DayService {
 		System.out.println("day - "+results);
 		for(Day result: results) {
 			List<Place> places = repo.selectAttraction(result.getId());
-			System.out.println(places);
-			if(places == null || places.size() == 0) continue;
+			if(places == null) continue;
 			result.setPlaces(new ArrayList<Place>());
 			result.setAttractions(new ArrayList<Integer>());
 			for(Place p: places) {
@@ -108,7 +107,6 @@ public class DayServiceImpl implements DayService {
 				result.getPlaces().add(any);
 				result.getAttractions().add(p.getContent_id());
 			}
-			System.out.println(result);
 		}
 		return results;
 	}
