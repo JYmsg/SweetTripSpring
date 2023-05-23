@@ -305,9 +305,18 @@ insert into user value ('테스트', 'my', '86e41a3324104a4710f2a40ce65bee17a8a7
 -- 공지
 insert into notice (title, content, writer_id) values ('[공지사항] 공지사항입니다.', '공지사항을 전달드립니다.', 'admin');
 insert into notice (title, content, writer_id) values ('[공지사항] 이벤트 당첨자를 알려드립니다.', 'my님 축하드립니다.', 'admin');
+insert into notice (title, content, writer_id) values ('[공지사항] 주의사항 전달합니다.', '핫플레이스 이미지 하나 필수입니다.', 'admin');
+insert into notice (title, content, writer_id) values ('[공지사항] 휴가갑니다', '문의사항 못 받습니다.', 'admin');
+insert into notice (title, content, writer_id) values ('[공지사항] 쿠폰드려요', '거짓말입니다.', 'admin');
 -- QnA
 insert into notice (title, content, writer_id) values ('[QnA] 질문이 있습니다~', '오늘 점심이 궁금해용.', 'jungeun');
 insert into notice (title, content, writer_id) values ('[QnA] 이벤트 문의드려용', '누가 당첨인가요?', 'yujin');
+insert into notice (title, content, writer_id) values ('[QnA] 잘 모르겠어요', '그냥 모르겠어요', 'my');
+insert into notice (title, content, writer_id) values ('[QnA] 한번 보세요 일단', '어그로입니다.', 'my');
+insert into notice (title, content, writer_id) values ('[QnA] 방학때 뭐할까요?', '제주도 가자', 'my');
+insert into notice (title, content, writer_id) values ('[QnA] 그만하고싶습니다', '진심입니다.', 'yujin');
+insert into notice (title, content, writer_id) values ('[QnA] 월급관련', '조금만 더주세요', 'jungeun');
+insert into notice (title, content, writer_id) values ('[QnA] 관리자님~', '이름이뭔가요', 'yujin');
 -- 댓글
 insert into comment (content, pr, writer_id, notice_id) value ('로제떡볶이입니다.', 1, 'yujin', 3);
 insert into comment (content, pr, writer_id, notice_id) value ('언니 뭐 먹을거야?', 0, 'yujin', 3);
