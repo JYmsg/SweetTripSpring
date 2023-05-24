@@ -36,7 +36,7 @@ public class HotPlaceServiceImpl implements HotPlaceService {
 			// 파일을 저장할 위치 지정
 //			Resource res = resLoader.getResource("classpath:static/resources/upload");
 			
-			String uploadFolder = "C:/SSAFY/work_pjt/SweetTripVue/public/img/upload";
+			String uploadFolder = "C:/SSAFY/TripFinal/SweetTripVue/public/img/upload";
 			// 중복방지를 위해 파일 이름앞에 현재 시간 추가
 			hotplace.setOrgImg(System.currentTimeMillis() + "_" + file.getOriginalFilename());
 			// 파일 저장

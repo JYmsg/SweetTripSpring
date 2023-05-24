@@ -50,12 +50,9 @@ public class TravelRestController {
 	@GetMapping("/travel/one/{travel_id}")
 	public ResponseEntity<?> selectTravel(@PathVariable int travel_id) throws SQLException{
 		Travel travel = ts.select(travel_id);
-		System.out.println(travel);
 		if(travel != null) return new ResponseEntity<Travel> (travel, HttpStatus.OK);
 		else return new ResponseEntity<Void>(HttpStatus.NO_CONTENT);
 	}
-
-	
 	@PostMapping("/day")
 	public ResponseEntity<?> insert(@RequestBody Day day) throws SQLException{
 		int r = ds.insert(day);
@@ -88,9 +85,15 @@ public class TravelRestController {
 	}
 	@GetMapping("/travel/list/{user_id}")
 	public ResponseEntity<?> selectAllTravel(@PathVariable String user_id) throws SQLException{
-		System.out.println(user_id);
 		List<Travel> travels = ts.selectAll(user_id);
-		if(travels != null && travels.size() > 0) return new ResponseEntity<List<Travel>> (travels, HttpStatus.OK);
+		if(travels != null) return new ResponseEntity<List<Travel>> (travels, HttpStatus.OK);
+		else return new ResponseEntity<Void>(HttpStatus.NO_CONTENT);
+	}
+	@GetMapping("/travel/list")
+	public ResponseEntity<?> selectAllTravelList() throws SQLException{
+		List<Travel> travels = ts.selectAllList();
+		System.out.println(travels);
+		if(travels != null) return new ResponseEntity<List<Travel>> (travels, HttpStatus.OK);
 		else return new ResponseEntity<Void>(HttpStatus.NO_CONTENT);
 	}
 	@GetMapping("/day/list/{travel_id}")

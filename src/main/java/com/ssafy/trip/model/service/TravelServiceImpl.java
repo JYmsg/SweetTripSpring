@@ -90,6 +90,18 @@ public class TravelServiceImpl implements TravelService {
 		if(travels == null) return null;
 		for(Travel travel: travels) {
 			travel.setDays(svc.selectAll(travel.getId()));
+			travel.setUsers(usvc.selectInviteAll(travel.getId()));
+		}
+		return travels;
+	}
+
+	@Override
+	public List<Travel> selectAllList() throws SQLException {
+		List<Travel> travels = repo.selectAllList();
+		if(travels == null) return null;
+		for(Travel travel: travels) {
+			travel.setDays(svc.selectAll(travel.getId()));
+			travel.setUsers(usvc.selectInviteAll(travel.getId()));
 		}
 		return travels;
 	}

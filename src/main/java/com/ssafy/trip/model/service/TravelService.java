@@ -13,4 +13,5 @@ public interface TravelService {
 	int delete(int id) throws SQLException;
 	Travel select(int id) throws SQLException;
 	List<Travel> selectAll(String user_id) throws SQLException;
+	List<Travel> selectAllList() throws SQLException;
 }

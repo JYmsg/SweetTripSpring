@@ -15,4 +15,5 @@ public interface TravelRepo {
 	int invite(int id, String user_id) throws SQLException;
 	Travel select(int id) throws SQLException;
 	List<Travel> selectAll(String user_id) throws SQLException;
+	List<Travel> selectAllList() throws SQLException;
 }

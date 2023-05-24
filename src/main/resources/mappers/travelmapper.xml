@@ -16,6 +16,9 @@
 	<select id="selectAll" resultType="Travel">
 		select * from travel where user_id=#{user_id}
 	</select>
+	<select id="selectAllList" resultType="Travel">
+		select * from travel
+	</select>
 	<insert id="invite">
 		insert into invite values (#{id}, #{user_id})
 	</insert>
