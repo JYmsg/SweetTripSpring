@@ -38,13 +38,8 @@
 				WHERE sido_code=#{id}
 			</if>
 		</if>
-		<if test="sort=='write_time'">
-			ORDER BY write_time
-		</if>
 		<if test="sort!='none'">
-			<if test="sort!='write_time'">
-				ORDER BY ${sort} DESC
-			</if>
+			ORDER BY ${sort} DESC
 		</if>
 	</select>
 	
