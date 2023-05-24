@@ -61,8 +61,9 @@ public class UserServiceImpl implements UserService{
 	public String sendMail(String email) throws SQLException, AddressException {
 		String code = makeCode(), subject = "SweetTrip 이메일 인증 코드", msg = "";
 		
-        msg += "<h1 style=\"font-size: 30px; padding-right: 30px; padding-left: 30px;\">이메일 주소 확인</h1>";
-        msg += "<p style=\"font-size: 17px; padding-right: 30px; padding-left: 30px;\">아래 확인 코드를 SweetTrip 회원가입 창에 입력하세요.</p>";
+		msg += "<img width=\"120\" height=\"130\" style=\"margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-right: 30px; padding-left: 30px;\" src=\"https://www.logoyogo.com/web/wp-content/uploads/edd/2023/03/logoyogo-.jpg\" alt=\"\" loading=\"lazy\">";
+        msg += "<h1 style=\"color: #8cadf2; font-size: 30px; padding-right: 30px; padding-left: 30px;\">이메일 주소 확인</h1>";
+        msg += "<p style=\"color: #8cadf2; font-size: 17px; padding-right: 30px; padding-left: 30px;\">아래 확인 코드를 SweetTrip 회원가입 창에 입력하세요.</p>";
         msg += "<div style=\"padding-right: 30px; padding-left: 30px; margin: 32px 0 40px;\"><table style=\"border-collapse: collapse; border: 0; background-color: #F4F4F4; height: 70px; table-layout: fixed; word-wrap: break-word; border-radius: 6px;\"><tbody><tr><td style=\"text-align: center; vertical-align: middle; font-size: 30px;\">";
         msg += code;
         msg += "</td></tr></tbody></table></div>";
