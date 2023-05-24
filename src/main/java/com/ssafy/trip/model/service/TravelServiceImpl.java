@@ -115,5 +115,13 @@ public class TravelServiceImpl implements TravelService {
 		}
 		return travels;
 	}
+	@Override
+	public int invite(int id, String user_id) throws SQLException {
+		return repo.invite(id, user_id);
+	}
+	@Override
+	public int inviteDelete(int id, String user_id) throws SQLException {
+		return repo.inviteDelete(id, user_id);
+	}
 
 }

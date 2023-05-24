@@ -32,7 +32,18 @@ public class TravelRestController {
 	@Autowired
 	private DayService ds;
 	
-	
+	@GetMapping("/travel/{user_id}/{travel_id}")
+	public ResponseEntity<?> invite(@PathVariable String user_id, @PathVariable int travel_id) throws Exception{
+		int r = ts.invite(travel_id, user_id);
+		if(r >= 0) return new ResponseEntity<Integer>(r, HttpStatus.CREATED); // 201
+		else       return new ResponseEntity<Void>   (HttpStatus.NO_CONTENT); // 204
+	}
+	@DeleteMapping("/travel/{user_id}/{travel_id}")
+	public ResponseEntity<?> inviteDelete(@PathVariable String user_id, @PathVariable int travel_id) throws Exception{
+		int r = ts.inviteDelete(travel_id, user_id);
+		if(r >= 0) return new ResponseEntity<Integer>(r, HttpStatus.CREATED); // 201
+		else       return new ResponseEntity<Void>   (HttpStatus.NO_CONTENT); // 204
+	}
 	@PostMapping("/travel")
 	public ResponseEntity<?> insert(@RequestBody Travel travel) throws Exception{
 		int r = ts.insert(travel);

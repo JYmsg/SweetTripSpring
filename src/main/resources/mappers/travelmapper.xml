@@ -10,6 +10,9 @@
 	<delete id="delete">
 		delete from travel where id=#{id}
 	</delete>
+	<delete id="inviteDelete">
+		delete from invite where travel_id=#{id} and user_id=#{user_id}
+	</delete>
 	<select id="select" resultType="Travel">
 		select * from travel where id=#{id}
 	</select>
