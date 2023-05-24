@@ -25,8 +25,7 @@ public class DayServiceImpl implements DayService {
 	public int insert(Day day) throws SQLException {
 		int r = repo.insert(day);
 		if(r == 0) { // day 생성 실패.
-			return r;
-			
+			return r;			
 		}
 		if(day.getPlaces() == null) return r;
 		for(int i=0; i<day.getPlaces().size(); i++) {

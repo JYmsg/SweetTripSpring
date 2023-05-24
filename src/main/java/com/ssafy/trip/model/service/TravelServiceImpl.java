@@ -46,7 +46,20 @@ public class TravelServiceImpl implements TravelService {
 		if(id == 1) return travel.getId();
 		return -1;
 	}
-	
+	@Override
+	@Transactional
+	public int insertCopy(Travel travel)  throws Exception{
+		int id = repo.insert(travel);
+		for(User user: travel.getUsers()) {
+			repo.invite(travel.getId(), user.getId());
+		}
+		for(Day day: travel.getDays()) {
+			day.setTravel_id(travel.getId());
+			svc.insert(day);
+		}
+		if(id == 1) return travel.getId();
+		return -1;
+	}
 	@Override
 	@Transactional
 	public int update(Travel travel) throws SQLException {
@@ -54,16 +67,13 @@ public class TravelServiceImpl implements TravelService {
 		List<Day> travelDays = travel.getDays(); // 업데이트할 정보
 		for(int i=0; i<travel.getDays().size(); i++) {
 			if(!days.contains(travelDays.get(i))) {
-//				System.out.println("insertDay = "+travelDays.get(i));
 				svc.insert(travelDays.get(i));
 			}else {
-//				System.out.println("updateDay = "+travelDays.get(i));
 				svc.update(travelDays.get(i));
 			}		
 		}
 		for(Day d : days) {
 			if(!travelDays.contains(d)) {
-//				System.out.println("delteDay = "+d);
 				svc.delete(d.getId());
 			}
 		}

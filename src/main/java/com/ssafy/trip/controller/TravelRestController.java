@@ -39,6 +39,14 @@ public class TravelRestController {
 		if(r >= 0) return new ResponseEntity<Integer>(r, HttpStatus.CREATED); // 201
 		else       return new ResponseEntity<Void>   (HttpStatus.NO_CONTENT); // 204
 	}
+	@PostMapping("/copytravel")
+	public ResponseEntity<?> insertCopy(@RequestBody Travel travel) throws Exception{
+		System.out.println(travel);
+		int r = ts.insertCopy(travel);
+		System.out.println(travel);
+		if(r >= 0) return new ResponseEntity<Integer>(r, HttpStatus.CREATED); // 201
+		else       return new ResponseEntity<Void>   (HttpStatus.NO_CONTENT); // 204
+	}
 	
 	@PutMapping("/travel")
 	public ResponseEntity<?> update(@RequestBody Travel travel) throws SQLException{

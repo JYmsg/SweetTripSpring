@@ -9,6 +9,7 @@ import com.ssafy.trip.dto.Travel;
 
 public interface TravelService {
 	int insert(Travel travel) throws Exception;
+	int insertCopy(Travel travel)  throws Exception;
 	int update(Travel travel) throws SQLException;
 	int delete(int id) throws SQLException;
 	Travel select(int id) throws SQLException;
