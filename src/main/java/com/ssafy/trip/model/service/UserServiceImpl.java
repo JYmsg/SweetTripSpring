@@ -39,7 +39,6 @@ public class UserServiceImpl implements UserService{
 
 	@Override
 	public int insert(User user) throws SQLException {
-		System.out.println(user);
 		return repo.insert(user);
 	}
 
@@ -93,6 +92,11 @@ public class UserServiceImpl implements UserService{
 	}
 	public List<User> selectInviteAll(int travel_id) throws SQLException {
 		return repo.selectInviteAll(travel_id);
+	}
+
+	@Override
+	public int updatePassword(User user) throws SQLException {
+		return repo.updatePassword(user);
 	}
 
 }

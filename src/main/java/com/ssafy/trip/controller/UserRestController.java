@@ -46,15 +46,13 @@ public class UserRestController {
 	}
 	
 	@PutMapping("/user")
-	public ResponseEntity<?> update(@RequestBody User user, HttpSession session) throws Exception{
-		System.out.println(user);
-		User update = (User)session.getAttribute("userinfo");
-		int r = us.update(user);
+	public ResponseEntity<?> update(@RequestBody User user) throws Exception{
+		String salt = SHA256Util.generateSalt();
+		String password = SHA256Util.getEncrypt(user.getPassword(), salt);
+		user.setSalt(salt);
+		user.setPassword(password);
+		int r = us.updatePassword(user);
 		if(r==1) {
-			update.setAge(user.getAge());
-			update.setEmail(user.getEmail());
-			update.setName(user.getName());
-			session.setAttribute("userinfo", update);
 			return new ResponseEntity<Integer>(r, HttpStatus.CREATED);
 		}
 		return new ResponseEntity<Void> (HttpStatus.NO_CONTENT);
@@ -88,17 +86,11 @@ public class UserRestController {
 	public ResponseEntity<?> login(@RequestBody User user, HttpSession session) throws Exception{
 		User loginUser = us.select(user.getId());
 		System.out.println(loginUser);
-//		if(loginUser != null && loginUser.getPassword().equals(user.getPassword())) {
-//			session.setAttribute("userinfo", loginUser);
-//			return new ResponseEntity<User>(loginUser, HttpStatus.OK);
-//		}
 		String password = SHA256Util.getEncrypt(user.getPassword(), loginUser.getSalt());
 		if(loginUser != null && loginUser.getPassword().equals(password)) {
 			session.setAttribute("userinfo", loginUser);
-			System.out.println("진자");
 			return new ResponseEntity<User>(loginUser, HttpStatus.OK);
 		}
-		System.out.println("가짜");
 		return new ResponseEntity<User> (loginUser, HttpStatus.NO_CONTENT);
 	}
 	

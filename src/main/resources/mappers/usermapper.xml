@@ -17,6 +17,11 @@
 		VALUES (#{name}, #{id}, #{password}, #{salt}, #{email}, #{age})
 	</insert>
 
+	<update id="updatePassword">
+		UPDATE user
+		SET salt=#{salt}, password=#{password}
+		WHERE id=#{id}
+	</update>
 	<update id="update">
 		UPDATE user
 		SET name=#{name}, email=#{email}, age=#{age}
