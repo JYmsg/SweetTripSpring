@@ -5,7 +5,7 @@
 		insert into travel (title, startdate, enddate, user_id) values(#{title}, #{startdate}, #{enddate}, #{user_id})
 	</insert>
 	<update id="update">
-		update travel set title=#{title}, startdate=#{startdate}, enddate=#{enddate}, save=1 where id=#{id}
+		update travel set title=#{title}, startdate=#{startdate}, enddate=#{enddate}, save=#{save} where id=#{id}
 	</update>
 	<delete id="delete">
 		delete from travel where id=#{id}
