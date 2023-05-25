@@ -21,15 +21,13 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.ssafy.trip.dto.HotPlace;
-import com.ssafy.trip.dto.Review;
 import com.ssafy.trip.model.service.HotPlaceService;
 import com.ssafy.trip.model.service.NoticeService;
-import com.ssafy.trip.model.service.ReviewService;
 
 @RestController
 @CrossOrigin("*")
-@RequestMapping("/hotplaceapi")
-public class HotPlaceRestController {
+@RequestMapping("/hotplaceapi") 
+public class HotPlaceRestController { 
 
 	@Autowired
 	private HotPlaceService hs;

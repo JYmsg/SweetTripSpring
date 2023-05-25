@@ -20,23 +20,13 @@ public class CartServiceImpl implements CartService {
 	private CartRepo repo;
 	@Autowired
 	private PlaceRepo srepo;
-	@Autowired
-	private HotPlaceRepo hrepo;
 	
-	@Override
-	public int inserthot(Cart cart) throws SQLException {
-		return repo.inserthot(cart);
-	}
 
 	@Override
 	public int insertplace(Cart cart) throws SQLException {
 		return repo.insertplace(cart);
 	}
 
-	@Override
-	public int deletehot(Cart cart) throws SQLException {
-		return repo.deletehot(cart);
-	}
 
 	@Override
 	public int deleteplace(Cart cart) throws SQLException {

@@ -199,30 +199,6 @@ DEFAULT CHARACTER SET = utf8mb4
 COLLATE = utf8mb4_0900_ai_ci;
 
 
--- -----------------------------------------------------
--- Table `tripdb`.`review`
--- -----------------------------------------------------
-drop table if exists review;
-CREATE TABLE IF NOT EXISTS `tripdb`.`review` (
-  `title` VARCHAR(100) NOT NULL,
-  `content` VARCHAR(2000) NULL DEFAULT NULL,
-  `img` VARCHAR(2000) NULL DEFAULT NULL,
-  `hit` INT NULL DEFAULT '0',
-  `write_time` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `writer_id` VARCHAR(20) NOT NULL,
-  `travel_id` INT NOT NULL,
-  PRIMARY KEY (`writer_id`, `travel_id`),
-  INDEX `fk_review_user1_idx` (`writer_id` ASC) VISIBLE,
-  INDEX `fk_review_travel1_idx` (`travel_id` ASC) VISIBLE,
-  CONSTRAINT `fk_review_travel1`
-    FOREIGN KEY (`travel_id`)
-    REFERENCES `tripdb`.`travel` (`id`) on delete cascade,
-  CONSTRAINT `fk_review_user1`
-    FOREIGN KEY (`writer_id`)
-    REFERENCES `tripdb`.`user` (`id`) on delete cascade)
-ENGINE = InnoDB
-DEFAULT CHARACTER SET = utf8mb4
-COLLATE = utf8mb4_0900_ai_ci;
 
 -- -----------------------------------------------------
 -- Table `tripdb`.`cartAtt`
@@ -242,24 +218,6 @@ CREATE TABLE IF NOT EXISTS `tripdb`.`cartAtt` (
     REFERENCES `tripdb`.`user` (`id`) on delete cascade)
 ENGINE = InnoDB;
 
-
--- -----------------------------------------------------
--- Table `tripdb`.`cartHot`
--- -----------------------------------------------------
-drop table if exists cartHot;
-CREATE TABLE IF NOT EXISTS `tripdb`.`cartHot` (
-  `hotplace_id` INT NOT NULL,
-  `user_id` VARCHAR(20) NOT NULL,
-  INDEX `fk_cartHot_hotplace1_idx` (`hotplace_id` ASC) VISIBLE,
-  INDEX `fk_cartHot_user2_idx` (`user_id` ASC) VISIBLE,
-  PRIMARY KEY (`hotplace_id`, `user_id`),
-  CONSTRAINT `fk_cartHot_hotplace1`
-    FOREIGN KEY (`hotplace_id`)
-    REFERENCES `tripdb`.`hotplace` (`id`) on delete cascade,
-  CONSTRAINT `fk_cartHot_user2`
-    FOREIGN KEY (`user_id`)
-    REFERENCES `tripdb`.`user` (`id`) on delete cascade)
-ENGINE = InnoDB;
 
 -- -----------------------------------------------------
 -- Table `tripdb`.`comment`

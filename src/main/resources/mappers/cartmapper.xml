@@ -1,26 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.ssafy.trip.model.repo.CartRepo">
-	<insert id="inserthot">
-		INSERT INTO cartHot (user_id, hotplace_id)
-		VALUES (#{user_id}, #{hotplace_id})
-	</insert>
 	<insert id="insertplace">
 		INSERT INTO cartAtt (user_id, attraction_id)
 		VALUES (#{user_id}, #{attraction_id})
 	</insert>
-	<delete id="deletehot">
-		delete from cartHot
-		where user_id = #{user_id} and hotplace_id = #{hotplace_id};
-	</delete>
 	<delete id="deleteplace">
-		delete from cartHot
+		delete from cartAtt
 		where user_id = #{user_id} and attraction_id = #{attraction_id};
 	</delete>
-	<select id="selecthot" resultType="Cart">
-		select * from cartHot
-		where user_id = #{id}
-	</select>
 	<select id="selectAllplace" resultType="Cart">
 		select * from cartAtt
 		where user_id = #{id}
@@ -30,5 +18,4 @@
 		from cartAtt
 		where user_id=#{user_id} and attraction_id=#{attraction_id}
 	</select>
-
 </mapper>

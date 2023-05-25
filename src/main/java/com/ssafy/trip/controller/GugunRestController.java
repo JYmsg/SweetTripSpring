@@ -17,10 +17,9 @@ import org.springframework.web.bind.annotation.RestController;
 import com.ssafy.trip.dto.User;
 import com.ssafy.trip.dto.Gugun;
 import com.ssafy.trip.dto.HotPlace;
-import com.ssafy.trip.dto.Review;
+
 import com.ssafy.trip.model.service.GugunService;
 import com.ssafy.trip.model.service.NoticeService;
-import com.ssafy.trip.model.service.ReviewService;
 import com.ssafy.trip.model.service.UserService;
 import com.ssafy.trip.util.SHA256Util;
 

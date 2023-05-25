@@ -31,24 +31,10 @@ public class CartRestController {
 		if(carts != null) return new ResponseEntity<List<Cart>>(carts, HttpStatus.OK);
 		return new ResponseEntity<Void>(HttpStatus.NO_CONTENT);
 	}
-	@PostMapping("/cart/hotplace")
-	public ResponseEntity<?> inserthot(@RequestBody Cart cart) throws Exception{
-		System.out.println(cart);
-		int r = cs.inserthot(cart);
-		if(r==1) return new ResponseEntity<Integer>(r, HttpStatus.CREATED);
-		return new ResponseEntity<Void>(HttpStatus.NO_CONTENT);
-	}
 	@PostMapping("/cart/place")
 	public ResponseEntity<?> insertatt(@RequestBody Cart cart) throws Exception{
 		System.out.println("place " + cart);
 		int r = cs.insertplace(cart);
-		if(r==1) return new ResponseEntity<Integer>(r, HttpStatus.CREATED);
-		return new ResponseEntity<Void>(HttpStatus.NO_CONTENT);
-	}
-	@DeleteMapping("/cart/hotplace")
-	public ResponseEntity<?> deletehot(@RequestBody Cart cart) throws Exception{
-		System.out.println(cart);
-		int r = cs.deletehot(cart);
 		if(r==1) return new ResponseEntity<Integer>(r, HttpStatus.CREATED);
 		return new ResponseEntity<Void>(HttpStatus.NO_CONTENT);
 	}
