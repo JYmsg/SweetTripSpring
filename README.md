@@ -1,92 +1,191 @@
-# TripSpring
+<div align="center">
+<a href="https://www.youtube.com/watch?v=E7CBdI0bE7s&source_ve_path=MjM4NTE&feature=emb_title"><img src="https://private-user-images.githubusercontent.com/101235186/264998597-326457d4-9292-4475-9ac7-51fe415110b1.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTEiLCJleHAiOjE2OTM1Njg1NDIsIm5iZiI6MTY5MzU2ODI0MiwicGF0aCI6Ii8xMDEyMzUxODYvMjY0OTk4NTk3LTMyNjQ1N2Q0LTkyOTItNDQ3NS05YWM3LTUxZmU0MTUxMTBiMS5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBSVdOSllBWDRDU1ZFSDUzQSUyRjIwMjMwOTAxJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDIzMDkwMVQxMTM3MjJaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1kOTNjM2I5MWY3NDYwM2M0YTUwOGQ1YjI1ZmRjMzc1M2Y2YTNkOGNjZGI4ZWM0OGExNGI3MGEzMDg0MGNkMzBkJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZhY3Rvcl9pZD0wJmtleV9pZD0wJnJlcG9faWQ9MCJ9.MnmYtGE_gWfEGgOsK04wEovzrRLfJwOUT2SIO477-rY"
+  alt="Sweet Trip 로고"
+/>
+</a>
+<p>☝로고를 클릭하면 시연 영상으로 이동합니다</p>
+</div>
 
+<br>
 
+# ✈️ SWEET TRIP, 당신의 여행 플래너
 
-## Getting started
+### ⚡️ 프로젝트 개요
 
-To make it easy for you to get started with GitLab, here's a list of recommended next steps.
+- 행복하고 편리한 여행을 위해 여행 계획 페이지를 제공하는 웹 사이트
+- 서비스 명 : Sweet Trip
 
-Already a pro? Just edit this README.md and make it your own. Want to make it easy? [Use the template at the bottom](#editing-this-readme)!
+<br>
 
-## Add your files
+### 📆 프로젝트 일정
 
-- [ ] [Create](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#create-a-file) or [upload](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#upload-a-file) files
-- [ ] [Add files using the command line](https://docs.gitlab.com/ee/gitlab-basics/add-file.html#add-a-file-using-the-command-line) or push an existing Git repository with the following command:
+- 2023.5.8 ~ 2023.5.26 (3주)
 
-```
-cd existing_repo
-git remote add origin https://lab.ssafy.com/evecomcom98/tripspring.git
-git branch -M master
-git push -uf origin master
-```
+<br>
 
-## Integrate with your tools
+### 🔧 기술 스택
 
-- [ ] [Set up project integrations](https://lab.ssafy.com/evecomcom98/tripspring/-/settings/integrations)
+### Back-end
 
-## Collaborate with your team
+![Java](https://img.shields.io/badge/Java-yellow.svg?&style=for-the-badge&logo=java&logoColor=#3776AB)
+![Spring](https://img.shields.io/badge/Spring-6DB33F.svg?&style=for-the-badge&logo=Spring&logoColor=white)
+![Spring Boot](https://img.shields.io/badge/Spring%20Boot-6DB33F.svg?&style=for-the-badge&logo=Spring%20Boot&logoColor=white)
 
-- [ ] [Invite team members and collaborators](https://docs.gitlab.com/ee/user/project/members/)
-- [ ] [Create a new merge request](https://docs.gitlab.com/ee/user/project/merge_requests/creating_merge_requests.html)
-- [ ] [Automatically close issues from merge requests](https://docs.gitlab.com/ee/user/project/issues/managing_issues.html#closing-issues-automatically)
-- [ ] [Enable merge request approvals](https://docs.gitlab.com/ee/user/project/merge_requests/approvals/)
-- [ ] [Automatically merge when pipeline succeeds](https://docs.gitlab.com/ee/user/project/merge_requests/merge_when_pipeline_succeeds.html)
+### Front-end
 
-## Test and Deploy
+![React](https://img.shields.io/badge/Vue.js-4FC08D.svg?&style=for-the-badge&logo=Vue.js&logoColor=white)
 
-Use the built-in continuous integration in GitLab.
+### DataBase
 
-- [ ] [Get started with GitLab CI/CD](https://docs.gitlab.com/ee/ci/quick_start/index.html)
-- [ ] [Analyze your code for known vulnerabilities with Static Application Security Testing(SAST)](https://docs.gitlab.com/ee/user/application_security/sast/)
-- [ ] [Deploy to Kubernetes, Amazon EC2, or Amazon ECS using Auto Deploy](https://docs.gitlab.com/ee/topics/autodevops/requirements.html)
-- [ ] [Use pull-based deployments for improved Kubernetes management](https://docs.gitlab.com/ee/user/clusters/agent/)
-- [ ] [Set up protected environments](https://docs.gitlab.com/ee/ci/environments/protected_environments.html)
+![MySQL](https://img.shields.io/badge/MySQL-4479A1.svg?&style=for-the-badge&logo=MySQL&logoColor=white)
 
-***
+### Collaboration Tools
 
-# Editing this README
+![Notion](https://img.shields.io/badge/Notion-000000.svg?&style=for-the-badge&logo=Notion&logoColor=로고색상)
+![Mattermost](https://img.shields.io/badge/Mattermost-0058CC.svg?&style=for-the-badge&logo=Mattermost&logoColor=로고색상)
 
-When you're ready to make this README your own, just edit this file and use the handy template below (or feel free to structure it however you want - this is just a starting point!). Thank you to [makeareadme.com](https://www.makeareadme.com/) for this template.
+### Configuration Management
 
-## Suggestions for a good README
-Every project is different, so consider which of these sections apply to yours. The sections used in the template are suggestions for most open source projects. Also keep in mind that while a README can be too long and detailed, too long is better than too short. If you think your README is too long, consider utilizing another form of documentation rather than cutting out information.
+![GitLab](https://img.shields.io/badge/Gitlab-FC6D26.svg?&style=for-the-badge&logo=Gitlab&logoColor=#FC6D26)
 
-## Name
-Choose a self-explaining name for your project.
+---
 
-## Description
-Let people know what your project can do specifically. Provide context and add a link to any reference visitors might be unfamiliar with. A list of Features or a Background subsection can also be added here. If there are alternatives to your project, this is a good place to list differentiating factors.
+<br><br>
 
-## Badges
-On some READMEs, you may see small images that convey metadata, such as whether or not all the tests are passing for the project. You can use Shields to add some to your README. Many services also have instructions for adding a badge.
+# 목차
 
-## Visuals
-Depending on what you are making, it can be a good idea to include screenshots or even a video (you'll frequently see GIFs rather than actual videos). Tools like ttygif can help, but check out Asciinema for a more sophisticated method.
+1. [**기획 배경**](#🎉기획-배경)
+2. [**기능 소개**](#🔗기능-소개)
+3. [**시연 영상**](#🎵시연-영상)
+4. [**프로젝트 산출물**](#🎈프로젝트-산출물)
+5. [**팀원 소개**](#✨팀원-소개)
 
-## Installation
-Within a particular ecosystem, there may be a common way of installing things, such as using Yarn, NuGet, or Homebrew. However, consider the possibility that whoever is reading your README is a novice and would like more guidance. Listing specific steps helps remove ambiguity and gets people to using your project as quickly as possible. If it only runs in a specific context like a particular programming language version or operating system or has dependencies that have to be installed manually, also add a Requirements subsection.
+<br><br>
 
-## Usage
-Use examples liberally, and show the expected output if you can. It's helpful to have inline the smallest example of usage that you can demonstrate, while providing links to more sophisticated examples if they are too long to reasonably include in the README.
+# 🎉기획 배경
 
-## Support
-Tell people where they can go to for help. It can be any combination of an issue tracker, a chat room, an email address, etc.
+## 배경
 
-## Roadmap
-If you have ideas for releases in the future, it is a good idea to list them in the README.
+여행에서 가장 중요한 것은 무엇일까요?
+식당, 숙소 등 대답은 사람마다 다를 것입니다.
+저희는 그 중 여행 기록에 대해 주목하였습니다.
+그래서 탄생한 Sweet Trip은 여행 일정과 기록을 돕는 플래너로 친구들과 함께 간편하게 여행 일정을 공유하고 관리해줍니다.
+또한 진행 중이거나 종료된 여행을 마이페이지에 캘린더 형태로 확인할 수 있습니다.
 
-## Contributing
-State if you are open to contributions and what your requirements are for accepting them.
+<br>
 
-For people who want to make changes to your project, it's helpful to have some documentation on how to get started. Perhaps there is a script that they should run or some environment variables that they need to set. Make these steps explicit. These instructions could also be useful to your future self.
+## 의의
 
-You can also document commands to lint the code or run tests. These steps help to ensure high code quality and reduce the likelihood that the changes inadvertently break something. Having instructions for running tests is especially helpful if it requires external setup, such as starting a Selenium server for testing in a browser.
+Sweet Trip으로 무엇을 얻을 수 있을까요?
 
-## Authors and acknowledgment
-Show your appreciation to those who have contributed to the project.
+1. 드로그 앤 드랍 방식으로 간편하게 여행 기록을 세울 수 있습니다.
+2. 카카오톡 공유와 사이트 내 공유를 통해 친구들과 여행 계획을 간편하게 공유할 수 있습니다.
+3. 다른 사람들의 여행 기록을 확인하고 따라할 수 있습니다.
+4. 이러한 여행 기록들은 마이페이지에서 확인할 수 있습니다.
 
-## License
-For open source projects, say how it is licensed.
+<br><br>
 
-## Project status
-If you have run out of energy or time for your project, put a note at the top of the README saying that development has slowed down or stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or owner, allowing your project to keep going. You can also make an explicit request for maintainers.
+# 🔗기능 소개
+
+<div align="center">
+ <table>
+    <tr>
+      <td align="center" style="font-weight: bold; font-size: 18;">로그인 페이지</td>
+    </tr>
+    <tr>
+      <td align="center"><img src="https://github.com/fluffymn/readme-test/assets/55385934/f3324c96-e216-453d-84e0-5dd9cf1a9a68" /></td>
+    </tr>
+        <tr>
+      <td align="center">로그인 후 자동으로 메인 화면 접속</td>
+    </tr>
+    <tr>
+      <td align="center" style="font-weight: bold; font-size: 18;">메인 페이지</td>
+    </tr>
+    <tr>
+      <td align="center"><img src="https://github.com/fluffymn/readme-test/assets/55385934/de5911ee-24e8-4d11-bc78-cde9bc1e6360" /></td>
+    </tr>
+    <tr>
+      <td align="center">'버블 만들기' 버튼으로 메시지 작성 가능<br>답장을 받을 경우 분홍색 비눗방울로 메시지가 나타남</td>
+    </tr>
+    <tr>
+      <td align="center" style="font-weight: bold; font-size: 18;">여행 등록 모달</td>
+    </tr>
+    <tr>
+      <td align="center"><img src="https://github.com/fluffymn/readme-test/assets/55385934/9dc8e364-23c2-4eb1-b494-8b55eccf3e10" /></td>
+    </tr>
+    <tr>
+      <td align="center">메인 화면의 왼쪽 하단의 '?' 버튼을 터치하여<br>서비스 튜토리얼 확인 가능</td>
+    </tr>
+    <tr>
+      <td align="center" style="font-weight: bold; font-size: 18;">여행 계획 페이지</td>
+    </tr>
+    <tr>
+      <td align="center"><img src="https://github.com/fluffymn/readme-test/assets/55385934/665f18f2-8dbe-4b8f-a2c9-d12a0608cdba" /></td>
+    </tr>
+    <tr>
+      <td align="center">친구의 메인화면 오른쪽 하단의 '★' 버튼을 터치하여 즐겨찾기에 추가 가능<br>자신의 메인 화면의 오른쪽 상단의 'My' 버튼을 터치하여<br>마이 페이지로 접속<br>'즐겨찾기' 탭에서 친구들 확인 가능</td>
+    </tr>
+    <tr>
+      <td align="center" style="font-weight: bold; font-size: 18;">여행 검색 페이지</td>
+    </tr>
+    <tr>
+      <td align="center"><img src="https://github.com/fluffymn/readme-test/assets/55385934/337b67ca-2e81-4c00-b92a-33d2ff727cb7" /></td>
+    </tr>
+        <tr>
+      <td align="center">메인 화면의 오른쪽 상단의 'My' 버튼을 터치하여<br>마이페이지 접속 가능<br>마이페이지의 오른쪽 상단의 'Settings' 버튼을 터치하여<br>설정페이지 접속 가능
+      <br>프로필 수정 및 로그아웃, 탈퇴, 고객센터 문의 가능</td>
+    </tr>
+    <tr>
+      <td align="center" style="font-weight: bold; font-size: 18;">마이페이지(나만의 장소)</td>
+    </tr>
+    <tr>
+      <td align="center"><img src="https://github.com/fluffymn/readme-test/assets/55385934/337b67ca-2e81-4c00-b92a-33d2ff727cb7" /></td>
+    </tr>
+        <tr>
+      <td align="center">메인 화면의 오른쪽 상단의 'My' 버튼을 터치하여<br>마이페이지 접속 가능<br>마이페이지의 오른쪽 상단의 'Settings' 버튼을 터치하여<br>설정페이지 접속 가능
+      <br>프로필 수정 및 로그아웃, 탈퇴, 고객센터 문의 가능</td>
+    </tr>
+    <tr>
+      <td align="center" style="font-weight: bold; font-size: 18;">마이페이지(캘린더)</td>
+    </tr>
+    <tr>
+      <td align="center"><img src="https://github.com/fluffymn/readme-test/assets/55385934/337b67ca-2e81-4c00-b92a-33d2ff727cb7" /></td>
+    </tr>
+        <tr>
+      <td align="center">메인 화면의 오른쪽 상단의 'My' 버튼을 터치하여<br>마이페이지 접속 가능<br>마이페이지의 오른쪽 상단의 'Settings' 버튼을 터치하여<br>설정페이지 접속 가능
+      <br>프로필 수정 및 로그아웃, 탈퇴, 고객센터 문의 가능</td>
+    </tr>
+ </table>
+</div>
+
+<br><br>
+
+# 🎵시연 영상
+
+- [시연 영상](https://www.youtube.com/watch?v=E7CBdI0bE7s&source_ve_path=MjM4NTE&feature=emb_title)
+
+<br><br>
+
+# 🎈프로젝트 산출물
+
+- [📃 발표 자료](https://drive.google.com/file/d/1potlI5Di7i7thlScLRnVT_Q1TVpCkZEy/view?usp=sharing)
+- [💿 ERD](https://private-user-images.githubusercontent.com/101235186/265005150-617e212b-02ec-4141-8536-eab7fd0ad71e.PNG?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTEiLCJleHAiOjE2OTM1NjcxMTQsIm5iZiI6MTY5MzU2NjgxNCwicGF0aCI6Ii8xMDEyMzUxODYvMjY1MDA1MTUwLTYxN2UyMTJiLTAyZWMtNDE0MS04NTM2LWVhYjdmZDBhZDcxZS5QTkc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBSVdOSllBWDRDU1ZFSDUzQSUyRjIwMjMwOTAxJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDIzMDkwMVQxMTEzMzRaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT00OTlmZmQ4YjFiMmY1YTc1MWQ3MzRiMzZmNDIzYTNmNzM2YzRkOGEwNDljNWI5NWQ2ZjgwNWNiZTFhNWU4Mjg3JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZhY3Rvcl9pZD0wJmtleV9pZD0wJnJlcG9faWQ9MCJ9.-bXDVJjx0fCgEdEPpHHqiiFG7Uaw3rC35d_nu1BFf2g)
+
+<br><br>
+
+# ✨팀원 소개
+
+  <table align="center">
+    <tr>
+      <td align="center"><img src="https://private-user-images.githubusercontent.com/101235186/265007798-8db1d6d2-5789-4269-9a48-4a50035b1ff3.jpg?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTEiLCJleHAiOjE2OTM1NjgxNDgsIm5iZiI6MTY5MzU2Nzg0OCwicGF0aCI6Ii8xMDEyMzUxODYvMjY1MDA3Nzk4LThkYjFkNmQyLTU3ODktNDI2OS05YTQ4LTRhNTAwMzViMWZmMy5qcGc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBSVdOSllBWDRDU1ZFSDUzQSUyRjIwMjMwOTAxJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDIzMDkwMVQxMTMwNDhaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT0xNjY1ZGQyZWMyMDUyNGM5YmMwZmQ0YjZhOGMyM2M4ZjNhZTRmYTgxNjU2MjcyMTI0MzBlMDdkOGYxZDY1ZGY4JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZhY3Rvcl9pZD0wJmtleV9pZD0wJnJlcG9faWQ9MCJ9.1scsXZGXHAR4gib5oIPqhvvVPx5Wb33-XcYKLmdopPo" width="160"></td>
+      <td align="center"><img src="https://private-user-images.githubusercontent.com/101235186/265007862-dac7665c-79a0-43e2-a6bc-c28852f72b05.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTEiLCJleHAiOjE2OTM1NjgxNDgsIm5iZiI6MTY5MzU2Nzg0OCwicGF0aCI6Ii8xMDEyMzUxODYvMjY1MDA3ODYyLWRhYzc2NjVjLTc5YTAtNDNlMi1hNmJjLWMyODg1MmY3MmIwNS5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBSVdOSllBWDRDU1ZFSDUzQSUyRjIwMjMwOTAxJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDIzMDkwMVQxMTMwNDhaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1kYWRlODcwNzJiZTQ1MjcxNWJiYzAxYTFlZGIwNTA5NzQ0ODRkZTU4M2RkNDQ0YWE4YjM5N2I2NTc5ZTA1MTExJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZhY3Rvcl9pZD0wJmtleV9pZD0wJnJlcG9faWQ9MCJ9.RECt08RVecH1vM0EtrnlRJ5R85eRA2JZQHh4yu8PFVA" width="160"></td>
+    </tr>
+    <tr>
+      <td align="center">김유진</td>
+      <td align="center">박정은</td>
+    </tr>
+    <tr>
+      <td align="center"><a href="https://github.com/Yujin830" target="_blank">@Yujin830</a></td>
+      <td align="center"><a href="https://github.com/jungeunevepark" target="_blank" width="160">@jungeunevepark</a></td>
+    </tr>
+  </table>
