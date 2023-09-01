@@ -1,5 +1,5 @@
 <div align="center">
-<a href="https://www.youtube.com/watch?v=E7CBdI0bE7s&source_ve_path=MjM4NTE&feature=emb_title"><img src="https://private-user-images.githubusercontent.com/101235186/264998597-326457d4-9292-4475-9ac7-51fe415110b1.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTEiLCJleHAiOjE2OTM1Njg1NDIsIm5iZiI6MTY5MzU2ODI0MiwicGF0aCI6Ii8xMDEyMzUxODYvMjY0OTk4NTk3LTMyNjQ1N2Q0LTkyOTItNDQ3NS05YWM3LTUxZmU0MTUxMTBiMS5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBSVdOSllBWDRDU1ZFSDUzQSUyRjIwMjMwOTAxJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDIzMDkwMVQxMTM3MjJaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1kOTNjM2I5MWY3NDYwM2M0YTUwOGQ1YjI1ZmRjMzc1M2Y2YTNkOGNjZGI4ZWM0OGExNGI3MGEzMDg0MGNkMzBkJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZhY3Rvcl9pZD0wJmtleV9pZD0wJnJlcG9faWQ9MCJ9.MnmYtGE_gWfEGgOsK04wEovzrRLfJwOUT2SIO477-rY"
+<a href="https://www.youtube.com/watch?v=E7CBdI0bE7s&source_ve_path=MjM4NTE&feature=emb_title"><img src="https://github.com/JYmsg/SweetTripSpring/assets/101235186/9214b017-ba59-4898-b8e6-3b6f3d84893c"
   alt="Sweet Trip 로고"
 />
 </a>
@@ -93,16 +93,25 @@ Sweet Trip으로 무엇을 얻을 수 있을까요?
       <td align="center" style="font-weight: bold; font-size: 18;">로그인 페이지</td>
     </tr>
     <tr>
-      <td align="center"><img src="https://github.com/fluffymn/readme-test/assets/55385934/f3324c96-e216-453d-84e0-5dd9cf1a9a68" /></td>
-    </tr>
-        <tr>
-      <td align="center">로그인 후 자동으로 메인 화면 접속</td>
+      <td align="center"><img src="https://github.com/JYmsg/SweetTripSpring/assets/101235186/74f9b929-6271-4d38-a3e6-bb6d97c8b551" /></td>
     </tr>
     <tr>
+      <td align="center">로그인 후 자동으로 메인 화면 접속</td>
+    </tr>
+   <tr>
+      <td align="center" style="font-weight: bold; font-size: 18;">회원가입 페이지</td>
+    </tr>
+    <tr>
+      <td align="center"><img src="https://github.com/JYmsg/SweetTripSpring/assets/101235186/e130e368-8695-420e-b0c6-7fbfb69bedd6" /></td>
+    </tr>
+    <tr>
+      <td align="center">로그인 후 자동으로 메인 화면 접속</td>
+    </tr> 
+   <tr>
       <td align="center" style="font-weight: bold; font-size: 18;">메인 페이지</td>
     </tr>
     <tr>
-      <td align="center"><img src="https://github.com/fluffymn/readme-test/assets/55385934/de5911ee-24e8-4d11-bc78-cde9bc1e6360" /></td>
+      <td align="center"><img src="https://github.com/JYmsg/SweetTripSpring/assets/101235186/d9d712f3-d2c3-489f-80a8-f1515a825349" /></td>
     </tr>
     <tr>
       <td align="center">'버블 만들기' 버튼으로 메시지 작성 가능<br>답장을 받을 경우 분홍색 비눗방울로 메시지가 나타남</td>
@@ -111,10 +120,12 @@ Sweet Trip으로 무엇을 얻을 수 있을까요?
       <td align="center" style="font-weight: bold; font-size: 18;">여행 등록 모달</td>
     </tr>
     <tr>
-      <td align="center"><img src="https://github.com/fluffymn/readme-test/assets/55385934/9dc8e364-23c2-4eb1-b494-8b55eccf3e10" /></td>
+      <td align="center"><img src="https://github.com/JYmsg/SweetTripSpring/assets/101235186/fbf8ac09-9c13-4ec2-a659-ecfc31dada2e" /></td>
     </tr>
     <tr>
-      <td align="center">메인 화면의 왼쪽 하단의 '?' 버튼을 터치하여<br>서비스 튜토리얼 확인 가능</td>
+      <td align="center">여행 제목과 여행 기간을 입력받습니다.<br>
+초대하기에서 유저의 닉네임으로 검색이 가능합니다.<br>
+'+' 버튼을 통해 여행에 초대할 수 있습니다.</td>
     </tr>
     <tr>
       <td align="center" style="font-weight: bold; font-size: 18;">여행 계획 페이지</td>
@@ -129,11 +140,18 @@ Sweet Trip으로 무엇을 얻을 수 있을까요?
       <td align="center" style="font-weight: bold; font-size: 18;">여행 검색 페이지</td>
     </tr>
     <tr>
-      <td align="center"><img src="https://github.com/fluffymn/readme-test/assets/55385934/337b67ca-2e81-4c00-b92a-33d2ff727cb7" /></td>
+      <td align="center"><img src="https://github.com/JYmsg/SweetTripSpring/assets/101235186/999b0e7c-7952-4ef1-b604-f0567531650f" /></td>
     </tr>
         <tr>
-      <td align="center">메인 화면의 오른쪽 상단의 'My' 버튼을 터치하여<br>마이페이지 접속 가능<br>마이페이지의 오른쪽 상단의 'Settings' 버튼을 터치하여<br>설정페이지 접속 가능
-      <br>프로필 수정 및 로그아웃, 탈퇴, 고객센터 문의 가능</td>
+      <td align="center">
+첫번째 탭에서 시/도 정보를 선택합니다.<br>
+그에 따른 상세 지역을 선택합니다.<br>
+여행지 분류를 선택합니다.<br>
+Search에서 여행지 명을 검색할 수 있습니다.<br>
+검색 버튼을 누르면 해당 되는 여행지 정보가 리스트로 나타납니다.<br>
+지도에 마커와 해당 위치 정보를 나타내는 네이버 지도 페이지로 이동합니다.<br>
+여행지를 누르면 모달로 상세 정보가 주어집니다.<br>
+자동차 버튼을 누르면 나만의 장소에 추가되고 상단 우측에 개수가 표시됩니다.</td>
     </tr>
     <tr>
       <td align="center" style="font-weight: bold; font-size: 18;">마이페이지(나만의 장소)</td>
@@ -142,18 +160,16 @@ Sweet Trip으로 무엇을 얻을 수 있을까요?
       <td align="center"><img src="https://github.com/fluffymn/readme-test/assets/55385934/337b67ca-2e81-4c00-b92a-33d2ff727cb7" /></td>
     </tr>
         <tr>
-      <td align="center">메인 화면의 오른쪽 상단의 'My' 버튼을 터치하여<br>마이페이지 접속 가능<br>마이페이지의 오른쪽 상단의 'Settings' 버튼을 터치하여<br>설정페이지 접속 가능
-      <br>프로필 수정 및 로그아웃, 탈퇴, 고객센터 문의 가능</td>
+      <td align="center">여행 검색 페이지에서 나만의 장소에 등록한 장소들이 리스트 형식으로 나타남</td>
     </tr>
     <tr>
       <td align="center" style="font-weight: bold; font-size: 18;">마이페이지(캘린더)</td>
     </tr>
     <tr>
-      <td align="center"><img src="https://github.com/fluffymn/readme-test/assets/55385934/337b67ca-2e81-4c00-b92a-33d2ff727cb7" /></td>
+      <td align="center"><img src="https://github.com/JYmsg/SweetTripSpring/assets/101235186/4862c088-06d7-4f12-8281-1be2a5321145" /></td>
     </tr>
-        <tr>
-      <td align="center">메인 화면의 오른쪽 상단의 'My' 버튼을 터치하여<br>마이페이지 접속 가능<br>마이페이지의 오른쪽 상단의 'Settings' 버튼을 터치하여<br>설정페이지 접속 가능
-      <br>프로필 수정 및 로그아웃, 탈퇴, 고객센터 문의 가능</td>
+    <tr>
+      <td align="center">캘린더에서 자신이 속한 모든 여행이 나타남<br>날짜를 클릭하면 해당 날짜가 속한 여행이 리스트 형식으로 나타남</td>
     </tr>
  </table>
 </div>
@@ -177,8 +193,8 @@ Sweet Trip으로 무엇을 얻을 수 있을까요?
 
   <table align="center">
     <tr>
-      <td align="center"><img src="https://private-user-images.githubusercontent.com/101235186/265007798-8db1d6d2-5789-4269-9a48-4a50035b1ff3.jpg?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTEiLCJleHAiOjE2OTM1NjgxNDgsIm5iZiI6MTY5MzU2Nzg0OCwicGF0aCI6Ii8xMDEyMzUxODYvMjY1MDA3Nzk4LThkYjFkNmQyLTU3ODktNDI2OS05YTQ4LTRhNTAwMzViMWZmMy5qcGc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBSVdOSllBWDRDU1ZFSDUzQSUyRjIwMjMwOTAxJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDIzMDkwMVQxMTMwNDhaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT0xNjY1ZGQyZWMyMDUyNGM5YmMwZmQ0YjZhOGMyM2M4ZjNhZTRmYTgxNjU2MjcyMTI0MzBlMDdkOGYxZDY1ZGY4JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZhY3Rvcl9pZD0wJmtleV9pZD0wJnJlcG9faWQ9MCJ9.1scsXZGXHAR4gib5oIPqhvvVPx5Wb33-XcYKLmdopPo" width="160"></td>
-      <td align="center"><img src="https://private-user-images.githubusercontent.com/101235186/265007862-dac7665c-79a0-43e2-a6bc-c28852f72b05.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTEiLCJleHAiOjE2OTM1NjgxNDgsIm5iZiI6MTY5MzU2Nzg0OCwicGF0aCI6Ii8xMDEyMzUxODYvMjY1MDA3ODYyLWRhYzc2NjVjLTc5YTAtNDNlMi1hNmJjLWMyODg1MmY3MmIwNS5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBSVdOSllBWDRDU1ZFSDUzQSUyRjIwMjMwOTAxJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDIzMDkwMVQxMTMwNDhaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1kYWRlODcwNzJiZTQ1MjcxNWJiYzAxYTFlZGIwNTA5NzQ0ODRkZTU4M2RkNDQ0YWE4YjM5N2I2NTc5ZTA1MTExJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZhY3Rvcl9pZD0wJmtleV9pZD0wJnJlcG9faWQ9MCJ9.RECt08RVecH1vM0EtrnlRJ5R85eRA2JZQHh4yu8PFVA" width="160"></td>
+      <td align="center"><img src="https://github.com/JYmsg/SweetTripSpring/assets/101235186/6286f2eb-0252-492e-a105-d6b969c66f68" width="160"></td>
+      <td align="center"><img src="https://github.com/JYmsg/SweetTripSpring/assets/101235186/f19be693-6596-4ef8-8c8a-d6b102259ee6" width="160"></td>
     </tr>
     <tr>
       <td align="center">김유진</td>
