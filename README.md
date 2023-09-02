@@ -128,13 +128,32 @@ Sweet Trip으로 무엇을 얻을 수 있을까요?
 '+' 버튼을 통해 여행에 초대할 수 있습니다.</td>
     </tr>
     <tr>
-      <td align="center" style="font-weight: bold; font-size: 18;">여행 계획 페이지</td>
+      <td align="center" style="font-weight: bold; font-size: 18;">여행 계획 세우기 페이지</td>
     </tr>
     <tr>
-      <td align="center"><img src="https://github.com/fluffymn/readme-test/assets/55385934/665f18f2-8dbe-4b8f-a2c9-d12a0608cdba" /></td>
+      <td align="center"><img src="https://github.com/JYmsg/SweetTripSpring/assets/101235186/081224e2-6163-47a6-9e53-818ee1a46b71" /></td>
     </tr>
     <tr>
-      <td align="center">친구의 메인화면 오른쪽 하단의 '★' 버튼을 터치하여 즐겨찾기에 추가 가능<br>자신의 메인 화면의 오른쪽 상단의 'My' 버튼을 터치하여<br>마이 페이지로 접속<br>'즐겨찾기' 탭에서 친구들 확인 가능</td>
+      <td align="center">찜한 장소 목록에서 드로그 앤 드랍으로 장소를 넣을 수 있습니다.<br>
+또는 검색 탭에서 장소를 검색하여 원하는 일자에 넣을 수 있습니다.<br>
+날짜 추가 버튼과 날짜 삭제 버튼을 통해 자유롭게 일정을 조정할 수 있습니다.<br>
+하나의 일정의 MORE 버튼으로 해당 장소의 상세 정보를 볼 수 있고 여행지별 메모를 남길수 있습니다.<br>
+Day에 일정이 추가되면 각 여행지 간의 거리가 보이고 소요 시간이 나타납니다.<br>
+연결 색을 다르게 하여 쉽게 구분할 수 있습니다.<br>
+여행 계획이 완료되었다면 계획 완료 버튼을 통해 계획을 저장합니다.</td>
+    </tr>
+   <tr>
+      <td align="center" style="font-weight: bold; font-size: 18;">여행 계획 완성 페이지</td>
+    </tr>
+    <tr>
+      <td align="center"><img src="https://github.com/JYmsg/SweetTripSpring/assets/101235186/8f9894d6-f9a1-457e-bca1-baea19b9745f" /></td>
+    </tr>
+    <tr>
+      <td align="center">지도에 여행 일정동안 방문하는 곳이 나타납니다.<br>
+지도 아래로 방문 지정한 방문 시간이 나타납니다.<br>
+'+' 버튼을 누르면 해당 장소의 상세 정보가 나타납니다.<br>
+태그 표시가 있는 곳은 메모가 있는 장소입니다.<br>
+우측 상단의 카카오톡 버튼으로 해당 일정을 공유할 수 있습니다.</td>
     </tr>
     <tr>
       <td align="center" style="font-weight: bold; font-size: 18;">여행 검색 페이지</td>
@@ -157,16 +176,42 @@ Search에서 여행지 명을 검색할 수 있습니다.<br>
       <td align="center" style="font-weight: bold; font-size: 18;">마이페이지(나만의 장소)</td>
     </tr>
     <tr>
-      <td align="center"><img src="https://github.com/fluffymn/readme-test/assets/55385934/337b67ca-2e81-4c00-b92a-33d2ff727cb7" /></td>
+      <td align="center"><img src="https://github.com/JYmsg/SweetTripSpring/assets/101235186/50ee45e8-b5c9-45c8-a167-f9a3d45f9f7a" /></td>
     </tr>
-        <tr>
-      <td align="center">여행 검색 페이지에서 나만의 장소에 등록한 장소들이 리스트 형식으로 나타남</td>
+      <td align="center">여행 검색 페이지에서 나만의 장소에 등록한 장소들이 리스트 형식으로 나타납니다.</td>
     </tr>
     <tr>
       <td align="center" style="font-weight: bold; font-size: 18;">마이페이지(캘린더)</td>
     </tr>
     <tr>
-      <td align="center"><img src="https://github.com/JYmsg/SweetTripSpring/assets/101235186/4862c088-06d7-4f12-8281-1be2a5321145" /></td>
+      <td align="center"><img src="https://github.com/JYmsg/SweetTripSpring/assets/101235186/42c03487-88dc-470a-aeea-74b7cd84b173" /></td>
+    </tr>
+    <tr>
+      <td align="center">캘린더에서 자신이 속한 모든 여행이 나타납니다.<br>날짜를 클릭하면 해당 날짜가 속한 여행이 리스트 형식으로 나타납니다.</td>
+    </tr>
+   <tr>
+      <td align="center" style="font-weight: bold; font-size: 18;">핫플레이스 리스트</td>
+    </tr>
+    <tr>
+      <td align="center"><img src="https://github.com/JYmsg/SweetTripSpring/assets/101235186/7579839b-ac70-4e4d-b82c-4abbbdf8663c" /></td>
+    </tr>
+    <tr>
+      <td align="center">캘린더에서 자신이 속한 모든 여행이 나타남<br>날짜를 클릭하면 해당 날짜가 속한 여행이 리스트 형식으로 나타남</td>
+    </tr>
+   <tr>
+      <td align="center" style="font-weight: bold; font-size: 18;">핫플레이스 등록하기</td>
+    </tr>
+    <tr>
+      <td align="center"><img src="https://github.com/JYmsg/SweetTripSpring/assets/101235186/9ccdf368-aba7-4c31-b0ac-4e43a199e254" /></td>
+    </tr>
+    <tr>
+      <td align="center">캘린더에서 자신이 속한 모든 여행이 나타남<br>날짜를 클릭하면 해당 날짜가 속한 여행이 리스트 형식으로 나타남</td>
+    </tr>
+   <tr>
+      <td align="center" style="font-weight: bold; font-size: 18;">공지사항 페이지</td>
+    </tr>
+    <tr>
+      <td align="center"><img src="https://github.com/JYmsg/SweetTripSpring/assets/101235186/d19b68bc-4660-49e0-9441-d600317aea5e" /></td>
     </tr>
     <tr>
       <td align="center">캘린더에서 자신이 속한 모든 여행이 나타남<br>날짜를 클릭하면 해당 날짜가 속한 여행이 리스트 형식으로 나타남</td>
@@ -185,7 +230,8 @@ Search에서 여행지 명을 검색할 수 있습니다.<br>
 # 🎈프로젝트 산출물
 
 - [📃 발표 자료](https://drive.google.com/file/d/1potlI5Di7i7thlScLRnVT_Q1TVpCkZEy/view?usp=sharing)
-- [💿 ERD](https://private-user-images.githubusercontent.com/101235186/265005150-617e212b-02ec-4141-8536-eab7fd0ad71e.PNG?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTEiLCJleHAiOjE2OTM1NjcxMTQsIm5iZiI6MTY5MzU2NjgxNCwicGF0aCI6Ii8xMDEyMzUxODYvMjY1MDA1MTUwLTYxN2UyMTJiLTAyZWMtNDE0MS04NTM2LWVhYjdmZDBhZDcxZS5QTkc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBSVdOSllBWDRDU1ZFSDUzQSUyRjIwMjMwOTAxJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDIzMDkwMVQxMTEzMzRaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT00OTlmZmQ4YjFiMmY1YTc1MWQ3MzRiMzZmNDIzYTNmNzM2YzRkOGEwNDljNWI5NWQ2ZjgwNWNiZTFhNWU4Mjg3JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZhY3Rvcl9pZD0wJmtleV9pZD0wJnJlcG9faWQ9MCJ9.-bXDVJjx0fCgEdEPpHHqiiFG7Uaw3rC35d_nu1BFf2g)
+- [💿 ERD](https://github.com/JYmsg/SweetTripSpring/assets/101235186/f34b126a-7fe4-45f4-bf23-bfc4f5476e81)
+
 
 <br><br>
 
