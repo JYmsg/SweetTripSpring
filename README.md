@@ -1,5 +1,5 @@
 <div align="center">
-<a href="https://www.youtube.com/watch?v=E7CBdI0bE7s&source_ve_path=MjM4NTE&feature=emb_title"><img src="https://www.youtube.com/watch?v=E7CBdI0bE7s&source_ve_path=MjM4NTE&feature=emb_title"
+<a href="https://www.youtube.com/watch?v=E7CBdI0bE7s&source_ve_path=MjM4NTE&feature=emb_title"><img src="https://github-production-user-asset-6210df.s3.amazonaws.com/101235186/265050690-9214b017-ba59-4898-b8e6-3b6f3d84893c.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20230904%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230904T002420Z&X-Amz-Expires=300&X-Amz-Signature=334a75a05585c22ff0c3549bf03a6f0ef2a7a5efe5c15169d2fc63703538a53a&X-Amz-SignedHeaders=host&actor_id=101235186&key_id=0&repo_id=684397069"
   alt="Sweet Trip 로고"
 />
 </a>
