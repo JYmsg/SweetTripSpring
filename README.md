@@ -246,8 +246,17 @@ Search에서 여행지 명을 검색할 수 있습니다.<br>
     </tr>
     <tr>
       <td align="center">관리자의 공지사항과 회원들의 QnA를 확인할 수 있습니다. <br/> 
-      카테고리에 따른 검색이 가능하며 카테고리를 클릭할 시 게시글이 정렬됩니다. <br/>
-      각 게시물에는 댓글을 남길 수 있으며 비밀댓글(댓글 작성자, 게시글 작성자만 확인 가능)도 가능합니다.</td>
+      카테고리에 따른 검색이 가능하며 카테고리를 클릭할 시 게시글이 정렬됩니다. </td>
+    </tr>
+   <tr>
+      <td align="center" style="font-weight: bold; font-size: 18;">공지사항 상세 페이지</td>
+    </tr>
+    <tr>
+      <td align="center"><img src="https://github.com/JYmsg/SweetTripVue/assets/96433955/956e595f-d25f-4805-9767-fbdaf062fc7e" /></td>
+    </tr>
+    <tr>
+      <td align="center">각 게시물에는 댓글을 남길 수 있으며 비밀댓글(댓글 작성자, 게시글 작성자만 확인 가능)도 가능합니다. <br/> 
+      댓글은 게시글 작성자와 댓글을 작성한 본인만 삭제 가능합니다.</td>
     </tr>
  </table>
 </div>
