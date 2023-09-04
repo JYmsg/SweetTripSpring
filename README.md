@@ -1,5 +1,5 @@
 <div align="center">
-<a href="https://www.youtube.com/watch?v=E7CBdI0bE7s&source_ve_path=MjM4NTE&feature=emb_title"><img src="https://github.com/JYmsg/SweetTripSpring/assets/101235186/9214b017-ba59-4898-b8e6-3b6f3d84893c"
+<a href="https://www.youtube.com/watch?v=E7CBdI0bE7s&source_ve_path=MjM4NTE&feature=emb_title"><img src="https://www.youtube.com/watch?v=E7CBdI0bE7s&source_ve_path=MjM4NTE&feature=emb_title"
   alt="Sweet Trip 로고"
 />
 </a>
