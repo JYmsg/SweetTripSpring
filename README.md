@@ -50,6 +50,7 @@
 
 ![GitLab](https://img.shields.io/badge/Gitlab-FC6D26.svg?&style=for-the-badge&logo=Gitlab&logoColor=#FC6D26)
 ![GitHub](https://img.shields.io/badge/GitHub-181717.svg?&style=for-the-badge&logo=GitHub&logoColor=white)
+
 ---
 
 <br><br>
@@ -98,25 +99,43 @@ Sweet Trip으로 무엇을 얻을 수 있을까요?
       <td align="center"><img src="https://github.com/JYmsg/SweetTripSpring/assets/101235186/74f9b929-6271-4d38-a3e6-bb6d97c8b551" /></td>
     </tr>
     <tr>
-      <td align="center">로그인 후 자동으로 메인 화면 접속</td>
+      <td align="center">로그인 후 자동으로 메인 화면으로 접속합니다.</td>
     </tr>
-   <tr>
+    <tr>
+      <td align="center" style="font-weight: bold; font-size: 18;">비밀번호 찾기 모달</td>
+    </tr>
+    <tr>
+      <td align="center"><img src="https://github.com/JYmsg/SweetTripVue/assets/96433955/5a487663-574f-4e03-a5d4-ef8fbecd871d" /></td>
+    </tr>
+    <tr>
+      <td align="center">아이디가 유효할 경우 해당 회원의 이메일로 인증코드를 보내<br/> 비밀번호를 재설정 할 수 있습니다.</td>
+    </tr>
+    <tr>
       <td align="center" style="font-weight: bold; font-size: 18;">회원가입 페이지</td>
     </tr>
     <tr>
       <td align="center"><img src="https://github.com/JYmsg/SweetTripSpring/assets/101235186/e130e368-8695-420e-b0c6-7fbfb69bedd6" /></td>
     </tr>
     <tr>
-      <td align="center">로그인 후 자동으로 메인 화면 접속</td>
+      <td align="center">이메일 인증, ID/PW 유효성 검사 등을 통해 회원가입을 합니다.</td>
     </tr> 
    <tr>
+      <td align="center" style="font-weight: bold; font-size: 18;">이메일 인증번호 확인</td>
+    </tr>
+    <tr>
+      <td align="center"><img src="https://github.com/JYmsg/SweetTripVue/assets/96433955/e3793cff-6b58-4a22-96cc-5b22e7a4c9b0" /></td>
+    </tr>
+    <tr>
+      <td align="center">회원가입, 비밀번호 찾기를 하면 등록한 메일로 인증번호가 전달됩니다.</td>
+    </tr> 
+    <tr>
       <td align="center" style="font-weight: bold; font-size: 18;">메인 페이지</td>
     </tr>
     <tr>
       <td align="center"><img src="https://github.com/JYmsg/SweetTripSpring/assets/101235186/d9d712f3-d2c3-489f-80a8-f1515a825349" /></td>
     </tr>
     <tr>
-      <td align="center">'버블 만들기' 버튼으로 메시지 작성 가능<br>답장을 받을 경우 분홍색 비눗방울로 메시지가 나타남</td>
+      <td align="center">공지사항과 지역은 Swiper로 자동 슬라이드 되며, <br/>이용 방법 옆 물음표를 누를 시 사이트의 이용 방법이 나옵니다.</td>
     </tr>
     <tr>
       <td align="center" style="font-weight: bold; font-size: 18;">여행 등록 모달</td>
@@ -144,7 +163,7 @@ Day에 일정이 추가되면 각 여행지 간의 거리가 보이고 소요 �
 연결 색을 다르게 하여 쉽게 구분할 수 있습니다.<br>
 여행 계획이 완료되었다면 계획 완료 버튼을 통해 계획을 저장합니다.</td>
     </tr>
-   <tr>
+    <tr>
       <td align="center" style="font-weight: bold; font-size: 18;">여행 계획 완성 페이지</td>
     </tr>
     <tr>
@@ -154,8 +173,16 @@ Day에 일정이 추가되면 각 여행지 간의 거리가 보이고 소요 �
       <td align="center">지도에 여행 일정동안 방문하는 곳이 나타납니다.<br>
 지도 아래로 방문 지정한 방문 시간이 나타납니다.<br>
 '+' 버튼을 누르면 해당 장소의 상세 정보가 나타납니다.<br>
-태그 표시가 있는 곳은 메모가 있는 장소입니다.<br>
-우측 상단의 카카오톡 버튼으로 해당 일정을 공유할 수 있습니다.</td>
+태그 표시가 있는 곳은 메모가 있는 장소입니다.</td>
+    </tr>
+    <tr>
+      <td align="center" style="font-weight: bold; font-size: 18;">여행 계획 공유</td>
+    </tr>
+    <tr>
+      <td align="center"><img src="https://github.com/JYmsg/SweetTripVue/assets/96433955/049689a8-76d1-425c-b96a-59c0153c3672" /></td>
+    </tr>
+    <tr>
+      <td align="center">카카오톡 공유하기로 내가 만든 여행 계획에 친구를 초대할 수 있습니다.</td>
     </tr>
     <tr>
       <td align="center" style="font-weight: bold; font-size: 18;">여행 검색 페이지</td>
@@ -198,7 +225,7 @@ Search에서 여행지 명을 검색할 수 있습니다.<br>
       <td align="center"><img src="https://github.com/JYmsg/SweetTripSpring/assets/101235186/7579839b-ac70-4e4d-b82c-4abbbdf8663c" /></td>
     </tr>
     <tr>
-      <td align="center">캘린더에서 자신이 속한 모든 여행이 나타남<br>날짜를 클릭하면 해당 날짜가 속한 여행이 리스트 형식으로 나타남</td>
+      <td align="center">우리나라의 각 시 별로 회원들이 공유한 핫 플레이스 장소를 확인할 수 있습니다.</td>
     </tr>
    <tr>
       <td align="center" style="font-weight: bold; font-size: 18;">핫플레이스 등록하기</td>
@@ -207,7 +234,9 @@ Search에서 여행지 명을 검색할 수 있습니다.<br>
       <td align="center"><img src="https://github.com/JYmsg/SweetTripSpring/assets/101235186/9ccdf368-aba7-4c31-b0ac-4e43a199e254" /></td>
     </tr>
     <tr>
-      <td align="center">캘린더에서 자신이 속한 모든 여행이 나타남<br>날짜를 클릭하면 해당 날짜가 속한 여행이 리스트 형식으로 나타남</td>
+      <td align="center">핫 플레이스로 등록할 장소를 검색하면 해당 위치가 왼쪽 지도에 표시됩니다. <br/>
+      제목과 내용을 입력한 후 이미지 1개를 업로드 하면 핫 플레이스로 게시물이 등록됩니다. <br/>
+      회원들은 게시물에 좋아요와 댓글을 남길 수 있습니다. </td>
     </tr>
    <tr>
       <td align="center" style="font-weight: bold; font-size: 18;">공지사항 페이지</td>
@@ -216,7 +245,9 @@ Search에서 여행지 명을 검색할 수 있습니다.<br>
       <td align="center"><img src="https://github.com/JYmsg/SweetTripSpring/assets/101235186/d19b68bc-4660-49e0-9441-d600317aea5e" /></td>
     </tr>
     <tr>
-      <td align="center">캘린더에서 자신이 속한 모든 여행이 나타남<br>날짜를 클릭하면 해당 날짜가 속한 여행이 리스트 형식으로 나타남</td>
+      <td align="center">관리자의 공지사항과 회원들의 QnA를 확인할 수 있습니다. <br/> 
+      카테고리에 따른 검색이 가능하며 카테고리를 클릭할 시 게시글이 정렬됩니다. <br/>
+      각 게시물에는 댓글을 남길 수 있으며 비밀댓글(댓글 작성자, 게시글 작성자만 확인 가능)도 가능합니다.</td>
     </tr>
  </table>
 </div>
@@ -233,7 +264,6 @@ Search에서 여행지 명을 검색할 수 있습니다.<br>
 
 - [📃 발표 자료](https://drive.google.com/file/d/1potlI5Di7i7thlScLRnVT_Q1TVpCkZEy/view?usp=sharing)
 - [💿 ERD](https://github.com/JYmsg/SweetTripSpring/assets/101235186/f34b126a-7fe4-45f4-bf23-bfc4f5476e81)
-
 
 <br><br>
 
