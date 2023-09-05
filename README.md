@@ -1,5 +1,5 @@
 <div align="center">
-<a href="https://www.youtube.com/watch?v=E7CBdI0bE7s&source_ve_path=MjM4NTE&feature=emb_title"><img src="https://github-production-user-asset-6210df.s3.amazonaws.com/101235186/265050690-9214b017-ba59-4898-b8e6-3b6f3d84893c.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20230904%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230904T002420Z&X-Amz-Expires=300&X-Amz-Signature=334a75a05585c22ff0c3549bf03a6f0ef2a7a5efe5c15169d2fc63703538a53a&X-Amz-SignedHeaders=host&actor_id=101235186&key_id=0&repo_id=684397069"
+<a href="https://www.youtube.com/watch?v=E7CBdI0bE7s&source_ve_path=MjM4NTE&feature=emb_title"><img src="https://github.com/JYmsg/SweetTripSpring/assets/101235186/b6cbd414-a012-4c1d-9f4d-fd0d2a38b78d"
   alt="Sweet Trip 로고"
 />
 </a>
@@ -96,7 +96,7 @@ Sweet Trip으로 무엇을 얻을 수 있을까요?
       <td align="center" style="font-weight: bold; font-size: 18;">로그인 페이지</td>
     </tr>
     <tr>
-      <td align="center"><img src="https://github.com/JYmsg/SweetTripSpring/assets/101235186/74f9b929-6271-4d38-a3e6-bb6d97c8b551" /></td>
+      <td align="center"><img src="https://github.com/JYmsg/SweetTripSpring/assets/101235186/fcd4041f-eb99-438a-b4c9-593a08549211" /></td>
     </tr>
     <tr>
       <td align="center">로그인 후 자동으로 메인 화면으로 접속합니다.</td>
@@ -105,7 +105,7 @@ Sweet Trip으로 무엇을 얻을 수 있을까요?
       <td align="center" style="font-weight: bold; font-size: 18;">비밀번호 찾기 모달</td>
     </tr>
     <tr>
-      <td align="center"><img src="https://github.com/JYmsg/SweetTripVue/assets/96433955/5a487663-574f-4e03-a5d4-ef8fbecd871d" /></td>
+      <td align="center"><img src="https://github.com/JYmsg/SweetTripSpring/assets/96433955/5a487663-574f-4e03-a5d4-ef8fbecd871d" /></td>
     </tr>
     <tr>
       <td align="center">아이디가 유효할 경우 해당 회원의 이메일로 인증코드를 보내<br/> 비밀번호를 재설정 할 수 있습니다.</td>
@@ -114,7 +114,7 @@ Sweet Trip으로 무엇을 얻을 수 있을까요?
       <td align="center" style="font-weight: bold; font-size: 18;">회원가입 페이지</td>
     </tr>
     <tr>
-      <td align="center"><img src="https://github.com/JYmsg/SweetTripSpring/assets/101235186/e130e368-8695-420e-b0c6-7fbfb69bedd6" /></td>
+      <td align="center"><img src="https://github.com/JYmsg/SweetTripSpring/assets/101235186/c5a0c163-7ed6-443d-ae4d-e08da02fc27d" /></td>
     </tr>
     <tr>
       <td align="center">이메일 인증, ID/PW 유효성 검사 등을 통해 회원가입을 합니다.</td>
@@ -123,7 +123,7 @@ Sweet Trip으로 무엇을 얻을 수 있을까요?
       <td align="center" style="font-weight: bold; font-size: 18;">이메일 인증번호 확인</td>
     </tr>
     <tr>
-      <td align="center"><img src="https://github.com/JYmsg/SweetTripVue/assets/96433955/e3793cff-6b58-4a22-96cc-5b22e7a4c9b0" /></td>
+      <td align="center"><img src="" /></td>
     </tr>
     <tr>
       <td align="center">회원가입, 비밀번호 찾기를 하면 등록한 메일로 인증번호가 전달됩니다.</td>
@@ -132,7 +132,7 @@ Sweet Trip으로 무엇을 얻을 수 있을까요?
       <td align="center" style="font-weight: bold; font-size: 18;">메인 페이지</td>
     </tr>
     <tr>
-      <td align="center"><img src="https://github.com/JYmsg/SweetTripSpring/assets/101235186/d9d712f3-d2c3-489f-80a8-f1515a825349" /></td>
+      <td align="center"><img src="https://github.com/JYmsg/SweetTripSpring/assets/101235186/ef34f7f0-a1b0-4506-ac2d-3fddbf208397" /></td>
     </tr>
     <tr>
       <td align="center">공지사항과 지역은 Swiper로 자동 슬라이드 되며, <br/>이용 방법 옆 물음표를 누를 시 사이트의 이용 방법이 나옵니다.</td>
@@ -141,7 +141,7 @@ Sweet Trip으로 무엇을 얻을 수 있을까요?
       <td align="center" style="font-weight: bold; font-size: 18;">여행 등록 모달</td>
     </tr>
     <tr>
-      <td align="center"><img src="https://github.com/JYmsg/SweetTripSpring/assets/101235186/fbf8ac09-9c13-4ec2-a659-ecfc31dada2e" /></td>
+      <td align="center"><img src="https://github.com/JYmsg/SweetTripSpring/assets/101235186/04290808-6491-46ef-8403-93e50662d91f" /></td>
     </tr>
     <tr>
       <td align="center">여행 제목과 여행 기간을 입력받습니다.<br>
@@ -152,7 +152,7 @@ Sweet Trip으로 무엇을 얻을 수 있을까요?
       <td align="center" style="font-weight: bold; font-size: 18;">여행 계획 세우기 페이지</td>
     </tr>
     <tr>
-      <td align="center"><img src="https://github.com/JYmsg/SweetTripSpring/assets/101235186/081224e2-6163-47a6-9e53-818ee1a46b71" /></td>
+      <td align="center"><img src="https://github.com/JYmsg/SweetTripSpring/assets/101235186/b1919739-728c-4bf2-9abc-e6f4fd03f5d0" /></td>
     </tr>
     <tr>
       <td align="center">찜한 장소 목록에서 드로그 앤 드랍으로 장소를 넣을 수 있습니다.<br>
@@ -167,7 +167,7 @@ Day에 일정이 추가되면 각 여행지 간의 거리가 보이고 소요 �
       <td align="center" style="font-weight: bold; font-size: 18;">여행 계획 완성 페이지</td>
     </tr>
     <tr>
-      <td align="center"><img src="https://github.com/JYmsg/SweetTripSpring/assets/101235186/8f9894d6-f9a1-457e-bca1-baea19b9745f" /></td>
+      <td align="center"><img src="https://github.com/JYmsg/SweetTripSpring/assets/101235186/7ae838d7-588b-49c4-9fbe-92cf4a12b1e0" /></td>
     </tr>
     <tr>
       <td align="center">지도에 여행 일정동안 방문하는 곳이 나타납니다.<br>
@@ -179,7 +179,7 @@ Day에 일정이 추가되면 각 여행지 간의 거리가 보이고 소요 �
       <td align="center" style="font-weight: bold; font-size: 18;">여행 계획 공유</td>
     </tr>
     <tr>
-      <td align="center"><img src="https://github.com/JYmsg/SweetTripVue/assets/96433955/049689a8-76d1-425c-b96a-59c0153c3672" /></td>
+      <td align="center"><img src="" /></td>
     </tr>
     <tr>
       <td align="center">카카오톡 공유하기로 내가 만든 여행 계획에 친구를 초대할 수 있습니다.</td>
@@ -188,7 +188,7 @@ Day에 일정이 추가되면 각 여행지 간의 거리가 보이고 소요 �
       <td align="center" style="font-weight: bold; font-size: 18;">여행 검색 페이지</td>
     </tr>
     <tr>
-      <td align="center"><img src="https://github.com/JYmsg/SweetTripSpring/assets/101235186/999b0e7c-7952-4ef1-b604-f0567531650f" /></td>
+      <td align="center"><img src="https://github.com/JYmsg/SweetTripSpring/assets/101235186/753367b4-04e6-40f4-a444-9159c74a4927" /></td>
     </tr>
         <tr>
       <td align="center">
@@ -205,7 +205,7 @@ Search에서 여행지 명을 검색할 수 있습니다.<br>
       <td align="center" style="font-weight: bold; font-size: 18;">마이페이지(나만의 장소)</td>
     </tr>
     <tr>
-      <td align="center"><img src="https://github.com/JYmsg/SweetTripSpring/assets/101235186/50ee45e8-b5c9-45c8-a167-f9a3d45f9f7a" /></td>
+      <td align="center"><img src="https://github.com/JYmsg/SweetTripSpring/assets/101235186/66ebb3fd-652d-4d3f-ad6e-32052132db20" /></td>
     </tr>
       <td align="center">여행 검색 페이지에서 나만의 장소에 등록한 장소들이 리스트 형식으로 나타납니다.</td>
     </tr>
@@ -213,7 +213,7 @@ Search에서 여행지 명을 검색할 수 있습니다.<br>
       <td align="center" style="font-weight: bold; font-size: 18;">마이페이지(캘린더)</td>
     </tr>
     <tr>
-      <td align="center"><img src="https://github.com/JYmsg/SweetTripSpring/assets/101235186/42c03487-88dc-470a-aeea-74b7cd84b173" /></td>
+      <td align="center"><img src="https://github.com/JYmsg/SweetTripSpring/assets/101235186/a5f2c206-6d98-4548-b2da-a76895cdf3cb" /></td>
     </tr>
     <tr>
       <td align="center">캘린더에서 자신이 속한 모든 여행이 나타납니다.<br>날짜를 클릭하면 해당 날짜가 속한 여행이 리스트 형식으로 나타납니다.</td>
@@ -222,7 +222,7 @@ Search에서 여행지 명을 검색할 수 있습니다.<br>
       <td align="center" style="font-weight: bold; font-size: 18;">핫플레이스 리스트</td>
     </tr>
     <tr>
-      <td align="center"><img src="https://github.com/JYmsg/SweetTripSpring/assets/101235186/7579839b-ac70-4e4d-b82c-4abbbdf8663c" /></td>
+      <td align="center"><img src="https://github.com/JYmsg/SweetTripSpring/assets/101235186/d47fc0a2-5efe-494d-84c0-e717a89f1def" /></td>
     </tr>
     <tr>
       <td align="center">우리나라의 각 시 별로 회원들이 공유한 핫 플레이스 장소를 확인할 수 있습니다.</td>
@@ -231,7 +231,7 @@ Search에서 여행지 명을 검색할 수 있습니다.<br>
       <td align="center" style="font-weight: bold; font-size: 18;">핫플레이스 등록하기</td>
     </tr>
     <tr>
-      <td align="center"><img src="https://github.com/JYmsg/SweetTripSpring/assets/101235186/9ccdf368-aba7-4c31-b0ac-4e43a199e254" /></td>
+      <td align="center"><img src="https://github.com/JYmsg/SweetTripSpring/assets/101235186/bf18e8a6-276a-4207-8a34-2b9135385043" /></td>
     </tr>
     <tr>
       <td align="center">핫 플레이스로 등록할 장소를 검색하면 해당 위치가 왼쪽 지도에 표시됩니다. <br/>
@@ -242,7 +242,7 @@ Search에서 여행지 명을 검색할 수 있습니다.<br>
       <td align="center" style="font-weight: bold; font-size: 18;">공지사항 페이지</td>
     </tr>
     <tr>
-      <td align="center"><img src="https://github.com/JYmsg/SweetTripSpring/assets/101235186/d19b68bc-4660-49e0-9441-d600317aea5e" /></td>
+      <td align="center"><img src="https://github.com/JYmsg/SweetTripSpring/assets/101235186/279d26a8-fcac-4d6b-89b7-0a7731742db7" /></td>
     </tr>
     <tr>
       <td align="center">관리자의 공지사항과 회원들의 QnA를 확인할 수 있습니다. <br/> 
@@ -252,7 +252,7 @@ Search에서 여행지 명을 검색할 수 있습니다.<br>
       <td align="center" style="font-weight: bold; font-size: 18;">공지사항 상세 페이지</td>
     </tr>
     <tr>
-      <td align="center"><img src="https://github.com/JYmsg/SweetTripVue/assets/96433955/956e595f-d25f-4805-9767-fbdaf062fc7e" /></td>
+      <td align="center"><img src="" /></td>
     </tr>
     <tr>
       <td align="center">각 게시물에는 댓글을 남길 수 있으며 비밀댓글(댓글 작성자, 게시글 작성자만 확인 가능)도 가능합니다. <br/> 
@@ -280,8 +280,8 @@ Search에서 여행지 명을 검색할 수 있습니다.<br>
 
   <table align="center">
     <tr>
-      <td align="center"><img src="https://github.com/JYmsg/SweetTripSpring/assets/101235186/6286f2eb-0252-492e-a105-d6b969c66f68" width="160"></td>
-      <td align="center"><img src="https://github.com/JYmsg/SweetTripSpring/assets/101235186/f19be693-6596-4ef8-8c8a-d6b102259ee6" width="160"></td>
+      <td align="center"><img src="https://github.com/JYmsg/SweetTripSpring/assets/101235186/4d3e2a26-6562-4375-b58d-ddc245b2b969" width="160"></td>
+      <td align="center"><img src="https://github.com/JYmsg/SweetTripSpring/assets/101235186/3449fe94-69b3-4863-8b12-2cf2111219f6" width="160"></td>
     </tr>
     <tr>
       <td align="center">김유진</td>
